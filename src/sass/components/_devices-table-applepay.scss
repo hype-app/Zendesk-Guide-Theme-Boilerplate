@@ -1,0 +1,102 @@
+.c-devices-table-applepay {
+  background: color($blue, default);
+  padding: $base-spacing-x5  $base-spacing-x2;
+  text-align: center;
+}
+
+.c-devices-table-applepay__title {
+  color: color($floral, default);
+}
+
+.c-devices-table-applepay__list {
+  max-width: 885px;
+  padding: 0;
+  margin: $base-spacing-x5 auto;
+}
+
+.c-devices-table-applepay__list-item {
+  display: block;
+  list-style: none;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  padding: $base-spacing-x4 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.2rem;
+    color: color($floral, default);
+    font-weight: 500;
+    width: 40%;
+  }
+}
+
+.c-devices-table-applepay__list-icons {
+  float: right;
+  overflow: hidden;
+  width: 60%;
+}
+.c-devices-table-applepay__list-head {
+  float: right;
+  overflow: hidden;
+  width: 56%;
+}
+.c-devices-table-applepay__head{
+  display: block;
+  text-transform: uppercase;
+  color: color($blue, lightest);
+  font-size: 16px;
+  font-weight: 500;
+  float: right;
+  margin-left: $base-spacing-x2;
+}
+.c-devices-table-applepay__icon {
+  display: block;
+  width: 45px;
+  height: 45px;
+  float: right;
+  margin-left: 23px;
+
+  &--true {
+    background: url(/assets/images/icon_true.svg) center center no-repeat;
+  background-size: contain;
+  background-position-y: 3px;
+  }
+
+  &--false {
+    background: url(/assets/images/icon_false.svg) center center no-repeat;
+    background-size: 27px;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-devices-table-applepay {
+    padding: $base-spacing-x5;
+  }
+  .c-devices-table-applepay__list-item {
+    padding: $base-spacing-x4 $base-spacing-x2;
+    p {
+      width: 60%;
+    }
+  }
+
+  .c-devices-table-applepay__list-icons {
+    padding-right: $base-spacing-x2;
+    width: 40%;
+  }
+  .c-devices-table-applepay__icon {
+    margin-left: 18%;
+  }
+  .c-devices-table-applepay__head{
+    width: 26%;
+    text-align: center;
+
+  }
+  .c-devices-table-applepay__list-head{
+    width: 37%;
+  }
+}

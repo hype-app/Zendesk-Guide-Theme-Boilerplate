@@ -1,0 +1,95 @@
+.c-features-double-image-text-block {
+  background: url('/assets/images/search-bg.png') left top no-repeat color($blue, darkest);
+  background-size: inherit;
+  overflow: hidden;
+  padding: $base-spacing-x4 0;
+
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.4rem;
+    padding: $base-spacing-x4 $base-spacing-x3;
+  }
+}
+.c-features-double-image-text-block__bg-bottom {
+  background: url('/assets/images/search-bg-bottom.png') bottom no-repeat color($blue, darkest);
+  background-size: inherit;
+  display: table;
+  .c-features-double-image-text-block__box {
+
+    display: table;
+  }
+  .c-features-double-image-text-block__text {
+    display: table-footer-group;
+  }
+}
+.c-features-double-image-text-block__box {
+  padding: $base-spacing-x3;
+  text-align: left;
+}
+
+.c-features-double-image-text-block__image {
+  max-width: 298px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: $base-spacing-x3;
+
+  &.c-features-double-image-text-block__image-hash {
+    max-width: 316px;
+  }
+}
+
+.c-features-double-image-text-block__text {
+  p, h3 {
+    color: color($blue, lightest);
+  }
+}
+
+.c-features-double-image-text-block__text-orange {
+  color: color($orange, default);
+}
+@media screen and (break(medium)) {
+
+  .c-features-double-image-text-block__bg-bottom {
+    background-size: contain;
+    background-position: left bottom;
+  }
+  .c-features-double-image-text-block {
+    background-size: contain;
+  }
+  .c-features-double-image-text-block {
+    &.c-features-double-image-text-block__bg-bottom {
+      .c-features-double-image-text-block__box {
+        display: flex;
+      }
+      .c-features-double-image-text-block__text {
+        display: inherit;
+        max-width: 82%;
+        min-width: 300px;
+      }
+    }
+  }
+
+  .c-features-double-image-text-block__box {
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .c-features-double-image-text-block__image {
+    max-width: 376px;
+    float: left;
+    border-bottom: 0;
+
+    &.c-features-double-image-text-block__image-hash {
+      max-width: 380px;
+    }
+  }
+
+  .c-features-double-image-text-block__text {
+    max-width: 650px;
+    float: left;
+  }
+}

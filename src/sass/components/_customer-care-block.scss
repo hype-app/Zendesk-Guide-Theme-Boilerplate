@@ -1,0 +1,38 @@
+.c-customer-care-block {
+  padding: $base-spacing-x6 * 2 $base-spacing-x2 $base-spacing-x6 * 3 $base-spacing-x2;
+  background-image: url("/assets/images/assistenza.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+
+
+  &__content {
+    text-align: left;
+    max-width: 790px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.375rem;
+    color: color($floral, default);
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: color($floral, default);
+    margin-bottom: $base-spacing-x7;
+  }
+
+  @media screen and (break(medium)) {
+    &__content {
+      text-align: center;
+    }
+
+    &__title {
+      text-align: center;
+      padding: $base-spacing-x2 $base-spacing-x9;
+    }
+  }
+}

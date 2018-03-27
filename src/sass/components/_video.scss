@@ -1,0 +1,130 @@
+$animation-speed: .3s;
+$animation-function: ease-out;
+$backdrop-color: rgba(color($purple, darkest), .7);
+$modal-bg-color: #333;
+
+@keyframes c-modal-video {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.c-video {
+  &.hidden {
+    display: none;
+  }
+
+}
+.c-youtube-player {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  background: #000;
+  margin: 0;
+}
+
+.c-youtube-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: transparent;
+}
+
+
+.button {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  &:hover {
+    fill: white;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-video {
+    position: fixed;
+    align-items: center;
+    padding: 0 16%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $backdrop-color;
+    z-index: 1000000;
+    cursor: pointer;
+    opacity: 1;
+    animation-timing-function: $animation-function;
+    animation-duration: $animation-speed;
+    animation-name: c-modal-video;
+    -webkit-transition: opacity $animation-speed $animation-function;
+    -moz-transition: opacity $animation-speed $animation-function;
+    -ms-transition: opacity $animation-speed $animation-function;
+    -o-transition: opacity $animation-speed $animation-function;
+    transition: opacity $animation-speed $animation-function;
+    &.hidden {
+      display: none;
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  .c-video__body {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+
+
+  .c-video iframe,
+  .c-video object,
+  .c-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .c-video__close {
+    color: #ffffff;
+    font-size: 37px;
+    top: -6%;
+    height: 34px;
+    line-height: 0;
+    position: absolute;
+    font-weight: bold;
+    z-index: 99999;
+    left: 101%;
+    display: block;
+    background: transparent;
+    border: transparent;
+
+    &:hover, &:focus {
+      color: color($blue, default);
+      text-decoration: none;
+      cursor: pointer;
+      background: none !important;
+      box-shadow: none;
+      outline: none;
+      border: none;
+    }
+  }
+  .c-video-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,73 @@
+.c-exchange-money-block {
+  background: url('/assets/images/scambio-denaro-bg.png') no-repeat color($blue, darkest);
+  background-size: cover;
+  text-align: center;
+  padding: $base-spacing-x5 $base-spacing-x3;
+}
+
+.c-exchange-money-block__title {
+  display: block;
+  font-size: 2.375rem;
+  color: color($floral, default);
+  padding: $base-spacing-x10 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.c-exchange-money-block__list {
+  padding: 0 0 $base-spacing-x10 0;
+  margin: 0;
+}
+
+.c-exchange-money-block__list-item {
+  list-style: none;
+  display: inline-block;
+  text-align: left;
+  margin: $base-spacing-x4 0;
+
+  &__image {
+    margin-left: -14px;
+  }
+
+  &__title {
+    margin: $base-spacing 0 $base-spacing-x2 0;
+  }
+
+  &__text {
+    color: color($floral, default);
+    font-weight: 400;
+    margin-bottom: $base-spacing-x4;
+  }
+
+  &--pay {
+    .c-exchange-money-block__list-item__title {
+      color: color($blue, lightest);
+    }
+  }
+  &--send {
+    .c-exchange-money-block__list-item__title {
+      color: color($purple, lightest);
+    }
+  }
+
+  &--receive {
+    .c-exchange-money-block__list-item__title {
+      color: color($orange, lightest);
+    }
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-exchange-money-block__list-item {
+    width: 26%;
+    min-width: 325px;
+    padding: 0 2.5%;
+    vertical-align: top;
+    text-align: left;
+
+    &__text {
+      margin-bottom: $base-spacing-x8;
+      min-height: 245px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.c-logo {
+  display: block;
+  width: 90px;
+  height: 72px;
+  margin: 0 auto;
+  background: url("assets/images/logo.svg") no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+
+  &.c-logo--landing-timpersonal {
+    background: url("assets/images/hype-logo-white.svg") no-repeat;
+    width: 49px;
+    display: inline-block;
+    height: 39px;
+    float: left;
+    position: absolute;
+    margin: -0.9rem 0 !important;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-logo {
+    width: 50px;
+    height: 40px;
+
+    background: url("assets/images/logo.svg") no-repeat;
+    background-size: contain;
+
+    text-indent: -9999px;
+    &.c-logo--landing-timpersonal {
+      margin: 0 auto;
+    }
+  }
+}

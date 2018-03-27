@@ -13,6 +13,7 @@ import runSequence from 'run-sequence';
 import yargs from 'yargs';
 import webpackConfig from './webpack.config';
 import webpack from 'webpack';
+import sourcemaps from 'gulp-sourcemaps';
 
 // Load environment config file
 const argv = yargs.argv;
@@ -68,8 +69,10 @@ gulp.task('build', ['build-sass', 'build-templates', 'build-js']);
 
 gulp.task('build-sass', () => {
     return gulp.src('./src/sass/style.scss')
+        .pipe(sourcemaps.init())
         .pipe(sassVars(config, { verbose: false }))
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist'));
 });
 

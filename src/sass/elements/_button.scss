@@ -1,0 +1,118 @@
+.e-button {
+  display: inline-block;
+  padding: $base-spacing $base-spacing-x7;
+  text-transform: uppercase;
+  background: color($blue, default);
+  color: #fff;
+  font-weight: 500;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  border-radius: 4px;
+
+  &:hover {
+    background: color($blue, light);
+    color: #fff;
+  }
+
+  &--orange {
+    background: color($orange, default);
+    &:hover {
+      background: color($orange, lighter);
+      color: #fff;
+    }
+  }
+
+
+
+  &--outlined {
+    background: none;
+    border: 1px solid color($blue, light);
+    color: color($blue, light);
+  }
+
+  &--small {
+    padding: $base-spacing $base-spacing-x2;
+    background: color($blue, lightest);
+    color: color($blue, light);
+    font-size: .75rem;
+    text-transform: none;
+    font-weight: 600;
+    line-height: .75rem;
+  }
+
+  &--no-uppercase {
+    text-transform: none;
+  }
+}
+
+.e-landing-timpersonal {
+  .e-button {
+    color: white;
+    background: #003264;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: $base-spacing $base-spacing-x7;
+    &--red {
+      background: #eb0028;
+    }
+    &--redheader {
+      background: #eb0028;
+      border-radius: 4px;
+      color: white;
+      float: right;
+      padding: $base-spacing;
+      text-transform: uppercase;
+
+      @media screen and (break(medium)){
+        background: #eb0028;
+        margin-right:20%;
+        border-radius: 4px;
+        color: white;
+        float: right;
+        padding: $base-spacing $base-spacing-x4;
+        text-transform: uppercase;
+      }
+
+    }
+
+  }
+}
+
+.e-landing-faq-timpersonal {
+  .e-button {
+    color: white;
+    background: #003264;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: $base-spacing $base-spacing-x7;
+    &--red {
+      background: #eb0028;
+    }
+    &--redheader {
+      background: #eb0028;
+      border-radius: 4px;
+      color: white;
+      float: right;
+      padding: $base-spacing;
+      text-transform: uppercase;
+
+      @media screen and (break(medium)){
+        background: #eb0028;
+        margin-right:20%;
+        border-radius: 4px;
+        color: white;
+        float: right;
+        padding: $base-spacing $base-spacing-x4;
+        text-transform: uppercase;
+      }
+
+    }
+
+  }
+}
+
+
+
+

@@ -1,0 +1,26 @@
+// ↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧
+// Font Face Tim
+// Last update: 22/11/2017
+// ↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥
+
+@if $font-face-name-timsans and $font-face-name-timsans != '' {
+
+  @font-face {
+    font-family: 'TimSans';
+    ssrc: url('/assets/fonts/timsans-regular.eot');
+    src: url('/assets/fonts/timsans-regular.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/timsans-regular.woff') format('woff'),
+    url('/assets/fonts/timsans-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TimSans Bold';
+    ssrc: url('/assets/fonts/timsans-bold.eot');
+    src: url('/assets/fonts/timsans-bold.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/timsans-bold.woff') format('woff'),
+    url('/assets/fonts/timsans-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+}

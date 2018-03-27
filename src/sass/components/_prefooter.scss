@@ -1,0 +1,71 @@
+.c-prefooter {
+  padding: $base-spacing-x6 * 2 0 $base-spacing-x6 * 3 0;
+  background-color: color($floral, default);
+  background-image: url("/assets/images/prefooter_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  > div {
+    padding: 0 $base-spacing-x3;
+  }
+}
+
+.c-prefooter__title {
+  max-width: 560px;
+  color: color($blue, default);
+  margin-bottom: $base-spacing-x3;
+}
+
+.c-prefooter__text {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.c-prefooter__text-image {
+  margin: 0 $base-spacing;
+
+  &--margin-left {
+    margin-left: $base-spacing-x3;
+  }
+}
+
+.c-prefooter__button {
+  width: 100%;
+  text-align: center;
+}
+
+.e-landing-timpersonal{
+  .c-prefooter {
+    background-color: #004990;
+    background-image: none;
+    padding: $base-spacing-x10 0;
+  }
+
+  .c-prefooter__title {
+    color: white;
+  }
+
+  .c-prefooter__text {
+    color: white;
+  }
+}
+
+@media screen and (break(extraSmall)) {
+  .c-prefooter__button {
+    width: auto;
+  }
+}
+
+@media screen and (break(medium)) {
+
+  .c-prefooter{
+    background-size: contain;
+    background-position: top right;
+  }
+  .c-prefooter__text {
+    max-width: 664px;
+  }
+  .c-prefooter__button {
+    width: auto;
+  }
+}

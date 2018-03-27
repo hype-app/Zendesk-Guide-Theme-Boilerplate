@@ -1,0 +1,72 @@
+.c-pricing-plans {
+  padding: $base-spacing-x5 0;
+}
+
+.c-pricing-plans__list {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.c-pricing-plans__list-item__header {
+  background: color($floral, default);
+
+  &__plan {
+    display: block;
+    padding: $base-spacing-x3 0;
+    font-size: 1.25rem;
+    color: #BCB3A0;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &__price {
+    padding: $base-spacing-x3 0;
+    font-size: 3.25rem;
+    color: color($blue, default);
+    margin: 0;
+
+    span {
+      font-size: 1.5rem;
+      color: #D0CABD;
+      font-weight: 600;
+    }
+  }
+
+  &__limit {
+    font-size: 1rem;
+    color: color($purple, lightest);
+    font-weight: 600 !important;
+    margin: $base-spacing-x4 0 $base-spacing-x2 0;
+  }
+
+  &__limit-value {
+    font-size: 2rem;
+    color: color($purple, lightest);
+    font-weight: 600 !important;
+    margin: 0 0 $base-spacing-x6 0;
+  }
+}
+
+.c-pricing-plans__list-item {
+  display: inline-block;
+  max-width: 400px;
+  width: 100%;
+  margin: $base-spacing-x3 0;
+  background: #FFFFFF;
+  box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.06);
+  padding-bottom: $base-spacing-x8;
+}
+
+@media screen and (break(medium)) {
+  .c-pricing-plans__list-item {
+    max-width: 400px;
+    width: 50%;
+    margin: 0 $base-spacing-x6;
+  }
+  .c-pricing-plans {
+    padding: $base-spacing-x10 0;
+  }
+
+}

@@ -1,0 +1,179 @@
+.c-block-online {
+  background: color($floral, default);
+  padding: $base-spacing-x5;
+  text-align: center;
+}
+
+.c-block-online__image {
+  vertical-align: -11px;
+  width: 40px;
+}
+
+.c-block-online__text {
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 1.375rem;
+  color: color($purple, lighter);
+
+  strong {
+    color: color($purple, light);
+  }
+
+  p {
+    display: inline-block;
+  }
+}
+.c-block-online__button {
+  width: 100%;
+}
+
+.e-landing-timpersonal {
+  .c-block-online {
+    background-image: url("/assets/images/timpersonal/vantaggi-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: $base-spacing-x3 $base-spacing-x7;
+    text-align: left;
+  }
+  .c-block-online__text {
+    display: inline-block;
+    color: white;
+    padding-right: 33%;
+    margin-left: 0;
+
+    strong {
+      color: white;
+    }
+
+    p {
+      display: inline-block;
+      color: white;
+      font-size: 1.250rem;
+    }
+
+  }
+  .c-block-online__title {
+    display: inline-block;
+    color: white;
+    padding-right: 33%;
+    margin-left: 0;
+
+    strong {
+      color: white;
+    }
+
+    p {
+      display: inline-block;
+      color: white;
+      font-size: 31.5px;
+      margin: $base-spacing 0;
+      font-weight: 400;
+    }
+
+  }
+  .c-block-online__subtext{
+    p {
+      display: inline-block;
+      font-size: 1rem;
+      color: white;
+    }
+  }
+}
+@media screen and (max-width: map-get( $breakpoints, small )) {
+
+  .c-block-online__text {
+    margin-left: 0;
+  }
+  .e-landing-timpersonal {
+    .c-block-online {
+      background-image: none;
+      background-color: #004990;
+      padding: $base-spacing-x3 $base-spacing-x4;
+    }
+    .c-block-online__text {
+      padding-right: 0;
+    }
+  }
+}
+
+
+.e-landing-timpersonal {
+  .c-block-onlinetim {
+    background-image: url("/assets/images/timpersonal/applepay-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: $base-spacing-x10 *3 $base-spacing-x7 $base-spacing-x10 $base-spacing-x10;
+    text-align: left;
+    margin-top: $base-spacing-x5;
+
+
+  }
+  .c-block-onlinetim__text {
+    display: inline-block;
+    color: color($purple, lighter);
+    padding-right: 33%;
+    margin-left: 0;
+
+    strong {
+      color: color($purple, lighter);
+    }
+
+    p {
+      display: inline-block;
+      color: color($purple, lighter);
+      font-size: 1.250rem;
+    }
+
+  }
+  .c-block-onlinetim__title {
+    display: inline-block;
+    color: color($purple, lighter);
+    padding-right: 33%;
+    margin-left: 0;
+
+    strong {
+      color: color($purple, lighter)!important;
+    }
+
+    p {
+      display: inline-block;
+      color: color($purple, lighter);
+      font-size: 31.5px;
+      margin: $base-spacing 0;
+      font-weight: 400;
+    }
+
+  }
+  .c-block-onlinetim__subtext{
+    p {
+      display: inline-block;
+      font-size: 1rem;
+      color: color($purple, lighter);
+    }
+  }
+}
+@media screen and (max-width: map-get( $breakpoints, medium )) {
+
+  .c-block-onlinetim__text {
+    margin-left: 0;
+  }
+  .e-landing-timpersonal {
+    .c-block-onlinetim {
+      background-image: none;
+      background-color: #004990;
+      padding: $base-spacing-x3 $base-spacing-x4;
+
+      p, strong {
+        color: white!important;
+      }
+      p {
+        color: white!important;
+      }
+    }
+    .c-block-onlinetim__text {
+      padding-right: 0;
+    }
+  }
+}

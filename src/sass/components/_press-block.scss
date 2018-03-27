@@ -1,0 +1,44 @@
+.c-press-block {
+  background: color($floral, darker);
+  padding: $base-spacing-x10 $base-spacing-x4;
+  text-align: center;
+}
+
+.c-press-block__list {
+  padding: 0;
+  margin: 0;
+}
+
+.c-press-block__list-item {
+  display: inline-block;
+  list-style: none;
+  vertical-align: middle;
+  margin: 0 $base-spacing-x4;
+
+  &--prepagata img {
+    max-width: 180px;
+  }
+
+  &--nerd img {
+    max-width: 81px;
+  }
+
+  &--money img {
+    max-width: 138px;
+  }
+
+  &--hardware img {
+    max-width: 184px;
+  }
+
+  img {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: map-get( $breakpoints, medium )) {
+  .c-press-block__list-item {
+    display: block;
+    margin: $base-spacing-x8 $base-spacing-x4;
+  }
+}

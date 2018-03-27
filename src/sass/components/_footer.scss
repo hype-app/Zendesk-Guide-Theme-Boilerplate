@@ -1,0 +1,93 @@
+.c-footer {
+  padding: $base-spacing-x5 $base-spacing-x3;
+  text-align: left;
+}
+
+.c-footer-timpersonal {
+  background-color: #003264;
+  padding: $base-spacing-x5;
+  color: white;
+  max-width: initial;
+
+}
+
+.c-footer__logo {
+  display: block;
+}
+
+.c-footer__social {
+  margin: $base-spacing-x5 0 0 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.c-footer__social-facebook,
+.c-footer__social-twitter,
+.c-footer__social-instagram {
+  display: inline-block;
+  list-style: none;
+  min-height: 16px;
+  min-width: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.c-footer__social-facebook {
+  background-image: url("images/facebook.png");
+  margin-right: $base-spacing;
+}
+
+.c-footer__social-twitter {
+  background-image: url("images/twitter.png");
+  margin-right: $base-spacing;
+}
+
+.c-footer__social-instagram {
+  background-image: url("images/instagram.png");
+}
+
+.c-footer__copyright {
+  margin: 0;
+  padding: $base-spacing-x2 0;
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 400;
+  color: color($purple, lightest);
+
+  &.c-footer__copyright-timpersonal {
+    color: rgba(254, 250, 242, .6);
+  }
+  &.c-footer__copyright-timpersonal-disclaimer{
+    font-size: .65rem;
+    text-align: left;
+    line-height: normal;
+    color: rgba(254, 250, 242, .4);
+  }
+}
+
+.c-footer__miglior-prepagata {
+  margin-top: $base-spacing-x6;
+  text-align: center;
+}
+
+@media screen and (break(medium)) {
+  .c-footer__miglior-prepagata {
+    float: right;
+    display: inline-block;
+    margin: 0;
+    margin-top: $base-spacing-x4;
+    max-width: 25%;
+  }
+}
+
+.c-footer__featured {
+  margin-top: $base-spacing-x2;
+}
+
+.c-footer__featured-img {
+  max-width: 110px;
+  margin: $base-spacing-x2 $base-spacing;
+  vertical-align: middle;
+}

@@ -1,0 +1,36 @@
+.c-features-friends-block {
+  background: color($blue, darker);
+  background-size: cover;
+  text-align: center;
+  padding: $base-spacing-x5 $base-spacing-x3;
+}
+
+.c-features-friends-block__title {
+  display: block;
+  color: color($floral, default);
+  max-width: 524px;
+  margin: 0 auto;
+  padding-top: $base-spacing-x10;
+}
+
+.c-features-friends-block__text {
+  color: color($floral, default);
+  max-width: 524px;
+  margin: 0 auto;
+  margin-top: $base-spacing-x2;
+  padding-bottom: $base-spacing-x10;
+}
+
+.c-features-friends-block__image {
+  width: 100%;
+  max-width: 595px;
+
+  padding-bottom: $base-spacing-x10;
+}
+
+@media screen and (break(medium)) {
+  .c-features-friends-block__image {
+    max-width: 595px;
+    width: 595px;
+  }
+}

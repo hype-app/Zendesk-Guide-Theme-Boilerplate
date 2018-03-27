@@ -1,0 +1,45 @@
+.c-payinstore-applepay {
+  background-color: #F6F9FC;
+  padding: $base-spacing-x7 $base-spacing-x3;
+  text-align: left;
+}
+.c-payonline-applepay {
+  background-color: white;
+  padding: $base-spacing-x7 $base-spacing-x3;
+  text-align: left;
+}
+
+.c-payinstore-applepay__title {
+  display: block;
+  max-width: 815px;
+  margin: 0 auto;
+  font-size: 44px;
+}
+
+.c-payinstore-applepay__text {
+  max-width: 815px;
+  margin: 0 auto;
+  margin-top: $base-spacing-x2;
+  padding-bottom: $base-spacing;
+}
+
+.c-payinstore-applepay__image {
+  background-image: url(/assets/images/applepay/photo-pay.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: right;
+}
+
+@media screen and (break(medium)) {
+  .c-payinstore-applepay__image {
+    height: 1082px;
+  }
+  .c-payonline-applepay {
+    text-align: center;
+    padding: $base-spacing-x9 $base-spacing-x8;
+  }
+  .c-payinstore-applepay {
+    text-align: center;
+    padding: $base-spacing-x9 $base-spacing-x8;
+  }
+}

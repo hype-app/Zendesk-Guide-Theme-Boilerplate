@@ -1,0 +1,21 @@
+.c-landing-dream-block {
+  padding: $base-spacing-x4;
+  margin: $base-spacing-x6 0;
+}
+
+@media screen and (break(large)) {
+  .c-landing-dream-block {
+    background: url('/assets/images/landing_dream.png') center right no-repeat;
+    background-size: 720px;
+    padding: $base-spacing-x7 *2;
+    &.c-landing-dream-block-applepay{
+      background: url('/assets/images/applepay/online.png') center right no-repeat;
+      background-size: 780px;
+      background-position: 100% 89%;
+    }
+  }
+
+  .c-landing-dream-block__text {
+    max-width: 460px;
+  }
+}

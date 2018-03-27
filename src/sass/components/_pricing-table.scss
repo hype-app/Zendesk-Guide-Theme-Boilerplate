@@ -1,0 +1,112 @@
+.c-pricing-table {
+  padding: $base-spacing-x5 0;
+  text-align: center;
+}
+
+.c-pricing-table__title {
+  margin: $base-spacing-x2 0;   
+}
+
+.c-pricing-table__list {
+  padding: 0;
+  margin: $base-spacing-x5 auto;
+  max-width: 680px;
+}
+
+.c-pricing-table__list-item {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  padding: $base-spacing-x2 0;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.c-pricing-table__list-text {
+  float: left;
+  padding-right: 0;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 3px;
+  font-weight: 500;
+  font-size: 1.125rem;
+
+}
+
+.c-pricing-table__list-value {
+  float: left;
+  overflow: hidden;
+  width: 50%;
+  text-align: center;
+  margin-top: $base-spacing-x3;
+  color: color($blue, default);
+  font-size: 1.125rem;
+  position: relative;
+  display: block;
+}
+.c-pricing-table__list-item-title{
+  font-weight: 600;
+}
+.c-pricing-table__list-item__column-title{
+  display: none;
+}
+.c-pricing-table__list-value--start {
+  position: relative;
+  &:before {
+    content: "Start: ";
+    position: relative;
+    color: color($purple, darkest);
+    display: block;
+  }
+}
+
+.c-pricing-table__list-value--plus {
+  position: relative;
+  &:before {
+    content: "Plus: ";
+    position: relative;
+    color: color($purple, darkest);
+    display: block;
+  }
+}
+.c-pricing-table-nb {
+  font-size: 1rem;
+  text-align: left;
+  color: color($purple, lighter);
+  margin-top: $base-spacing-x3;
+}
+
+@media screen and (break(medium)) {
+  .c-pricing-table {
+    padding: $base-spacing-x5;
+  }
+  .c-pricing-table__list-item {
+    display: flex;
+    padding: $base-spacing-x3 0;
+  }
+  .c-pricing-table__list-value {
+    width: 25%;
+    text-align: center;
+    margin-top: 3px;
+    height: auto;
+    line-height: inherit;
+  }
+  .c-pricing-table__list-text {
+    width: 50%;
+    padding-right: $base-spacing-x6;
+  }
+  .c-pricing-table__list-item__column-title{
+    display: block;
+    font-weight: 600;
+    color: color($purple, darkest)
+  }
+  .c-pricing-table__list-value--plus, .c-pricing-table__list-value--start {
+    &:before {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.c-illustrated-description-block {
+  padding: $base-spacing-x3;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.c-illustrated-description-block__text {
+  text-align: left;
+}
+
+.c-illustrated-description-block__image {
+  margin-top: $base-spacing-x4;
+  width: 350px;
+  &--addcard, &--online {
+    width: 220px;
+    margin-bottom: $base-spacing-x6;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-illustrated-description-block {
+    padding: $base-spacing-x7 *2;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .c-illustrated-description-block__content {
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 910px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .c-illustrated-description-block__text {
+    max-width: 454px;
+    float: left;
+  }
+
+  .c-illustrated-description-block__image {
+    float: left;
+    margin-left: $base-spacing-x7 *2;
+    margin-top: 0;
+    width: 350px;
+  }
+  .e-apple-pay {
+    .c-illustrated-description-block__content {
+      margin: 0 auto;
+      overflow: hidden;
+      max-width: fit-content;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .c-illustrated-description-block__text {
+      max-width: 580px;
+      float: left;
+    }
+    .c-illustrated-description-block__image {
+      float: left;
+      margin-left: $base-spacing-x7 *2;
+      margin-top: 0;
+      width: 350px;
+
+      &--addcard,  &--online {
+        width: 220px;
+      }
+    }
+  }
+}
+
+

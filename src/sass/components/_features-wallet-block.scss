@@ -1,0 +1,54 @@
+.c-features-wallet-block {
+  padding: $base-spacing-x10 $base-spacing-x2;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.c-features-wallet-block__image {
+  width: 250px;;
+  max-width: 250px;;
+}
+
+@media screen and (break(medium)) {
+
+  .c-features-wallet-block {
+    padding: $base-spacing-x10 $base-spacing-x2;
+    border-bottom: 1px solid color($floral, dark);
+    background-size: cover;
+    position: relative;
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .c-features-wallet-block__title {
+    color: color($blue, default);
+    margin-top: 0;
+    margin-bottom: $base-spacing-x4;
+    z-index: 10;
+  }
+
+  .c-features-wallet-block__subtitle {
+    display: block;
+    max-width: 500px;
+    font-weight: 400;
+    z-index: 10;
+
+    p {
+      font-size: 1.375rem;
+      font-weight: 400;
+    }
+  }
+
+  .c-features-wallet-block__image {
+    display: block;
+    width: 359px;;
+    max-width: 359px;;
+    position: relative;
+    flex: 1;
+    order: 2;
+    margin-right: $base-spacing-x3;
+  }
+}

@@ -1,0 +1,36 @@
+.c-deals-block {
+  background: color($purple, lightest);
+  background-size: cover;
+  text-align: center;
+  padding: $base-spacing-x5 $base-spacing-x3;
+}
+
+.c-deals-block__title {
+  display: block;
+  color: color($floral, default);
+  max-width: 524px;
+  margin: 0 auto;
+  padding-top: $base-spacing-x10;
+}
+
+.c-deals-block__text {
+  color: color($floral, default);
+  max-width: 524px;
+  margin: 0 auto;
+  margin-top: $base-spacing-x2;
+  padding-bottom: $base-spacing-x10;
+}
+
+.c-deals-block__image {
+  width: 100%;
+  max-width: 595px;
+
+  padding-bottom: $base-spacing-x10;
+}
+
+@media screen and (break(medium)) {
+  .c-deals-block__image {
+    max-width: 595px;
+    width: 595px;
+  }
+}

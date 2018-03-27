@@ -1,0 +1,57 @@
+.c-landing-card-block {
+  padding: $base-spacing-x4;
+}
+
+@media screen and (break(medium)) {
+  .c-landing-card-block {
+    background: url('/assets/images/hand_card.jpg') center right no-repeat;
+    background-size: 50%;
+    padding: $base-spacing-x7 *2;
+
+    &.c-landing-card-block-sabati-colorati {
+      background: url('/assets/images/sabati-colorati-paga-con-hype.png') center right no-repeat;
+      background-size: 50%;
+      padding: $base-spacing-x7 *2;
+    }
+
+      &.c-landing-card-block-sabati-colorati{
+        background: url('/assets/images/sabati-colorati-paga-con-hype.png') center right no-repeat;
+        background-size: 50%;
+        padding: $base-spacing-x7 *2;
+      }
+      &.c-landing-card-plus{
+        background: url('/assets/images/mockup_plus.png') center right no-repeat;
+        background-size: 24%;
+        background-position-x: 89%;
+        padding: $base-spacing-x7 *2;
+      }
+      &.c-landing-human-safari {
+        background: url('/assets/images/nicolo_human-safari.png') center right no-repeat;
+        background-size: 100%;
+        background-position-x: 89%;
+        padding: $base-spacing-x7 *2;
+      }
+      &.c-landing-card-block-timpersonal{
+        background: url('/assets/images/timpersonal/timpersonal-card.png') center right no-repeat;
+        background-size: 315px;
+        background-position-x: 89%;
+        padding: 100px;
+        .c-landing-card-block__text {
+          width: 58%;
+          max-width: 600px;
+        }
+      }
+      &.c-landing-card-block-timapplepay{
+      background: url('/assets/images/timpersonal/applepay-bg.png') center right no-repeat;
+      background-size: 315px;
+      background-position-x: 89%;
+      padding: 100px;
+      }
+  }
+
+  .c-landing-card-block__text {
+    max-width: 470px;
+}
+  }
+
+

@@ -1,0 +1,168 @@
+// ↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧
+// Font Face
+// Last update: 09/08/2016
+// ↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥
+
+
+@if $font-face-name and $font-face-name != '' {
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Lt';
+  	src: url('/assets/fonts/FaktSoftPro-Light.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Light.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Light.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Light.ttf') format('truetype');
+  	font-weight: 300;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Bnd';
+  	src: url('/assets/fonts/FaktSoftPro-BlondItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-BlondItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-BlondItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-BlondItalic.ttf') format('truetype');
+  	font-weight: normal;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Bnd';
+  	src: url('/assets/fonts/FaktSoftPro-Blond.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Blond.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Blond.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Blond.ttf') format('truetype');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro SmBd';
+  	src: url('/assets/fonts/FaktSoftPro-SemiBold.eot');
+  	src: url('/assets/fonts/FaktSoftPro-SemiBold.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-SemiBold.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-SemiBold.ttf') format('truetype');
+  	font-weight: 600;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Bd';
+  	src: url('/assets/fonts/FaktSoftPro-BoldItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-BoldItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-BoldItalic.ttf') format('truetype');
+  	font-weight: bold;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Th';
+  	src: url('/assets/fonts/FaktSoftPro-Thin.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Thin.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Thin.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Thin.ttf') format('truetype');
+  	font-weight: 100;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro SmBd';
+  	src: url('/assets/fonts/FaktSoftPro-SemiBoldItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-SemiBoldItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-SemiBoldItalic.ttf') format('truetype');
+  	font-weight: 600;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Med';
+  	src: url('/assets/fonts/FaktSoftPro-Medium.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Medium.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Medium.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Medium.ttf') format('truetype');
+  	font-weight: 500;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Lt';
+  	src: url('/assets/fonts/FaktSoftPro-LightItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-LightItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-LightItalic.ttf') format('truetype');
+  	font-weight: 300;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Bd';
+  	src: url('/assets/fonts/FaktSoftPro-Bold.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Bold.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Bold.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Bold.ttf') format('truetype');
+  	font-weight: bold;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Blk';
+  	src: url('/assets/fonts/FaktSoftPro-Black.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Black.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Black.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Black.ttf') format('truetype');
+  	font-weight: 900;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Nor';
+  	src: url('/assets/fonts/FaktSoftPro-NormalItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-NormalItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-NormalItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-NormalItalic.ttf') format('truetype');
+  	font-weight: normal;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Nor';
+  	src: url('/assets/fonts/FaktSoftPro-Normal.eot');
+  	src: url('/assets/fonts/FaktSoftPro-Normal.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-Normal.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-Normal.ttf') format('truetype');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Blk';
+  	src: url('/assets/fonts/FaktSoftPro-BlackItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-BlackItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-BlackItalic.ttf') format('truetype');
+  	font-weight: 900;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Th';
+  	src: url('/assets/fonts/FaktSoftPro-ThinItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-ThinItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-ThinItalic.ttf') format('truetype');
+  	font-weight: 100;
+  	font-style: italic;
+  }
+
+  @font-face {
+  	font-family: 'Fakt Soft Pro Med';
+  	src: url('/assets/fonts/FaktSoftPro-MediumItalic.eot');
+  	src: url('/assets/fonts/FaktSoftPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+  		url('/assets/fonts/FaktSoftPro-MediumItalic.woff') format('woff'),
+  		url('/assets/fonts/FaktSoftPro-MediumItalic.ttf') format('truetype');
+  	font-weight: 500;
+  	font-style: italic;
+  }
+}

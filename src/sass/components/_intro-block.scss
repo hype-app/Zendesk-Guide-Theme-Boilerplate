@@ -1,0 +1,79 @@
+.c-intro-block {
+  padding: 0 $base-spacing-x3 $base-spacing-x10 $base-spacing-x3;
+  text-align: center;
+  border-bottom: 1px solid color($floral, dark);
+  background: url(/assets/images/intro_bg.png) center center no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: $base-spacing-x10;
+}
+
+.c-intro-block__title {
+  color: color($blue, default);
+  margin-top: 0;
+  margin-bottom: $base-spacing-x4;
+  z-index: 10;
+}
+
+.c-intro-block__subtitle {
+  display: block;
+  max-width: 430px;
+  margin: 0 auto;
+  font-size: 1.375rem;
+  font-weight: 400;
+  z-index: 10;
+
+  p {
+    font-size: 1.375rem;
+    font-weight: 400;
+  }
+}
+
+
+.c-intro-block__bg-img {
+  display: none;
+}
+
+
+@media screen and (break(medium)) {
+  .c-intro-block {
+    padding: ($base-spacing-x6 * 4) 0;
+  }
+  .c-intro-block__bg-img {
+    position: absolute;
+    display: block;
+
+    &--card {
+      width: 295px;
+      bottom: 75px;
+      left: -40px;
+      //opacity: 0;
+      &.animate {
+        animation: 1s ease rotateInDownLeft forwards;
+      }
+    }
+
+    &--offers {
+      top: -46px;
+      left: -120px;
+      width: 320px;
+    }
+
+    &--profile {
+      top: -78px;
+      right: -112px;
+      width: 320px;
+     // opacity: 0;
+      &.animate {
+        animation: 1s ease rotateInDownRight forwards;
+      }
+    }
+
+    &--goals {
+      bottom: -56px;
+      right: 110px;
+      width: 320px;
+    }
+
+  }
+}

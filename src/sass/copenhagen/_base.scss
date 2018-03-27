@@ -37,12 +37,6 @@ h4 { font-size: 16px; }
 a {
   color: $link_color;
   text-decoration: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: underline;
-  }
 }
 
 input,

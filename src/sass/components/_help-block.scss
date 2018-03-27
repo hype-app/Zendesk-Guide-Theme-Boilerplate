@@ -1,0 +1,43 @@
+.c-help-block {
+  display: block;
+  overflow: hidden;
+  margin-top: 2em;
+  vertical-align: top;
+  text-align: center;
+}
+
+.c-help-block__text {
+  &-title {
+    font-size: 1.75rem;
+    margin: 0;
+    padding-top: $base-spacing;
+    font-weight: 600;
+    color: color($blue, default);
+  }
+
+  &-paragraph {
+    font-size: 1rem;
+    font-weight: 400;
+    color: color($purple, lightest);
+  }
+}
+
+@media screen and (break(extraSmall)) {
+  .c-help-block {
+    display: inline-block;
+    margin: $base-spacing-x4 3% 0 4%;
+    max-width: 30%;
+    text-align: left;
+  }
+
+  .c-help-block__image {
+    float: left;
+  }
+
+  .c-help-block__text {
+    float: left;
+    display: inline-block;
+    max-width: 83%;
+    margin-left: $base-spacing-x4;
+  }
+}

@@ -1,0 +1,83 @@
+.c-costs-table {
+  padding: 0;
+  text-align: center;
+  h3 {
+    text-align: left;
+  }
+}
+
+.c-costs-table__list {
+  padding: 0;
+  margin: $base-spacing-x5 auto;
+}
+
+.c-costs-table__list-item {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  padding: $base-spacing-x2 0;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  p {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.c-costs-table__list-text {
+  float: left;
+  padding-right: $base-spacing-x2;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.c-costs-table__list-value {
+  float: right;
+  padding-left: 0;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 3px;
+  text-align: left;
+
+  p {
+    color: color($blue, default);
+  }
+  &.c-costs-table__list-value-long {
+    div {
+      font-size: 1rem;
+      color: color($purple, lightest);
+    }
+  }
+
+}
+
+@media screen and (break(medium)) {
+  .c-costs-table {
+    padding: $base-spacing-x5;
+  }
+  .c-costs-table__list-item {
+    display: flex;
+  }
+  .c-costs-table__list-value {
+    width: 40%;
+    padding-left: $base-spacing-x4;
+    text-align: right;
+    &.c-costs-table__list-value-long {
+      text-align: right;
+      div {
+        font-size: 1rem;
+        color: color($purple, lightest);
+        text-align: right;
+      }
+    }
+  }
+  .c-costs-table__list-text {
+    width: 60%;
+  }
+}

@@ -1,0 +1,80 @@
+// ↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧↧
+// Basics Typography
+// Last update: 08/08/2016
+// ↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥
+
+%heading-rules {
+  line-height: 1.2;
+  color: color($purple, default);
+}
+
+
+h1 {
+  @extend %heading-rules;
+  font-size: 3em;
+}
+
+
+h2 {
+  @extend %heading-rules;
+  font-size: 2.369em;
+}
+
+
+h3 {
+  @extend %heading-rules;
+  font-size: 1.777em;
+}
+
+
+h4 {
+  @extend %heading-rules;
+  font-size: 1.333em;
+}
+
+
+h5 {
+  @extend %heading-rules;
+  font-size: 1em;
+}
+
+
+h6 {
+  @extend %heading-rules;
+  font-size: 0.75em;
+}
+
+
+p,li {
+  font-weight: normal;
+  font-size: 1.250rem;
+  line-height: 1.8;
+  color: color($purple, default);
+}
+
+.e-landing-timpersonal, .e-landing-faq-timpersonal {
+
+  body {
+    @extend %heading-rules;
+    font-family: $font-face-name-timsans;
+  }
+
+  strong {
+    font-family: $font-face-name-timsans;
+    font-weight: 700;
+  }
+
+  h3 {
+    @extend %heading-rules;
+    font-family: $font-face-name-timsans;
+    font-size: 31.5px;
+    font-weight: 400;
+    color: #252525;
+    line-height: 1.6
+  }
+  p {
+    font-family: $font-face-name-timsans;
+    font-weight: normal;
+    color: #747474;
+  }
+}

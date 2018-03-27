@@ -1,0 +1,91 @@
+.c-features-navigation {
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 11px $base-spacing-x2;
+  border-top: 1px solid rgba(186, 183, 204, 0.3);
+  background: rgba(255, 255, 255, 1);
+  z-index: 1000;
+  height: 44px;
+  transition: position 0.2s ease-in;
+}
+
+.c-features-navigation--hidden {
+  top: -44px;
+  transition: position 0.2s ease-out;
+}
+
+.c-features-navigation-icon {
+  background: url('images/feature-icon.svg') no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 40%;
+  height: 20px;
+  margin-top: 2px;
+  text-align: center;
+}
+
+.c-features-navigation-arrow {
+  width: 50%;
+  height: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: color($purple, light);
+
+  &.c-features-navigation-arrow__prev {
+    background: url('images/prev-mobile.svg') no-repeat;
+    background-size: contain;
+    padding-left: 1rem;
+    text-align: left;
+  }
+  &.c-features-navigation-arrow__next {
+    background: url('images/next-mobile.svg') no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding-right: 1rem;
+    text-align: right;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-features-navigation {
+    position: inherit;
+    padding: 0;
+    width: auto;
+    overflow: hidden;
+    background: none;
+    height: inherit;
+    border: none;
+  }
+  .c-features-navigation-arrow {
+    color: transparent;
+    width: 34px;
+    height: 121px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    &:hover {
+      color: transparent;
+    }
+    &.c-features-navigation-arrow__prev {
+      background: url('images/prev.svg') no-repeat;
+      background-size: contain;
+      left: $base-spacing-x3;
+      background-position: inherit;
+    }
+    &.c-features-navigation-arrow__next {
+      background: url('images/next.svg') no-repeat;
+      background-size: contain;
+      right: $base-spacing-x3;
+    }
+  }
+  .c-features-navigation-icon {
+    display: none;
+  }
+}

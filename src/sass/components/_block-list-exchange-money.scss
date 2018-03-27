@@ -1,0 +1,39 @@
+.c-block-list-exchange-money__list {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.c-block-list-exchange-money__list-item {
+  display: block;
+  list-style: none;
+  width: 100%;
+  padding: 40px;
+  border-top: 1px solid #F1F3F7;
+  border-bottom: 1px solid #F1F3F7;
+  float: left;
+
+  img {
+    display: block;
+    margin: 0 auto $base-spacing-x4 auto;
+    width: 70px;
+  }
+
+  p {
+    font-size: 1rem;
+    color: color($purple, lighter);
+    font-weight: 500;
+    padding: 0 $base-spacing-x5;
+    text-align: center;
+  }
+}
+
+@media screen and (break(medium)) {
+  .c-block-list-exchange-money__list-item {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+    border-right: 1px solid #F1F3F7;
+    height: 270px;
+  }
+}
