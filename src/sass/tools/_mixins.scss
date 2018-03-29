@@ -1,0 +1,32 @@
+@mixin transitionEaseInOut ($duration: 0.3s, $ease: ease-in-out) {
+-webkit-transition: all $duration $ease;
+-moz-transition: all $duration $ease;
+-o-transition: all $duration $ease;
+-ms-transition: all $duration $ease;
+-khtml-transition: all $duration $ease;
+transition: all $duration $ease;
+}
+
+// transition linear
+@mixin transitionLinear($duration: 0.3s, $linear: linear) {
+  -webkit-transition: all $duration $linear;
+  -moz-transition: all $duration $linear;
+  -o-transition: all $duration $linear;
+  -ms-transition: all $duration $linear;
+  -khtml-transition: all $duration $linear;
+  transition: all $duration $linear;
+}
+
+// breakpoint
+@mixin respond-to($breakpoint) { 
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
