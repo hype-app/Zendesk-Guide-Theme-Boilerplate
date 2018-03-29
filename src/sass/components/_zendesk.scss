@@ -1,0 +1,59 @@
+.c-hero {
+  align-items: center;
+  justify-content: center;
+  background-image: url("/guide/assets/images/hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 440px;
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+  color: color($purple, light);
+  .o-wrapper {
+    width: 90%;
+    max-width: 700px;
+  }
+  @include respond-to(small) {
+    .o-wrapper {
+      width: 70%;
+    }
+  }
+  @include respond-to(medium) {
+    .o-wrapper {
+      width: 60%;
+    }
+  }
+  @include respond-to(large) {
+    .o-wrapper {
+      width: 50%;
+    }
+  }
+  @include respond-to(extraLarge) {
+    .o-wrapper {
+      width: 40%;
+    }
+  }
+}
+
+.c-new-features {
+  padding: $base-spacing-x4 0;
+  background-color: color($floral, default);
+  text-align: center;
+  > div {
+    padding: 0 $base-spacing-x3;
+  }
+  .c-new-features__title {
+    color: color($orange,default);
+    font-weight: 600;
+  }
+  .c-new-features__text {
+
+  }
+}
+
+.search-result-description em {
+  font-weight: bold;
+  background-color: red;
+  padding: 0px 3px 2px;
+  border-radius: 3px;
+}
