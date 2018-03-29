@@ -1,6 +1,6 @@
 {
-  "name": "Brugerdefineret tema",
-  "author": "Zendesk",
+  "name": "BZendesk-Guide-Theme",
+  "author": "Bemind Interactive",
   "version": "1.0.0",
   "api_version": 1,
   "default_locale": "en-us",
@@ -13,7 +13,7 @@
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "#0072ef"
+          "value": "#00A5FF"
         },
         {
           "identifier": "color_2",
@@ -34,7 +34,7 @@
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#0072ef"
+          "value": "#00A5FF"
         },
         {
           "identifier": "color_5",

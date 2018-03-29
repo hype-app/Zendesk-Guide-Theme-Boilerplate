@@ -1,69 +1,105 @@
-<section class="section hero">
-	<div class="hero-inner">
-		{{search submit=false instant=true class='search search-full'}}
+<section class="section">
+	<div class="hero c-hero">
+		<div class="o-wrapper">
+			<h1>Ciao! Hai bisogno di aiuto?</h1>
+			{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
+			<div class="quick-search t-40-top-margin">
+	      <a @click="onQuickSearchClick" href="#" class="e-button e-button--small">Purchase</a>
+	      <a @click="onQuickSearchClick" href="#" class="e-button e-button--small">Installation</a>
+	      <a @click="onQuickSearchClick" href="#" class="e-button e-button--small">Customization</a>
+				<a @click="onQuickSearchClick" href="#" class="e-button e-button--small">Purchase</a>
+	    </div>
+		</div>
+	</div>
+
+	<div class="c-new-features">
+		<div class="o-wrapper">
+			<p>
+				<span class="c-new-features__title">New Features!</span>
+				Scopri come funziona Credit Boost, il tuo credito personale sempre disponibile!
+			</p>
+		</div>
 	</div>
 </section>
 
-<div class="container">
-	<section class="section knowledge-base">
-		<section class="categories blocks">
-			<ul class="blocks-list">
-				{{#each categories}}
-					{{#if ../has_multiple_categories}}
-						<li class="blocks-item">
-							<a href='{{url}}' class="blocks-item-link">
-								<h4 class="blocks-item-title">{{name}}</h4>
-								<p class="blocks-item-description">{{excerpt description}}</p>
-							</a>
+<section class="section">
+	<div class="o-wrapper">
+		<h2>Benvenuto!</h2>
+		<section class="section knowledge-base">
+			<section class="categories blocks">
+				<div class="c-block-list-with-icons">
+					<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--three">
+						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_time.svg">
+							<p>L'IBAN è attivo in pochi minuti e senza nessun costo.</p>
 						</li>
-					{{else}}
-						{{#each sections}}
-							<li class="blocks-item {{#if internal}}blocks-item-internal{{/if}}">
+						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_card.svg">
+							<p>Ricevi la carta gratis e comodamente a casa.</p>
+						</li>
+						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_ricarica.svg">
+							<p>Ricarichi HYPE gratuitamente con bonifico o altre carte.</p>
+						</li>
+					</ul>
+				</div>
+				<ul class="blocks-list">
+					{{#each categories}}
+							<li class="blocks-item">
 								<a href='{{url}}' class="blocks-item-link">
-									<h4 class="blocks-item-title">
-										{{name}}
-										{{#if internal}}
-											<span class="icon-lock" title="{{t 'internal'}}"></span>
-										{{/if}}
-									</h4>
+									<h4 class="blocks-item-title">{{name}}</h4>
 									<p class="blocks-item-description">{{excerpt description}}</p>
+									<ul>
+										{{#each sections}}
+											<li class="blocks-item {{#if internal}}blocks-item-internal{{/if}}">
+												<a href='{{url}}' class="blocks-item-link">
+													<h4 class="blocks-item-title">sadsa
+														{{name}} ({{article_count}})
+														{{#if internal}}
+															<span class="icon-lock" title="{{t 'internal'}}"></span>
+														{{/if}}
+													</h4>
+													<p class="blocks-item-description">{{excerpt description}}</p>
+													{{#each articles}}
+														{{title}}<br />
+													{{/each}}
+												</a>
+											</li>
+										{{/each}}
+									</ul>
+								</a>
+							</li>
+					{{/each}}
+				</ul>
+				{{pagination}}
+			</section>
+
+			{{#if promoted_articles}}
+				<section class="articles">
+					<h3>{{t 'promoted_articles'}}</h3>
+					<ul class="article-list promoted-articles">
+						{{#each promoted_articles}}
+							<li class="promoted-articles-item">
+								<a href="{{url}}">
+									{{title}}
 								</a>
 							</li>
 						{{/each}}
-					{{/if}}
-				{{/each}}
-			</ul>
-			{{pagination}}
+					</ul>
+				</section>
+			{{/if}}
 		</section>
 
-		{{#if promoted_articles}}
-			<section class="articles">
-				<h3>{{t 'promoted_articles'}}</h3>
-				<ul class="article-list promoted-articles">
-					{{#each promoted_articles}}
-						<li class="promoted-articles-item">
-							<a href="{{url}}">
-								{{title}}
-							</a>
-						</li>
-					{{/each}}
-				</ul>
+		{{#if help_center.community_enabled}}
+			<section class="section community">
+				<h2>{{t 'community'}}</h2>
+				{{#link 'community' class='community-link'}}
+					{{t 'join_conversation'}}
+				{{/link}}
+
+				<div class="community-image"></div>
 			</section>
 		{{/if}}
-	</section>
 
-	{{#if help_center.community_enabled}}
-		<section class="section community">
-			<h2>{{t 'community'}}</h2>
-			{{#link 'community' class='community-link'}}
-				{{t 'join_conversation'}}
-			{{/link}}
-
-			<div class="community-image"></div>
+		<section class="section activity">
+			{{recent_activity}}
 		</section>
-	{{/if}}
-
-	<section class="section activity">
-		{{recent_activity}}
-	</section>
-</div>
+	</div>
+</section>

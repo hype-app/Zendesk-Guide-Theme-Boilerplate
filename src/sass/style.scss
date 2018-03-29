@@ -31,9 +31,6 @@ Trumps ------ Helpers and overrides.
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Muli:300,400,700);
 
-/* Standard copenhagen theme css */
-@import 'copenhagen/index'; 
-
 /* Import Settings */
 @import 'settings/colors';
 @import 'settings/ambient';
@@ -46,11 +43,14 @@ Trumps ------ Helpers and overrides.
 @import 'tools/fontface';
 @import 'tools/grid';
 @import 'tools/mediaqueries';
+@import 'tools/mixins';
 
 
 /* Import Generic */
 @import 'generic/normalize';
 
+/* Standard copenhagen theme css */
+@import 'copenhagen/index';
 
 /* Import Elements */
 @import 'elements/links';
@@ -107,6 +107,8 @@ Trumps ------ Helpers and overrides.
 @import 'components/devices-table-applepay';
 @import 'components/video';
 @import 'components/deals-block';
+@import 'components/form';
+@import 'components/zendesk';
 
 
 @import 'components/landing-card-block';
