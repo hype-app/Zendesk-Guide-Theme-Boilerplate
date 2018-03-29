@@ -25,6 +25,13 @@
     color: color($purple, lighter);
     font-weight: 500;
   }
+  &:last-child {
+    border-right: 0 !important;
+  }
+  &.c-block-list-with-icons__list-item--no-border {
+    border-top: 0;
+    border-bottom: 0;
+  }
 }
 
 @media screen and (break(medium)) {
@@ -33,6 +40,11 @@
     width: 25%;
     text-align: center;
     border-right: 1px solid #F1F3F7;
+
+  }
+  .c-block-list-with-icons__list--three {
+    .c-block-list-with-icons__list-item {
+      width: 33%;
+    }
   }
 }
-
