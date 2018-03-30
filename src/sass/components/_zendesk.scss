@@ -4,7 +4,7 @@
   background-image: url("/guide/assets/images/hero-bg.jpg");
   background-position: center;
   background-size: cover;
-  height: 440px;
+  min-height: 700px;
   padding: 0 20px;
   text-align: center;
   width: 100%;
@@ -17,20 +17,56 @@
     .o-wrapper {
       width: 70%;
     }
+    // .c-ill-window {
+    //   width: 100%;
+    // }
   }
   @include respond-to(medium) {
     .o-wrapper {
       width: 60%;
     }
+    // .c-ill-window {
+    //   width: 100%;
+    // }
   }
   @include respond-to(large) {
     .o-wrapper {
       width: 50%;
     }
+    // .c-ill-window {
+    //   width: 100%;
+    // }
   }
   @include respond-to(extraLarge) {
     .o-wrapper {
       width: 40%;
+    }
+    // .c-ill-window {
+    //   width: 70%;
+    // }
+  }
+  .c-ill-window {
+    // margin: 0 auto;
+    // width: 100%;
+    // display: block;
+    // position: absolute;
+    // .c-ill-window__wrapper {
+    //   position: relative;
+    // }
+    .c-ill-window__item {
+      position: absolute;
+      &:nth-child(1) {
+        left: 100px;
+        top: 300px;
+      }
+      &:nth-child(2) {
+        left: 600px;
+        top: 500px;
+      }
+      &:nth-child(3) {
+        right: 100px;
+        top: 380px;
+      }
     }
   }
 }
@@ -56,4 +92,108 @@
   background-color: red;
   padding: 0px 3px 2px;
   border-radius: 3px;
+}
+
+.c-section-title {
+  color: color($purple, lighter);
+  margin: 100px auto 65px auto;
+  text-align: center;
+}
+.c-block-list-with-icons__list-item {
+  @include transitionEaseInOut();
+  .icon {
+    font-size: 3.5em;
+    color: color($blue,default);
+  }
+  .c-block-list-with-icons__title {
+    color: color($purple, lighter);
+    font-size: 1.1em;
+    span {
+      font-size: 0.7em;
+      color: color($orange, default);
+    }
+  }
+  .c-block-list-with-icons__text {
+    font-size: 0.65em;
+  }
+  .c-block-list-with-icons__link {
+    font-size: 0.65em;
+    a {
+      display: block;
+      color: color($blue, default);
+      &:hover {
+        color: transparentize(color($blue, default), 0.3)
+      }
+      &:nth-child(n+4) {
+         display: none;
+      }
+    }
+  }
+  .c-block-list-with-icons__link--more {
+    margin-top: 16px;
+    font-size: 0.6em;
+    font-weight: 600;
+    a {
+      color: color($blue, default);
+      position: relative;
+      &:before {
+        content: "";
+        height: 2px;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        bottom: -2px;
+        left: 0;
+        background-color: color($blue,default);
+        @include transitionEaseInOut();
+      }
+      &:after {
+        opacity: 0;
+        content: "\2192";
+        height: 2px;
+        position: absolute;
+        width: 100%;
+        right: -16px;
+        transform: translateX(30px);
+        @include transitionEaseInOut();
+      }
+      &:hover {
+        &:before {
+          width: 0;
+        }
+        &:after {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+.c-recent-articles {
+  background-color: lighten(color($purple,lightest),20%);
+  padding: 70px 0;
+  h3 {
+    color: color($purple,default);
+    font-size: 1.5em;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    a {
+      font-weight: 600;
+      color: color($purple, lighter);
+    }
+  }
+  .c-recent-articles__articles {
+    @include grid(6, 12, 30px);
+  }
 }

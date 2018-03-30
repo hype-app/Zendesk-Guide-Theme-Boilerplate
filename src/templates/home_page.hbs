@@ -10,6 +10,19 @@
 				<a @click="onQuickSearchClick" href="#" class="e-button e-button--small">Purchase</a>
 	    </div>
 		</div>
+		<div class="c-ill-window">
+			<div class="c-ill-window__wrapper">
+				<div class="c-ill-window__item">
+					<img src="http://localhost:4567/assets/images/window-left.svg" />
+				</div>
+				<div class="c-ill-window__item">
+					<img src="http://localhost:4567/assets/images/window-center.svg" />
+				</div>
+				<div class="c-ill-window__item">
+					<img src="http://localhost:4567/assets/images/window-right.svg" />
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div class="c-new-features">
@@ -24,82 +37,104 @@
 
 <section class="section">
 	<div class="o-wrapper">
-		<h2>Benvenuto!</h2>
 		<section class="section knowledge-base">
-			<section class="categories blocks">
-				<div class="c-block-list-with-icons">
-					<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--three">
-						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_time.svg">
-							<p>L'IBAN è attivo in pochi minuti e senza nessun costo.</p>
-						</li>
-						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_card.svg">
-							<p>Ricevi la carta gratis e comodamente a casa.</p>
-						</li>
-						<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border"> <img src="/guide/assets/images/icon_ricarica.svg">
-							<p>Ricarichi HYPE gratuitamente con bonifico o altre carte.</p>
-						</li>
-					</ul>
-				</div>
-				<ul class="blocks-list">
-					{{#each categories}}
-							<li class="blocks-item">
-								<a href='{{url}}' class="blocks-item-link">
-									<h4 class="blocks-item-title">{{name}}</h4>
-									<p class="blocks-item-description">{{excerpt description}}</p>
-									<ul>
-										{{#each sections}}
-											<li class="blocks-item {{#if internal}}blocks-item-internal{{/if}}">
-												<a href='{{url}}' class="blocks-item-link">
-													<h4 class="blocks-item-title">sadsa
-														{{name}} ({{article_count}})
-														{{#if internal}}
-															<span class="icon-lock" title="{{t 'internal'}}"></span>
-														{{/if}}
-													</h4>
-													<p class="blocks-item-description">{{excerpt description}}</p>
-													{{#each articles}}
-														{{title}}<br />
-													{{/each}}
-												</a>
-											</li>
-										{{/each}}
-									</ul>
-								</a>
-							</li>
-					{{/each}}
-				</ul>
-				{{pagination}}
-			</section>
-
-			{{#if promoted_articles}}
-				<section class="articles">
-					<h3>{{t 'promoted_articles'}}</h3>
-					<ul class="article-list promoted-articles">
-						{{#each promoted_articles}}
-							<li class="promoted-articles-item">
-								<a href="{{url}}">
-									{{title}}
-								</a>
-							</li>
+			<h2 class="c-section-title">Benvenuto!</h2>
+				<section class="c-block-list-with-icons">
+					<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
+						{{#each categories}}
+							{{#is name 'Generale'}}
+								{{#each sections}}
+									<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
+										<a href='{{url}}'>
+											{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
+											{{#is name 'Il mio account'}}<div class="icon hype-icon-account"></div>{{/is}}
+											{{#is name 'Sicurezza'}}<div class="icon hype-icon-lock"></div>{{/is}}
+											<h3 class="c-block-list-with-icons__title">
+												{{name}} <span>({{article_count}})</span>
+												{{#if internal}}
+													<span class="icon-lock" title="{{t 'internal'}}"></span>
+												{{/if}}
+											</h3>
+										</a>
+										<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
+										<div class="c-block-list-with-icons__link t-align-left">
+											{{#each articles}}
+												<a href='{{url}}'>{{title}}</a>
+											{{/each}}
+										</div>
+										<div class="c-block-list-with-icons__link--more t-align-right">
+											<a href='{{url}}'>Vedi tutti</a>
+										</div>
+									</li>
+								{{/each}}
+							{{/is}}
 						{{/each}}
 					</ul>
 				</section>
-			{{/if}}
-		</section>
-
-		{{#if help_center.community_enabled}}
-			<section class="section community">
-				<h2>{{t 'community'}}</h2>
-				{{#link 'community' class='community-link'}}
-					{{t 'join_conversation'}}
-				{{/link}}
-
-				<div class="community-image"></div>
 			</section>
-		{{/if}}
+			<section class="section knowledge-base">
+				<h2 class="c-section-title">Inizia a usare HYPE</h2>
+					<section class="c-block-list-with-icons">
+						<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
+							{{#each categories}}
+								{{#is name 'Usare Hype'}}
+									{{#each sections}}
+										<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
+											<a href='{{url}}'>
+												{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
+												{{#is name 'Il mio account'}}<div class="icon hype-icon-account"></div>{{/is}}
+												{{#is name 'Sicurezza'}}<div class="icon hype-icon-lock"></div>{{/is}}
+												{{#is name 'La Carta'}}<div class="icon hype-icon-card"></div>{{/is}}
+												{{#is name 'Pagamenti'}}<div class="icon hype-icon-pagamento"></div>{{/is}}
+												{{#is name 'Movimenti'}}<div class="icon hype-icon-movimenti"></div>{{/is}}
+												{{#is name 'Obiettivi'}}<div class="icon hype-icon-obiettivi"></div>{{/is}}
+												{{#is name 'Offerte'}}<div class="icon hype-icon-offerte"></div>{{/is}}
+												{{#is name 'Ricarica'}}<div class="icon hype-icon-ricarica"></div>{{/is}}
+												<h3 class="c-block-list-with-icons__title">
+													{{name}} <span>({{article_count}})</span>
+													{{#if internal}}
+														<span class="icon-lock" title="{{t 'internal'}}"></span>
+													{{/if}}
+												</h3>
+											</a>
+											<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
+											<div class="c-block-list-with-icons__link t-align-left">
+												{{#each articles}}
+													<a href='{{url}}'>{{title}}</a>
+												{{/each}}
+											</div>
+											<div class="c-block-list-with-icons__link--more t-align-right">
+												<a href='{{url}}'>Vedi tutti</a>
+											</div>
+										</li>
+									{{/each}}
+								{{/is}}
+							{{/each}}
+						</ul>
+					</section>
+				</section>
 
-		<section class="section activity">
-			{{recent_activity}}
-		</section>
+
+
 	</div>
+	<section class="section c-recent-articles">
+		<div class="o-wrapper clearfix">
+			<div class="c-recent-articles__articles">
+				{{recent_articles}}
+			</div>
+			<div class="c-recent-articles__articles">
+				<h3>Ultimo video caricato</h3>
+				{{#each categories}}
+					{{#is name 'Generale'}}
+						{{#each sections}}
+							{{#each articles}}
+								{{#if @first}}{{title}}{{/if}}
+							{{/each}}
+						{{/each}}
+					{{/is}}
+				{{/each}}
+			</div>
+		</div>
+
+	</section>
 </section>
