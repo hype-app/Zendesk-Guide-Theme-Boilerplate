@@ -171,11 +171,11 @@
 
 @font-face {
   font-family: 'hype-icon';
-  src:  url('/guide/assets/fonts/hype-icon.eot?5yfrgh');
-  src:  url('/guide/assets/fonts/hype-icon.eot?5yfrgh#iefix') format('embedded-opentype'),
-    url('/guide/assets/fonts/hype-icon.ttf?5yfrgh') format('truetype'),
-    url('/guide/assets/fonts/hype-icon.woff?5yfrgh') format('woff'),
-    url('/guide/assets/fonts/hype-icon.svg?5yfrgh#hype-icon') format('svg');
+  src:  url('/guide/assets/fonts/hype-icon.eot?38tbg4');
+  src:  url('/guide/assets/fonts/hype-icon.eot?38tbg4#iefix') format('embedded-opentype'),
+    url('/guide/assets/fonts/hype-icon.ttf?38tbg4') format('truetype'),
+    url('/guide/assets/fonts/hype-icon.woff?38tbg4') format('woff'),
+    url('/guide/assets/fonts/hype-icon.svg?38tbg4#hype-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -195,30 +195,43 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hype-icon-ricarica:before {
-  content: "\e900";
-}
-.hype-icon-obiettivi:before {
-  content: "\e902";
-}
-.hype-icon-pagamento:before {
-  content: "\e903";
+.hype-icon-account:before {
+  content: "\e90a";
+  color: #00a5ff;
 }
 .hype-icon-card:before {
-  content: "\e904";
-}
-.hype-icon-movimenti:before {
-  content: "\e905";
-}
-.hype-icon-lock:before {
-  content: "\e906";
+  content: "\e90b";
+  color: #00a5ff;
 }
 .hype-icon-start:before {
-  content: "\e907";
+  content: "\e90c";
+  color: #00a5ff;
 }
-.hype-icon-v-card:before {
-  content: "\e908";
+.hype-icon-movimenti:before {
+  content: "\e90d";
+  color: #00a5ff;
+}
+.hype-icon-obiettivi:before {
+  content: "\e90e";
+  color: #00a5ff;
+}
+.hype-icon-offerte:before {
+  content: "\e90f";
+  color: #00a5ff;
+}
+.hype-icon-pagamento:before {
+  content: "\e910";
+  color: #00a5ff;
+}
+.hype-icon-ricarica:before {
+  content: "\e911";
+  color: #00a5ff;
 }
 .hype-icon-lente:before {
-  content: "\e901";
+  content: "\e912";
+  color: #00a5ff;
+}
+.hype-icon-lock:before {
+  content: "\e913";
+  color: #00a5ff;
 }
