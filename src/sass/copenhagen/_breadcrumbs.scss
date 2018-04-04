@@ -1,5 +1,6 @@
 /***** Breadcrumbs *****/
 .breadcrumbs {
+  list-style-type: none;
   @include tablet {
     margin: 0;
   }
@@ -8,9 +9,9 @@
   padding: 0;
 
   li {
-    color: $secondary-text-color;
+    color: color($blue,default);
     display: inline;
-    font-weight: $font-weight-light;
+    font-weight: 600;
     font-size: $font-size-small;
     max-width: 450px;
     overflow: hidden;
@@ -19,9 +20,16 @@
     + li::before {
       content: ">";
       margin: 0 4px;
+      background: none;
+      color: color($purple,lighter);
     }
-    a:visited {
-      color: $link_color;
+    a, a:visited {
+      color: color($purple,lighter);
+    }
+    &:last-child {
+      a, a:visited {
+        color: color($blue,lighter);
+      }
     }
   }
 }

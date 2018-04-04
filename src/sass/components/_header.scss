@@ -135,6 +135,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -195,6 +196,9 @@
     position: relative;
     display: flex;
     margin: 0 auto;
+    &.c-header__wrapper--full {
+      width: 100%;
+    }
   }
   .c-header .e-button {
     display: block;

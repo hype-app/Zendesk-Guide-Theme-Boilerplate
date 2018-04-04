@@ -1,15 +1,19 @@
 /***** Article *****/
 .article {
+  p, li {
+    font-size: 1rem;
+    color: color($purple,lighter);
+  }
   /*
   * The article grid is defined this way to optimize readability:
   * Sidebar | Content | Free space
   * 17%     | 66%     | 17%
   */
   @include desktop {
-    flex: 1 0 66%;
-    max-width: 66%;
+    flex: 1 0 75%;
+    max-width: 75%;
     min-width: 640px;
-    padding: 0 30px;
+    padding: 0 15px 0 30px;
   }
 
   flex: 1 0 auto; //Explicit values needed whith flex-direction: column for IE11
@@ -43,6 +47,7 @@
   }
 
   &-title {
+    font-size: 2em;
     @include tablet {
       flex-basis: 100%; /* Take entire row */
     }
@@ -110,8 +115,9 @@
   &-sidebar {
     @include desktop {
       border: 0;
-      flex: 0 0 17%;
+      flex: 0 0 25%;
       height: auto;
+      padding: 0 30px 0 15px;
     }
 
     border-bottom: 1px solid $border-color;
@@ -148,13 +154,15 @@
     text-align: center;
   }
 
+
   &-vote {
     background: transparent;
-    border: 1px solid $brand_color;
-    color: $brand_color;
+    border: 1px solid color($blue, lighter);
+    color: color($blue, lighter);
     margin: 10px 5px;
     min-width: 90px;
     width: auto;
+    height: auto !important;
 
     &::before {
       @extend .icon;
@@ -174,11 +182,11 @@
     &:focus,
     &:active {
       background-color: transparent;
-      color: $brand_color;
+      color: color($blue, lighter);
     }
 
     &:hover {
-      background-color: $brand_color;
+      background-color: color($blue, lighter);
     }
 
     &:hover::before,
@@ -241,12 +249,16 @@
 }
 
 .sidenav {
+  p, li {
+    font-size: 1rem;
+  }
   &-title {
     font-size: $font-size-base;
     position: relative;
   }
 
   &-item {
+    font-size: 1rem;
     border-radius: 4px;
     color: $text_color;
     display: block;
@@ -258,7 +270,7 @@
     &:hover {
       background-color: $brand_color;
       color: $brand_text_color;
-      text-decoration: none;
+      text-decoration: none; 
     }
   }
 }
@@ -269,8 +281,11 @@
     font-size: $font-size-base;
     margin: 20px 0;
   }
-
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
   li {
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
   }
 }

@@ -7,7 +7,7 @@ a {
   text-decoration: none;
   transition: all 200ms;
   display: inline-block;
-  color: color($blue, dark);
+  color: color($blue, lighter);
 
   &:hover {
     transition: all 200ms;

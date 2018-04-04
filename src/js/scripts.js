@@ -184,10 +184,10 @@ window.onscroll = function () {
     else {
       mobileNavigation.classList.add('is-sticky');
     }
-    document
-      .getElementById('js-cookie')
-      .classList.add('c-cookie-block--closed');
-    navigationBar.classList.remove('cookie-on');
+    //document
+    //  .getElementById('js-cookie')
+    //  .classList.add('c-cookie-block--closed');
+    //navigationBar.classList.remove('cookie-on');
   }
   else {
     if (isDesktopOrLanding()) {
@@ -259,4 +259,25 @@ var openVideo = function () {
     }
   };
 };
+
+var tl1 = new TimelineMax(),
+    tl2 = new TimelineMax();
+
+// Timeline Tweenmax prima sezione
+tl1
+.from("#c-ill-window__item-1 .c-ill-window__item-bubble",1,{ scale:0 , opacity:0 , ease: Bounce.easeOut },1)
+  .to("#c-ill-window__item-1 .c-ill-window__item-bubble",0,{ scale:1 , opacity:1 , ease: Bounce.easeIn })
+.from("#c-ill-window__item-2 .c-ill-window__item-bubble",1,{ scale:0 , opacity:0 , ease: Bounce.easeOut },2)
+  .to("#c-ill-window__item-2 .c-ill-window__item-bubble",0,{ scale:1 , opacity:1 , ease: Bounce.easeIn });
+// .from("#section-1 .section__text div",1,{ y:1000 , opacity:1 , ease: Expo. easeOut },1)
+//   .to("#section-1 .section__text div",0,{ y:0 , opacity:1 , ease: Expo. easeOut })
+// .fromTo("#section-1 .section-animate__left", 0.5, {css: {bottom: "100%"}}, {css:{bottom: "0"}},2)
+// .fromTo("#section-1 .section-animate__right", 0.5, {css: {top: "100%"}}, {css:{top: "0"}},2)
+// .from("#section-1 .reveal-bottom img",1,{ y:1000 , opacity:1 , ease: Expo. easeOut },"+=0.5")
+//   .to("#section-1 .reveal-bottom img",0,{ y:0 , opacity:1 , ease: Expo. easeOut })
+// .from("#section-1 .reveal-left img",1,{ x:-800 , opacity:1 , ease: Expo. easeOut },"+=0.5")
+//   .to("#section-1 .reveal-left img",0,{ x:0 , opacity:1 , ease: Expo. easeOut });
+
+console.log(tl1);
+
 });

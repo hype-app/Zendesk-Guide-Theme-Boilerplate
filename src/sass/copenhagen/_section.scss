@@ -7,9 +7,17 @@
 
   &-content {
     @include desktop {
-      flex: 0 0 80%;
+      // flex: 0 0 80%;
+      order: 2;
     }
     flex: 1;
+  }
+  &-aside {
+    @include desktop {
+      order: 1;
+      flex: 0 0 20%;
+    }
+    // flex: 1;
   }
 
   &-subscribe {

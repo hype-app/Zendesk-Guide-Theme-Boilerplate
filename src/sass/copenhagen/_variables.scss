@@ -3,8 +3,8 @@
 // Colors
 $brand_color: color($blue, default) !default;
 $brand_text_color: #fff !default; //Color for text with an accent color background
-$text_color: #333 !default;
-$link_color: color($blue, default) !default;
+$text_color: color($purple,lighter) !default;
+$link_color: color($red, default) !default;
 $background_color: #fff !default;
 
 $visited-link-color: zass-darken($link_color, 20%);
