@@ -3,7 +3,14 @@
 		<div class="o-wrapper">
 			<div class="c-hero__breadcrumbs">
 				<nav class="sub-nav">
-					{{breadcrumbs}}
+					<ol class="breadcrumbs">
+  					<li title="Hype">
+        			<a href="/hc/it">Home</a>
+						</li>
+	  				<li title="{{section.name}}">
+      				<a href="{{section.url}}">{{section.name}}</a>
+    				</li>
+					</ol>
 				</nav>
 			</div>
 			<div class="c-hero__search">
@@ -70,17 +77,20 @@
 
 			{{#if section.articles}}
 			<section>
-				<h2 class="article-list-title">Scopri di più:</h2>		
+				<h2 class="article-list-title">Scopri di più:</h2>
 					<ul class="article-list o-columns">
 						{{#each section.articles}}
 							<li class="article-list-item o-columns__item {{#if promoted}} article-promoted{{/if}}">
-								{{#if promoted}}
-									<span data-title="{{t 'promoted'}}" class="icon-star"></span>
-								{{/if}}
-								<a href="{{url}}" class="article-list-link">{{title}}</a>
-								<p>
-									{{excerpt body}}
-								</p>
+								<div class="article-list-wrapper">
+									{{#if promoted}}
+										<span data-title="{{t 'promoted'}}" class="icon-star"></span>
+									{{/if}}
+									<a href="{{url}}" class="article-list-link">{{title}}</a>
+									<p>
+										{{excerpt body}}
+									</p>
+									<a href="{{url}}" class="article-list-other">... altro</a>
+								</div>
 							</li>
 						{{/each}}
 					</ul>

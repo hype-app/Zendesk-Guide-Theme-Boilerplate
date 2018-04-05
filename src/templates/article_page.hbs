@@ -3,7 +3,17 @@
 		<div class="o-wrapper">
 			<div class="c-hero__breadcrumbs">
 				<nav class="sub-nav">
-					{{breadcrumbs}}
+					<ol class="breadcrumbs">
+  					<li title="Hype">
+        			<a href="/hc/it">Home</a>
+						</li>
+	  				<li title="{{section.name}}">
+      				<a href="{{section.url}}">{{section.name}}</a>
+    				</li>
+						<li title="{{article.title}}">
+      				<a href="{{article.url}}">{{article.title}}</a>
+    				</li>
+					</ol>
 				</nav>
 			</div>
 			<div class="c-hero__search">

@@ -1,103 +1,112 @@
-<div class="container-divider"></div>
-<div class="container">
-	<nav class="sub-nav">
-		{{breadcrumbs}}
-		{{search submit=false}}
-	</nav>
-
-	<header class="page-header">
-		<h1>{{t 'search_results'}}</h1>
-		<p class="page-header-description">{{t 'results' query=query count=results_count}}</p>
-	</header>
-
-	<div class="search-results">
-		<section class="search-results-column">
-			<h3 class="search-results-subheading">
-				{{t 'knowledge_base'}}
-			</h3>
-			{{#if article_results}}
-				<ul class="search-results-list">
-					{{#each article_results}}
-						<li class="search-result">
-							<a href="{{url}}" class="search-result-link">{{title}}</a>
-							{{#if vote_sum}}
-								<span class="search-result-votes meta-count">{{vote_sum}}</span>
-							{{/if}}
-							<ul class="meta-group">
-								<li>
-									<ol class="breadcrumbs search-result-breadcrumbs">
-										{{#each path_steps}}
-											<li title="{{name}}"><a href="{{url}}">{{name}}</a></li>
-										{{/each}}
-									</ol>
-								</li>
-								<li class="meta-data">
-									{{#link 'user_profile' id=author.id}}
-										{{author.name}}
-									{{/link}}
-								</li>
-								<li class="meta-data">{{date created_at timeago=true}}</li>
-							</ul>
-							<div class="search-result-description">{{text}}</div>
+<section class="section">
+	<div class="hero c-hero c-hero-internal">
+		<div class="o-wrapper">
+			<div class="c-hero__breadcrumbs">
+				<nav class="sub-nav">
+					<ol class="breadcrumbs">
+  					<li title="Hype">
+        			<a href="/hc/it">Home</a>
 						</li>
-					{{/each}}
+	  				<li title="Risultati ricerca">
+      				Risultati ricerca
+    				</li>
+					</ol>
+				</nav>
+			</div>
+			<div class="c-hero__search">
+				{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+<div class="container-divider"></div>
+
+<div class="o-wrapper">
+
+	<div class="article-container" id="article-container">
+		<section class="article-sidebar">
+			<section class="section-articles collapsible-sidebar">
+				<h3 class="collapsible-sidebar-title sidenav-title sidenav-title--light">Categorie</h3>
+				<ul id="foo" class="e-list">
+
 				</ul>
-			{{else}}
-				<p>
-					{{t 'no_results' query=query}}
-					{{#link 'help_center'}}
-						{{t 'browse_knowledge_base'}}
-					{{/link}}
-				</p>
-			{{/if}}
+
+			</section>
+
 		</section>
 
-		{{#if help_center.community_enabled}}
-			<section class="search-results-column">
-				<h3 class="search-results-subheading">
-					{{t 'community'}}
-				</h3>
-				{{#if post_results}}
+	<article class="article">
+		<header class="page-header">
+			<h1>{{t 'search_results'}}<span>({{results_count}})</span></h1>
+		</header>
+		<div class="search-results">
+			<section class="">
+				{{#if article_results}}
 					<ul class="search-results-list">
-						{{#each post_results}}
+						{{#each article_results}}
 							<li class="search-result">
 								<a href="{{url}}" class="search-result-link">{{title}}</a>
-								<span class="search-result-meta-count">
-									{{comment_count}}
-								</span>
+								{{#if vote_sum}}
+									<span class="search-result-votes meta-count">{{vote_sum}}</span>
+								{{/if}}
 								<ul class="meta-group">
 									<li>
 										<ol class="breadcrumbs search-result-breadcrumbs">
+
 											{{#each path_steps}}
 												<li title="{{name}}"><a href="{{url}}">{{name}}</a></li>
 											{{/each}}
 										</ol>
 									</li>
-									<li class="meta-data">
-										{{#link 'user_profile' id=author.id}}
-											{{author.name}}
-										{{/link}}
-									</li>
-									<li class="meta-data">{{date created_at timeago=true}}</li>
 								</ul>
-								<div class="search-result-description">
-									{{text}}
-								</div>
+								<div class="search-result-description">{{text}}</div>
 							</li>
 						{{/each}}
 					</ul>
 				{{else}}
 					<p>
 						{{t 'no_results' query=query}}
-						{{#link 'topics'}}
-							{{t 'browse_community'}}
+						{{#link 'help_center'}}
+							{{t 'browse_knowledge_base'}}
 						{{/link}}
 					</p>
 				{{/if}}
 			</section>
-		{{/if}}
 
-	</div>
+		</div>
 
-	{{pagination}}
+		{{pagination}}
+	</article>
+
+
+
+</div>
+
+<script>
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === 4) {
+
+		var respObj = JSON.parse(this.responseText);
+
+		respObj.categories.forEach(function(c){
+			$('#foo').append('<li><a href="' + c.html_url + '" class="sidenav-item ">' + c.name + '</a></li>')
+			c.name
+		})
+
+	}
+});
+
+xhr.open("GET", "https://hype.zendesk.com/api/v2/help_center/it/categories.json");
+
+xhr.send(data);
+</script>
+
 </div>

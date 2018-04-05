@@ -1,4 +1,27 @@
+// .o-wrapper {
+//   max-width: 1220px;
+//   margin: 0 auto;
+// }
+
+// Centered container element
+@mixin container-fixed($gutter: $grid-gutter) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  floor(($gutter / 2));
+  padding-right: ceil(($gutter / 2));
+  @include clearfix;
+}
+
 .o-wrapper {
-  max-width: 1220px;
-  margin: 0 auto;
+  position: relative;
+  @include container-fixed;
+
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @if $breakpoint-value < 81em {
+      @include respond-to($breakpoint-name) {
+        width: $breakpoint-value - 1em;
+      }
+    }
+  }
+
 }

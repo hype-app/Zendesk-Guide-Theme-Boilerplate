@@ -18,13 +18,15 @@
   }
 
   &-list {
+    list-style-type: none;
     margin-bottom: 25px;
+    padding:0;
     > li {
       border-bottom: 1px solid $border-color;
       padding: 20px 0;
-      &:first-child {
-        border-top: 1px solid $border-color;
-      }
+      // &:first-child {
+      //   border-top: 1px solid $border-color;
+      // }
     }
   }
 }
@@ -33,6 +35,8 @@
 
   &-description {
     margin-top: 15px;
+    color: color($purple, lighter);
+    font-size: 1rem;
   }
 
   &-votes,
@@ -74,15 +78,23 @@
 
   .meta-group {
     align-items: center;
+    padding:0;
   }
 
   &-breadcrumbs {
     margin: 0;
-
-    li:last-child::after {
-       content: "·";
-       display: inline-block;
-       margin: 0 5px;
+    font-size: 1rem;
+    li+li::before {
+      color: color($purple,lightest) !important;
     }
+    a {
+      font-weight: 400 !important;
+      color: color($purple,lightest) !important;
+    }
+    // li:last-child::after {
+    //    content: "·";
+    //    display: inline-block;
+    //    margin: 0 5px;
+    // }
   }
 }

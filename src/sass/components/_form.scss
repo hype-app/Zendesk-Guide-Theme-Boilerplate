@@ -3,39 +3,3 @@
     caret-color: color($blue, default);
   }
 }
-
-.c-form__hero-search {
-  border-radius: 6px;
-  box-shadow: 0 1px 19px 0 rgba(0, 0, 0, 0.06);
-
-  input[type="search"] {
-    border-radius: 6px;
-    font-size: 1.4em;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 78px;
-    height: auto;
-    border: none;
-    &:focus {
-      outline: 0;
-      border: none;
-    }
-  }
-  &::before {
-    font-family: "hype-icon" !important;
-    content: "\e912" !important;
-    font-size: 1.7em;
-    @include transitionEaseInOut(0.4s);
-  }
-  &:focus-within {
-    &::before {
-      color: color($blue, default);
-    }
-  }
-}
-
-
-// .c-form__hero-search::before {
-//   font-family: "hype-icon" !important;
-//   content: "\e901" !important;
-// }

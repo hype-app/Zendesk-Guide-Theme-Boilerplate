@@ -48,6 +48,7 @@
 
   &-title {
     font-size: 2em;
+    margin-top: 16px;
     @include tablet {
       flex-basis: 100%; /* Take entire row */
     }
@@ -255,6 +256,11 @@
   &-title {
     font-size: $font-size-base;
     position: relative;
+    &--light {
+      font-size: 1.250em;
+      font-size: 400;
+      color: color($purple,lightest);
+    }
   }
 
   &-item {
@@ -270,7 +276,7 @@
     &:hover {
       background-color: $brand_color;
       color: $brand_text_color;
-      text-decoration: none; 
+      text-decoration: none;
     }
   }
 }

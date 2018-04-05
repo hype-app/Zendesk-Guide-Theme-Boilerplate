@@ -44,6 +44,7 @@ transition: all $duration $ease;
       margin-top: $gutter;
       &:nth-child(2n+1) {
         border-right: 1px solid #d8d8d8;
+        padding-left:0 !important;
       }
 
 

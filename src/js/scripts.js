@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleQueryString();
   createSlider();
   openVideo();
+  //subsVideo();
 
   var chatbotColor = '#00A5FD';
 
