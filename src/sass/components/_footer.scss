@@ -70,15 +70,17 @@
 .c-footer__miglior-prepagata {
   margin-top: $base-spacing-x6;
   text-align: center;
+  @include grid(12,12,30px);
 }
 
-@media screen and (break(medium)) {
+@media screen and (break(large)) {
   .c-footer__miglior-prepagata {
     float: right;
     display: inline-block;
     margin: 0;
     margin-top: $base-spacing-x4;
-    max-width: 25%;
+    //max-width: 25%;
+    @include grid(4,12,30px);
   }
 }
 

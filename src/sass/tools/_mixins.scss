@@ -31,7 +31,7 @@ transition: all $duration $ease;
   }
 }
 
-@mixin n-columns($min-width, $gutter, $last-equal: false, $max-cols: 5) {
+@mixin n-columns($min-width, $gutter, $last-equal: true, $max-cols: 5) {
   .o-columns {
     display: flex;
     flex-wrap: wrap;
@@ -42,19 +42,25 @@ transition: all $duration $ease;
       flex: 1 0 $min-width;
       margin-left: $gutter;
       margin-top: $gutter;
-      &:nth-child(2n+1) {
-        border-right: 1px solid #d8d8d8;
-        padding-left:0 !important;
-      }
+      border-bottom: 1px solid #d8d8d8;
+      // &:nth-child(2n+1) {
+      //   border-right: 1px solid #d8d8d8;
+      //   padding-left:0 !important;
+      // }
 
 
       @if $last-equal {
         @for $i from 2 through $max-cols {
-          prova: $i;
           $screen-width: ($min-width*$i)+($gutter*$i);
           $column-width: (100%/$i);
           @media (min-width: $screen-width) {
             max-width: calc(#{$column-width} - #{$gutter});
+            border-bottom: 0;
+            &:nth-child(2n+1) {
+
+              border-right: 1px solid #d8d8d8;
+              padding-left:0 !important;
+            }
           }
         }
 
@@ -67,3 +73,39 @@ transition: all $duration $ease;
     }
   }
 }
+
+/* 0.3 Animazioni
+     ========================================================================== */
+  .animated-out,.animated-in {
+    -webkit-transition-timing-function: cubic-bezier(0.13,0.71,0.30,0.94);
+    -moz-transition-timing-function: cubic-bezier(0.13,0.71,0.30,0.94);
+    -o-transition-timing-function: cubic-bezier(0.13,0.71,0.30,0.94);
+    transition-timing-function: cubic-bezier(0.13,0.71,0.30,0.94);
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+  }
+
+  .animated-out {
+    -webkit-transform: translateY(55px);
+    -moz-transform: translateY(55px);
+    -o-transform: translateY(55px);
+    -ms-transform: translateY(55px);
+    transform: translateY(55px);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+  }
+
+  .animated-in {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    visibility:visible;
+  }

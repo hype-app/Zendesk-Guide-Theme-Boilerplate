@@ -1,54 +1,10 @@
 $(document).ready(function() {
 
-document.addEventListener('DOMContentLoaded', function () {
   // DOM Ready, execute code
   // checkCookie();
-  createBurger();
-  handleQueryString();
-  createSlider();
-  openVideo();
+  //handleQueryString();
+  //createSlider();
   //subsVideo();
-
-  var chatbotColor = '#00A5FD';
-
-  var isTimPersonal =
-    window.location.pathname.toLowerCase().indexOf('timpersonal') > -1;
-
-  // @remarks removed because the following statement won't be executed for TIM partner right now
-  // if (isTimPersonal) {
-  //   chatbotColor = '#004691'
-  // }
-
-  if (!isTimPersonal) {
-    window.chatbotInstance = Chatbot.init({
-      width: '340px',
-      padding: '50px',
-      color: chatbotColor, //'#00A5FD'
-      chatbotName: 'Hypebot',
-      emailAddress: 'help@hype.it',
-      fontFamily: 'Muli, sans-serif',
-      robotIcon: '/assets/images/robot-icon.png',
-      userIcon: '/assets/images/user-icon.png',
-      errorIcon: '/assets/images/error-icon.png',
-      selector: '#chatbot',
-      endpoint: 'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
-      subKey: '35f376e3f5294748886e1cd937a75f3e',
-      operatorChatURL: '/Chat/',
-      __hypeCheck: '/api/rest/FREE/services'
-    });
-  }
-});
-
-// chatbotInstance.toggle()
-
-Array.prototype.slice
-  .call(document.querySelectorAll('.js-chatbot'))
-  .forEach(function (el) {
-    el.onclick = function (e) {
-      e.preventDefault();
-      window.chatbotInstance.open();
-    };
-  });
 
 //slider
 var createSlider = function () {
@@ -109,39 +65,6 @@ var createSlider = function () {
       isSliding = false;
     }, 500);
   }
-};
-
-// Burger menu
-var createBurger = function () {
-  var navigation = document.getElementById('js-mobileMenu');
-  var burger = document.getElementById('js-mobileMenu__button');
-  var featuresNavigationBar = document.getElementById('js-featuresNavigation');
-  var closeText = 'CHIUDI';
-
-  if (!navigation || !burger) return;
-
-  if (window.location.href.split('/').indexOf('en') >= 0) {
-    closeText = 'CLOSE';
-  }
-
-  burger.onclick = function (e) {
-    e.preventDefault();
-    if (navigation.classList.contains('c-mobile-navigation--closed')) {
-      navigation.classList.remove('c-mobile-navigation--closed');
-      navigation.classList.add('c-mobile-navigation--open');
-      if (!!featuresNavigationBar) {
-        featuresNavigationBar.classList.add('c-features-navigation--hidden');
-      }
-      burger.innerHTML = closeText;
-    } else {
-      navigation.classList.remove('c-mobile-navigation--open');
-      navigation.classList.add('c-mobile-navigation--closed');
-      if (!!featuresNavigationBar) {
-        featuresNavigationBar.classList.remove('c-features-navigation--hidden');
-      }
-      burger.innerHTML = 'MENU';
-    }
-  };
 };
 
 // cookie
@@ -225,42 +148,6 @@ var handleQueryString = function () {
   });
 };
 
-//open video hype
-
-var openVideo = function () {
-  var modalVideo = document.getElementById('js-video');
-  var btnVideo = document.getElementById('js-video-modal-button');
-  var body = document.body;
-  var span = document.getElementsByClassName('c-video__close')[0];
-  var iframe = document.getElementById('js-iframe-video');
-
-  if (!btnVideo) return;
-  btnVideo.onclick = function () {
-    modalVideo.classList.add('open');
-    modalVideo.classList.remove('hidden');
-    body.classList.add('t-noscroll');
-    iframe.src =
-      'https://www.youtube.com/embed/NuAKnlcBGVc?rel=0&showinfo=0&autoplay=1&color=white&modestbranding=1&theme=light';
-  };
-
-  if (!span) return;
-  span.onclick = function () {
-    modalVideo.classList.add('hidden');
-    modalVideo.classList.remove('open');
-    body.classList.remove('t-noscroll');
-    iframe.src = '';
-  };
-
-  window.onclick = function (event) {
-    if (event.target === modalVideo) {
-      modalVideo.classList.add('hidden');
-      modalVideo.classList.remove('open');
-      body.classList.remove('t-noscroll');
-      iframe.src = '';
-    }
-  };
-};
-
 var tl1 = new TimelineMax(),
     tl2 = new TimelineMax();
 
@@ -281,4 +168,32 @@ tl1
 
 console.log(tl1);
 
+// Animazione di entrata su alcuni elementi
+$('[data-animated]').each(function() {
+    $(this).addClass('animated-out');
+});
+
+});
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+		//console.log(scroll)
+    var height = $(window).height();
+		//console.log(height)
+		//console.log(scroll + height)
+
+    $('.animated-out[data-animated]').each(function() {
+        var $this = $(this);
+				//console.log($this.offset().top)
+        if (scroll + height >= $this.offset().top + 160) {
+            var delay = parseInt($this.attr('data-animated'));
+            if (isNaN(delay) || 0 === delay) {
+                $this.removeClass('animated-out').addClass('animated-in');
+            } else {
+                setTimeout(function() {
+                    $this.removeClass('animated-out').addClass('animated-in');
+                }, delay);
+            }
+        }
+    });
 });

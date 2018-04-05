@@ -1,9 +1,9 @@
 {
-  "name": "BZendesk-Guide-Theme",
+  "name": "Hype-Zendesk-Guide-Theme",
   "author": "Bemind Interactive",
   "version": "1.0.0",
   "api_version": 1,
-  "default_locale": "en-us",
+  "default_locale": "it",
   "settings": [
     {
       "label": "colors_group_label",

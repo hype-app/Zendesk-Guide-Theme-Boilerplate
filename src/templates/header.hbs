@@ -74,3 +74,44 @@
     </li>
   </ul>
 </div>
+
+<script>
+// Burger menu
+var createBurger = function () {
+
+  var navigation = document.getElementById('js-mobileMenu');
+  var burger = document.getElementById('js-mobileMenu__button');
+  var featuresNavigationBar = document.getElementById('js-featuresNavigation');
+  var closeText = 'CHIUDI';
+
+  if (!navigation || !burger) return;
+
+  if (window.location.href.split('/').indexOf('en') >= 0) {
+    closeText = 'CLOSE';
+  }
+
+  burger.onclick = function (e) {
+    console.log('Burger')
+    e.preventDefault();
+    if (navigation.classList.contains('c-mobile-navigation--closed')) {
+      navigation.classList.remove('c-mobile-navigation--closed');
+      navigation.classList.add('c-mobile-navigation--open');
+      if (!!featuresNavigationBar) {
+        featuresNavigationBar.classList.add('c-features-navigation--hidden');
+      }
+      burger.innerHTML = closeText;
+    } else {
+      navigation.classList.remove('c-mobile-navigation--open');
+      navigation.classList.add('c-mobile-navigation--closed');
+      if (!!featuresNavigationBar) {
+        featuresNavigationBar.classList.remove('c-features-navigation--hidden');
+      }
+      burger.innerHTML = 'MENU';
+    }
+  };
+};
+
+$(document).ready(function() {
+  createBurger();
+});
+</script>

@@ -6,6 +6,9 @@
 .c-footer__navigation__list {
   padding: 0;
   margin: 0;
+  width: 100%;
+  column-count: 2;
+  column-gap: $base-spacing-x5;
 }
 
 .c-footer__navigation__list-item {
@@ -13,6 +16,8 @@
   font-weight: 500;
   list-style: none;
   padding: $base-spacing $base-spacing-x5 $base-spacing 0;
+  align-self: flex-start;
+  border-right: 1px solid color($floral, dark);
 
   &--active {
     font-size: 1rem;
@@ -30,7 +35,7 @@
   .c-footer__navigation__list {
     column-count: 2;
     column-gap: $base-spacing-x5;
-    min-width: 373px;
+    //min-width: 373px;
   }
 
   .c-footer__navigation__list-item {
@@ -39,7 +44,15 @@
   }
 }
 
+@media screen and (break(small)) {
+  .c-footer__navigation {
+    @include grid(6,12,30px);
+  }
+}
 @media screen and (break(medium)) {
+  .c-footer__navigation {
+    @include grid(6,12,30px);
+  }
   .c-footer__navigation__list {
     column-count: 2;
     column-gap: $base-spacing-x5;
@@ -49,5 +62,11 @@
   .c-footer__navigation__list-item {
     align-self: flex-start;
     border-right: 1px solid color($floral, dark);
+  }
+}
+
+@media screen and (break(large)) {
+  .c-footer__navigation {
+    @include grid(4,12,30px);
   }
 }

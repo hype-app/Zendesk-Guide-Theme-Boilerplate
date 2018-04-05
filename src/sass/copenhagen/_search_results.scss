@@ -33,10 +33,50 @@
 
 .search-result {
 
+  &-title {
+    font-size: 2em;
+    span{
+      font-size:1.4rem;
+      color:color($orange,default);
+    }
+  }
+  &-link {
+    font-size: 1.250em;
+    font-weight: 600;
+    color: color($purple, lighter);
+  }
   &-description {
     margin-top: 15px;
     color: color($purple, lighter);
     font-size: 1rem;
+    position: relative;
+  }
+
+  a.search-result-other {
+    font-size: 0.9em;
+    position: absolute;
+    right:0;
+    bottom:0;
+    font-weight: 300;
+    color: color($blue, default);
+    padding: 0 0 0 25px;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%);
+    &:after {
+      opacity: 0;
+      content: "\2192";
+      height: 1px;
+      position: absolute;
+      width: 100%;
+      right: -110%;
+      transform: translateX(30px);
+      @include transitionEaseInOut();
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
 
   &-votes,
