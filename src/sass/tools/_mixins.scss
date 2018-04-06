@@ -42,7 +42,7 @@ transition: all $duration $ease;
       flex: 1 0 $min-width;
       margin-left: $gutter;
       margin-top: $gutter;
-      border-bottom: 1px solid #d8d8d8;
+      border-bottom: 1px solid color($floral, dark);
       // &:nth-child(2n+1) {
       //   border-right: 1px solid #d8d8d8;
       //   padding-left:0 !important;
@@ -58,7 +58,7 @@ transition: all $duration $ease;
             border-bottom: 0;
             &:nth-child(2n+1) {
 
-              border-right: 1px solid #d8d8d8;
+              border-right: 1px solid color($floral, dark);
               padding-left:0 !important;
             }
           }

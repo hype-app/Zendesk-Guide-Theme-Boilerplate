@@ -35,17 +35,17 @@
 }
 
 .c-footer__social-facebook {
-  background-image: url("assets/images/facebook.png");
+  background-image: url('$assets-facebook-png');
   margin-right: $base-spacing;
 }
 
 .c-footer__social-twitter {
-  background-image: url("assets/images/twitter.png");
+  background-image: url('$assets-twitter-png');
   margin-right: $base-spacing;
 }
 
 .c-footer__social-instagram {
-  background-image: url("assets/images/instagram.png");
+  background-image: url('$assets-instagram-png');
 }
 
 .c-footer__copyright {

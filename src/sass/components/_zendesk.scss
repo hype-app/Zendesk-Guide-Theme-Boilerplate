@@ -1,13 +1,13 @@
 //Override font dimensions
-// p,li {
-//   font-size: 1rem;
-// }
+ .c-logo {
+   background: url('$assets-logo-svg') no-repeat;
+ }
 
 .c-hero {
   position: relative;
   align-items: center;
   justify-content: center;
-  background-image: url("/guide/assets/images/hero-bg.jpg");
+  background-image: url('$assets-hero-bg-jpg');
   background-position: center;
   background-size: cover;
   height: auto;
@@ -15,8 +15,14 @@
   text-align: center;
   width: 100%;
   color: color($purple, light);
+  h1 {
+    margin-bottom: 1em;
+  }
   @include respond-to(medium) {
-    min-height: calc(100vh - 140px);
+    //min-height: calc(100vh - 140px);
+    min-height: 750px;
+    align-items: flex-start;
+    padding-top: 160px;
   }
 
   .c-ill-window {
@@ -35,12 +41,13 @@
       position: absolute;
       &:nth-child(1) {
         left: 20px;
-        top: 25%;
+        top: 90%;
         .c-ill-window__item-bubble {}
       }
       &:nth-child(2) {
         left: 50%;
-        top: 105%;
+        transform: translateX(-50%);
+        top: 120%;
         //transform: translateY(-110%);
         .c-ill-window__item-bubble {
           position: absolute;
@@ -52,7 +59,7 @@
       }
       &:nth-child(3) {
         right: 20px;
-        top: 50%;
+        top: 100%;
         .c-ill-window__item-bubble {
           position: absolute;
           top: 50%;
@@ -89,15 +96,20 @@
 
   input[type="search"] {
     border-radius: 6px;
-    font-size: 1.4em;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    font-size: 1em;
+    padding-top: 14px;
+    padding-bottom: 14px;
     padding-left: 78px;
     height: auto;
     border: none;
     &:focus {
       outline: 0;
       border: none;
+    }
+    @include respond-to(medium) {
+      font-size: 1.4em;
+      padding-top: 18px;
+      padding-bottom: 18px;
     }
   }
   &::before {
@@ -122,6 +134,7 @@
   height: auto;
   padding: 40px 20px;
   margin-top: 30px;
+  align-items: center;
   @include respond-to(medium) {
     min-height: 300px;
     margin-top: 0;
@@ -130,7 +143,7 @@
     align-items: center;
     justify-content: center;
     order: 1;
-    display: none;
+    //display: none;
     @include grid(12, 12, 30px);
     @include respond-to(medium) {
       @include grid(6, 12, 30px);
@@ -291,6 +304,7 @@
 
 .c-video-recent {
   position: relative;
+  display: none;
   .c-hero__play {
     top: 50%;
     transform: translate(-50%,-50%);
@@ -299,6 +313,9 @@
     svg {
       width: fit-content;
     }
+  }
+  @media screen and (break(small)) {
+    display: block;
   }
 }
 
@@ -337,11 +354,14 @@
   font-size: 1.6em;
   color: color($purple,light);
 }
-@include n-columns(340px,  0px, true, 2);
 
-.article-list.o-columns {
-  list-style-type: none;
-  padding:0;
+
+.article-list {
+  @include n-columns(340px,  0px, true, 2);
+  .o-columns {
+    list-style-type: none;
+    padding:0;
+  }
   .o-columns__item {
     box-sizing: border-box;
     padding: 10px 30px;
@@ -379,5 +399,23 @@
         transform: translateX(0);
       }
     }
+  }
+}
+
+.c-quick-search {
+  margin-top: 40px;
+  .e-button {
+    font-weight: 400;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.breadcrumbs {
+  li {
+    font-weight: 400;
   }
 }

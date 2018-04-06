@@ -1,76 +1,58 @@
-{{!-- <header class="header">
-	<div class="logo">
-		{{#link 'help_center'}}
-			<img src="{{logo_url}}" alt="{{t 'logo'}}">
-		{{/link}}
-	</div>
-
-	<div class="nav-wrapper">
-		<span class="icon-menu"></span>
-		<nav class="user-nav" id="user-nav">
-			{{link 'community'}}
-			{{link 'new_request' class='submit-a-request'}}
-		</nav>
-		{{user_info}}
-	</div>
-</header> --}}
 
 <header class="c-header" role="banner" id="js-fixedNav">
     <div class="c-header__wrapper c-header__wrapper--full">
 
-				{{#link 'help_center' class='c-logo'}}
-					HYPE
-				{{/link}}
+				<a href="https://www.hype.it/" class="c-logo">HYPE</a>
 
 			<nav class="c-main-navigation" role="navigation" aria-label="Main Menu">
 				<ul class="c-main-navigation__list">
 					<li class="c-main-navigation__list-item">
-						<a class="c-main-navigation__link" href="/funzionalita">Funzionalità</a>
+						<a class="c-main-navigation__link" href="https://www.hype.it/funzionalita">Funzionalità</a>
 					</li>
 					<li class="c-main-navigation__list-item">
-						<a class="c-main-navigation__link" href="/hypeplus">HYPE Plus</a>
+						<a class="c-main-navigation__link" href="https://www.hype.it/hypeplus">HYPE Plus</a>
 					</li>
 					<li class="c-main-navigation__list-item">
-						<a class="c-main-navigation__link" href="/landing-apple-pay">Apple Pay</a>
+						<a class="c-main-navigation__link" href="https://www.hype.it/landing-apple-pay">Apple Pay</a>
 					</li>
 					<li class="c-main-navigation__list-item">
-						<a class="c-main-navigation__link" href="/offerta">Piani</a>
+						<a class="c-main-navigation__link" href="https://www.hype.it/offerta">Piani</a>
 					</li>
 					<li class="c-main-navigation__list-item c-main-navigation__list-item--right">
-
+            <a class="c-main-navigation__link" href="/hc/it">Aiuto <img class="c-main-navigation__link-icon" target="_blank" src="{{asset 'help-icon.svg' }}"> </a>
 					</li>
 				</ul>
 			</nav>
         <!-- {% include language-switcher.html %} -->
-        <a class="e-button" href="../signup">REGISTRATI</a>
+        <a class="e-button" href="https://www.hype.it/signup/">REGISTRATI</a>
     </div>
 </header>
 <div class="c-mobile-navigation c-mobile-navigation--closed" id="js-mobileMenu">
-  {{#link 'help_center' class='c-logo'}}
-    HYPE
-  {{/link}}
-  <a class="e-button" href="../signup">REGISTRATI</a>
+  <a href="https://www.hype.it/" class="c-logo">HYPE</a>
+  <a class="e-button" href="https://www.hype.it/signup/">REGISTRATI</a>
   <a href="#" class="c-mobile-navigation__burger" id="js-mobileMenu__button">MENU</a>
 
   <ul class="c-mobile-navigation__list">
     <li class="c-mobile-navigation__list-item c-mobile-navigation__list-item--active">Home</li>
     <li class="c-mobile-navigation__list-item">
-      <a class="c-mobile-navigation__link" href="/funzionalita">Funzionalità</a>
+      <a class="c-mobile-navigation__link" href="https://www.hype.it/funzionalita">Funzionalità</a>
     </li>
     <li class="c-mobile-navigation__list-item">
-      <a class="c-mobile-navigation__link" href="/hypeplus">HYPE Plus</a>
+      <a class="c-mobile-navigation__link" href="https://www.hype.it/hypeplus">HYPE Plus</a>
     </li>
     <li class="c-mobile-navigation__list-item">
-      <a class="c-mobile-navigation__link" href="/landing-apple-pay">Apple Pay</a>
+      <a class="c-mobile-navigation__link" href="https://www.hype.it/landing-apple-pay">Apple Pay</a>
     </li>
     <li class="c-mobile-navigation__list-item">
-      <a class="c-mobile-navigation__link" href="/offerta">Piani</a>
+      <a class="c-mobile-navigation__link" href="https://www.hype.it/offerta">Piani</a>
     </li>
     <li class="c-mobile-navigation__list-help">
-
+      <a class="c-mobile-navigation__link-help" href="/faq">Aiuto
+        <img class="c-mobile-navigation__link-icon" target="_blank" src="{{asset 'help-icon.svg' }}">
+      </a>
     </li>
     <li class="c-mobile-navigation__list-item">
-      <a href="../signup" class="e-button c-mobile-navigation__signup">Registrati</a>
+      <a href="https://www.hype.it/signup/" class="e-button c-mobile-navigation__signup">Registrati</a>
     </li>
   </ul>
 </div>
