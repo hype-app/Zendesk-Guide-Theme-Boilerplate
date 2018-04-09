@@ -1,4 +1,12 @@
-//Override font dimensions
+  body>main {
+    padding-top: 0 !important;
+  }
+
+  .notification-lock {
+    position: relative;
+    z-index: 10;
+  }
+
  .c-logo {
    background: url('$assets-logo-svg') no-repeat;
  }
@@ -133,7 +141,8 @@
   background-color: rgba(185, 230, 255, 0.12);
   height: auto;
   padding: 40px 20px;
-  margin-top: 30px;
+  //margin-top: 30px;
+  margin-top: 0;
   align-items: center;
   @include respond-to(medium) {
     min-height: 300px;
