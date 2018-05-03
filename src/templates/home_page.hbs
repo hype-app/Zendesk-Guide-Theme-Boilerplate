@@ -4,10 +4,10 @@
 			<h1>Ciao! Hai bisogno di aiuto?</h1>
 			{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
 			<div class="c-quick-search">
-	      <a href="#" class="e-button e-button--small">Purchase</a>
-	      <a href="#" class="e-button e-button--small">Installation</a>
-	      <a href="#" class="e-button e-button--small">Customization</a>
-				<a href="#" class="e-button e-button--small">Purchase</a>
+	      <a href="/hc/it/sections/360000529974-Getting-Started" class="e-button e-button--small">Registrazione</a>
+	      <a href="/hc/it/sections/360000529954-La-carta" class="e-button e-button--small">La carta</a>
+	      <a href="/hc/it/sections/360000571154-Il-conto" class="e-button e-button--small">Il conto</a>
+				<a href="/hc/it/sections/360000570034-Le-funzioni" class="e-button e-button--small">Le funzioni</a>
 	    </div>
 			<div class="c-ill-window">
 				<div class="c-ill-window__wrapper">
@@ -29,7 +29,7 @@
 						<div class="c-ill-window__item-wrapper" id="c-ill-window__item-2">
 							<img src="{{asset 'window-right.svg'}}" />
 							<div class="c-ill-window__item-bubble">
-								Certo!E in tutte le banche. &#x1F609;
+								Certo! E in tutte le banche. &#x1F609;
 							</div>
 						</div>
 					</div>
@@ -41,8 +41,8 @@
 	<div class="c-new-features">
 		<div class="o-wrapper">
 			<p>
-				<span class="c-new-features__title">New Features!</span>
-				Scopri come funziona Credit Boost, il tuo credito personale sempre disponibile!
+				<span class="c-new-features__title">Tip!</span>
+				Sapevi che puoi guadagnare dai tuoi acquisti online? Scopri la sezione <a href="http://blog.hype.it/sezione-offerte-di-hype/" target="_blank" title="Benvenuti nella sezione offerte di HYPE">Offerte!</a>
 			</p>
 		</div>
 	</div>
@@ -60,8 +60,8 @@
 									<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
 										<a href='{{url}}'>
 											{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
-											{{#is name 'Il mio account'}}<div class="icon hype-icon-account"></div>{{/is}}
-											{{#is name 'Sicurezza'}}<div class="icon hype-icon-lock"></div>{{/is}}
+											{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
+											{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
 											<h3 class="c-block-list-with-icons__title">
 												{{name}} <span>({{article_count}})</span>
 												{{#if internal}}
@@ -86,22 +86,22 @@
 				</section>
 			</section>
 			<section class="section knowledge-base" data-animated="0">
-				<h2 class="c-section-title">Inizia a usare HYPE</h2>
+				<h2 class="c-section-title">Tutto su HYPE</h2>
 					<section class="c-block-list-with-icons">
 						<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
 							{{#each categories}}
-								{{#is name 'Usare Hype'}}
+								{{#is name 'Tutto su Hype'}}
 									{{#each sections}}
 										<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
 											<a href='{{url}}'>
 												{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
-												{{#is name 'Il mio account'}}<div class="icon hype-icon-account"></div>{{/is}}
-												{{#is name 'Sicurezza'}}<div class="icon hype-icon-lock"></div>{{/is}}
-												{{#is name 'La Carta'}}<div class="icon hype-icon-card"></div>{{/is}}
-												{{#is name 'Pagamenti'}}<div class="icon hype-icon-pagamento"></div>{{/is}}
-												{{#is name 'Movimenti'}}<div class="icon hype-icon-movimenti"></div>{{/is}}
-												{{#is name 'Obiettivi'}}<div class="icon hype-icon-obiettivi"></div>{{/is}}
-												{{#is name 'Offerte'}}<div class="icon hype-icon-offerte"></div>{{/is}}
+												{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
+												{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
+												{{#is name "L'app"}}<div class="icon hype-icon-app"></div>{{/is}}
+												{{#is name 'Il conto'}}<div class="icon hype-icon-account"></div>{{/is}}
+												{{#is name 'Pagamenti e prelievi'}}<div class="icon hype-icon-pagamenti"></div>{{/is}}
+												{{#is name 'Servizi e sicurezza'}}<div class="icon hype-icon-sicurezza"></div>{{/is}}
+												{{#is name 'Promozioni'}}<div class="icon hype-icon-promo"></div>{{/is}}
 												{{#is name 'Ricarica'}}<div class="icon hype-icon-ricarica"></div>{{/is}}
 												<h3 class="c-block-list-with-icons__title">
 													{{name}} <span>({{article_count}})</span>
