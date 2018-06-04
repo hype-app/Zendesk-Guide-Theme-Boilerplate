@@ -1,3 +1,48 @@
+/**
+ * Initializes the chatbot
+ * @return {undefined} undefined
+ */
+function initChatbot(){
+  var chatbotColor = '#00A5FD';
+
+  var isTimPersonal =
+    window.location.pathname.toLowerCase().indexOf('timpersonal') > -1;
+
+  // @remarks removed because the following statement won't be executed for TIM partner right now
+  // if (isTimPersonal) {
+  //   chatbotColor = '#004691'
+  // }
+
+  if (!isTimPersonal) {
+    window.chatbotInstance = Chatbot.init({
+      width: '340px',
+      padding: '50px',
+      color: chatbotColor, //'#00A5FD'
+      chatbotName: 'Hypebot',
+      emailAddress: 'help@hype.it',
+      fontFamily: 'Muli, sans-serif',
+      robotIcon: 'https://www.hype.it/assets/images/robot-icon.png',
+      userIcon: 'https://www.hype.it/assets/images/user-icon.png',
+      errorIcon: 'https://www.hype.it/assets/images/error-icon.png',
+      selector: '#chatbot',
+      endpoint: 'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
+      subKey: '35f376e3f5294748886e1cd937a75f3e',
+      operatorChatURL: '/Chat/',
+      __hypeCheck: 'https://www.hype.it/api/rest/FREE/services'
+    });
+  }
+
+  Array.prototype.slice
+  .call(document.querySelectorAll('.js-chatbot'))
+  .forEach(function (el) {
+    el.onclick = function (e) {
+      e.preventDefault();
+      window.chatbotInstance.open();
+    };
+  });
+}
+
+
 $(document).ready(function() {
 
   // DOM Ready, execute code
@@ -172,6 +217,8 @@ console.log(tl1);
 $('[data-animated]').each(function() {
     $(this).addClass('animated-out');
 });
+
+initChatbot();
 
 });
 
