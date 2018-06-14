@@ -27,8 +27,8 @@ function initChatbot(){
       selector: '#chatbot',
       endpoint: 'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
       subKey: '35f376e3f5294748886e1cd937a75f3e',
-      operatorChatApiRoot: 'https://www.te-hype.it/Chat/service/gc/',
-      hypeCheck: 'https://www.te-hype.it/api/rest/FREE/services'
+      operatorChatApiRoot: 'https://www.hype.it/Chat/service/gc/',
+      hypeCheck: 'https://www.hype.it/api/rest/FREE/services'
     });
   }
 
