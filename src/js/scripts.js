@@ -24,6 +24,28 @@ function initChatbot(){
       robotIcon: 'https://www.hype.it/assets/images/robot-icon.png',
       userIcon: 'https://www.hype.it/assets/images/user-icon.png',
       errorIcon: 'https://www.hype.it/assets/images/error-icon.png',
+      surveyIcons: {
+        '1': {
+          default: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_entusiasta_normal.png',
+          active: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_entusiasta_active_hover.png'
+        },
+        '2': {
+          default: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_soddisfatto_normal.png',
+          active: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_soddisfatto_active_hover.png'
+        },
+        '3': {
+          default: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_neutrale_normal.png',
+          active: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_neutrale_active_hover.png'
+        },
+        '4': {
+          default: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_deluso_normal.png',
+          active: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_deluso_active_hover.png'
+        },
+        '5': {
+          default: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_irritato_normal.png',
+          active: 'https://www.hype.it/assets/images/chat_survey/icn_40x40_feedback_irritato_active_hover.png'
+        }
+      },
       selector: '#chatbot',
       endpoint: 'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
       subKey: '35f376e3f5294748886e1cd937a75f3e',
