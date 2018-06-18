@@ -8,11 +8,6 @@ function initChatbot() {
   var isTimPersonal =
     window.location.pathname.toLowerCase().indexOf('timpersonal') > -1;
 
-  // @remarks removed because the following statement won't be executed for TIM partner right now
-  // if (isTimPersonal) {
-  //   chatbotColor = '#004691'
-  // }
-
   var WWW_ROOT = 'https://www.hype.it';
 
   if (!isTimPersonal) {
