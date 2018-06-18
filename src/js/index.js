@@ -5,4 +5,4 @@ import TweenMax from './TweenMax.min';
 import scripts from './scripts';
 
 // Access config values via _config
-console.log(_config.category_ticket_field);
+// console.log(_config.category_ticket_field);
