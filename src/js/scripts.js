@@ -84,14 +84,23 @@ function initChatbot() {
     });
   }
 
+  var openChatbotFromLink = function (e) {
+    e.preventDefault();
+    window.chatbotInstance.open();
+  };
+
   Array.prototype.slice
     .call(document.querySelectorAll('.js-chatbot'))
     .forEach(function (el) {
-      el.onclick = function (e) {
-        e.preventDefault();
-        window.chatbotInstance.open();
-      };
+      el.onclick = openChatbotFromLink;
     });
+
+  // $('div.article-more-questions').text('Hai ancora bisogno d’aiuto?');
+  $('.article-more-questions a')
+    .text('Avvia chat')
+    .attr('href', '#')
+    .addClass('js-chatbot')
+    .on('click', openChatbotFromLink);
 }
 
 $(document).ready(function () {
