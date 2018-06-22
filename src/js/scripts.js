@@ -67,9 +67,9 @@ function initChatbot() {
       endpoint:
         'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
       subKey: '35f376e3f5294748886e1cd937a75f3e',
-      operatorChatApiRoot: WWW_ROOT + '/Chat/service/gc/',
+      operatorChatApiRoot: WWW_ROOT + '/ChatApi/service/gc/',
       hypeCheck: WWW_ROOT + '/api/rest/FREE/services',
-      afterOpenCallback: function() {
+      afterOpenCallback: function () {
         var decodedQs = decodeURIComponent(window.location.search);
         var chatCredentials = {
           name: decodedQs.replace(/^.*\Wname\=([^&]*).*$/i, '$1'),
