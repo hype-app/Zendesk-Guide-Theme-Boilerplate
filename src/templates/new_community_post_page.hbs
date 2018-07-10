@@ -1,49 +1,16 @@
-<div class="container-divider"></div>
-<div class="container">
-	<nav class="sub-nav">
-		{{breadcrumbs}}
-		{{search submit=false}}
-	</nav>
+<section class="section">
+	<div class="hero c-hero">
+		<div class="o-wrapper">
+			<div class="error-page">
+				<h1>{{t 'oops'}}</h1>
 
-	<h1 class="form-header">
-		{{t 'what_is_your_post_about'}}
-	</h1>
+						<h2>{{t 'nonexistent_page'}}</h2>
+						<p>{{t 'mistyped_address_or_moved_page'}}</p>
 
-	<div class="form">
-		{{#form 'post' class='new_community_post'}}
-			<div class="form-field {{#required 'title'}} required {{/required}}">
-				{{label 'title'}}
-				{{input 'title' autofocus=true}}
-				{{#validate 'title'}}
-					<div class="notification notification-error notification-inline">
-						{{error 'title'}}
-					</div>
-				{{/validate}}
+					{{#link 'help_center'}}
+						{{t 'back_to_homepage'}}
+					{{/link}}
 			</div>
-
-			{{suggestion_list class='suggestion-list'}}
-
-			<div class="form-field {{#required 'details'}} required {{/required}}">
-				{{label 'details'}}
-				{{wysiwyg 'details'}}
-				{{#validate 'details'}}
-					<div class="notification notification-error notification-inline">
-						{{error 'details'}}
-					</div>
-				{{/validate}}
-			</div>
-
-			<div class="form-field {{#required 'topic'}} required {{/required}}">
-				{{label 'topic'}}
-				{{select 'topic'}}
-				{{#validate 'topic'}}
-					<div class="notification notification-error notification-inline">
-						{{error 'topic'}}
-					</div>
-				{{/validate}}
-			</div>
-
-			<footer>{{input type='submit'}}</footer>
-		{{/form}}
+		</div>
 	</div>
-</div>
+</section>

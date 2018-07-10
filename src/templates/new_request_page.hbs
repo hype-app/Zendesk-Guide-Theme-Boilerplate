@@ -1,22 +1,16 @@
-<div class="container-divider"></div>
-<div class="container">
-	<nav class="sub-nav">
-		{{breadcrumbs}}
-		{{search submit=false}}
-	</nav>
+<section class="section">
+	<div class="hero c-hero">
+		<div class="o-wrapper">
+			<div class="error-page">
+				<h1>{{t 'oops'}}</h1>
 
-	<h1>
-		{{t 'submit_a_request'}}
-		{{#if follow_up}}
-			<span class="follow-up-hint">
-				{{follow_up}}
-			</span>
-		{{/if}}
-	</h1>
+						<h2>{{t 'nonexistent_page'}}</h2>
+						<p>{{t 'mistyped_address_or_moved_page'}}</p>
 
-	<div class="form">
-		{{request_form}}
+					{{#link 'help_center'}}
+						{{t 'back_to_homepage'}}
+					{{/link}}
+			</div>
+		</div>
 	</div>
-
-	{{chat}}
-</div>
+</section>
