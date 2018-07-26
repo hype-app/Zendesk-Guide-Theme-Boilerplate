@@ -80,12 +80,16 @@ function initChatbot() {
         // if (Object.keys(chatCredentials).every(k => !!chatCredentials[k])) {
         window.chatbotInstance.setCredentials(chatCredentials);
         // }
+      },
+      afterCloseCallback: function () {
+        document.getElementById("chatbot").style.display = "none";
       }
     });
   }
 
   var openChatbotFromLink = function (e) {
     e.preventDefault();
+    document.getElementById("chatbot").style.display = "block";
     window.chatbotInstance.open();
   };
 
@@ -93,6 +97,7 @@ function initChatbot() {
     .call(document.querySelectorAll('.js-chatbot'))
     .forEach(function (el) {
       el.onclick = openChatbotFromLink;
+      //el.onclick = document.getElementById("chatbot").style.visibility = "visible";
     });
 
   // $('div.article-more-questions').text('Hai ancora bisogno d’aiuto?');
