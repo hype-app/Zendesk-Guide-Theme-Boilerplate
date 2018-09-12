@@ -13,13 +13,13 @@
 				<div class="c-ill-window__wrapper">
 					<div class="c-ill-window__item">
 						<div class="c-ill-window__item-wrapper" id="c-ill-window__item-3">
-							<img src="{{asset 'window-left.svg'}}" />
+							<img src="{{asset 'window-left.svg'}}">
 
 						</div>
 					</div>
 					<div class="c-ill-window__item">
 						<div class="c-ill-window__item-wrapper" id="c-ill-window__item-1">
-							<img src="{{asset 'window-center.svg'}}" />
+							<img src="{{asset 'window-center.svg'}}">
 							<div class="c-ill-window__item-bubble">
 								I prelievi sono gratuiti?
 							</div>
@@ -27,7 +27,7 @@
 					</div>
 					<div class="c-ill-window__item">
 						<div class="c-ill-window__item-wrapper" id="c-ill-window__item-2">
-							<img src="{{asset 'window-right.svg'}}" />
+							<img src="{{asset 'window-right.svg'}}">
 							<div class="c-ill-window__item-bubble">
 								Certo! E in tutte le banche. &#x1F609;
 							</div>
@@ -58,7 +58,7 @@
 							{{#is name 'Generale'}}
 								{{#each sections}}
 									<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
-										<a href='{{url}}'>
+										<a href="{{url}}">
 											{{#is name 'Registrazione'}}<div class="icon hype-icon-start"></div>{{/is}}
 											{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
 											{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
@@ -72,11 +72,11 @@
 										<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
 										<div class="c-block-list-with-icons__link t-align-left">
 											{{#each articles}}
-												<a href='{{url}}'>{{title}}</a>
+												<a href="{{url}}">{{title}}</a>
 											{{/each}}
 										</div>
 										<div class="c-block-list-with-icons__link--more t-align-right">
-											<a href='{{url}}'>Vedi tutti</a>
+											<a href="{{url}}">Vedi tutti</a>
 										</div>
 									</li>
 								{{/each}}
@@ -93,7 +93,7 @@
 								{{#is name 'Tutto su Hype'}}
 									{{#each sections}}
 										<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
-											<a href='{{url}}'>
+											<a href="{{url}}">
 												{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
 												{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
 												{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
@@ -113,11 +113,11 @@
 											<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
 											<div class="c-block-list-with-icons__link t-align-left">
 												{{#each articles}}
-													<a href='{{url}}'>{{title}}</a>
+													<a href="{{url}}">{{title}}</a>
 												{{/each}}
 											</div>
 											<div class="c-block-list-with-icons__link--more t-align-right">
-												<a href='{{url}}'>Vedi tutti</a>
+												<a href="{{url}}">Vedi tutti</a>
 											</div>
 										</li>
 									{{/each}}
@@ -136,7 +136,7 @@
 			<div class="c-recent-articles__articles">
 				<h3>Ultimo video caricato</h3>
 				<div class="c-video-recent">
-					<img src="{{asset 'video.png' }}" />
+					<img src="{{asset 'video.png' }}">
 					<button class="c-hero__play" id="js-video-modal-button" rel="nofollow" href="#">
 			      <svg width="93px" height="93px" viewBox="0 0 93 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			        <defs>
@@ -192,7 +192,7 @@
 
 				<div class="c-video-mobile" id="js-video-mobile">
 				  <div class="c-youtube-player">
-				    <iframe src="https://www.youtube.com/embed/NuAKnlcBGVc?modestbranding=1&showinfo=0&rel=0&theme=light&fs=0&color=white&autohide=0&controls=0&disablekb=1" frameborder="0" allowfullscreen></iframe>
+				    <iframe src="https://www.youtube.com/embed/NuAKnlcBGVc?modestbranding=1&showinfo=0&rel=0&theme=light&fs=0&color=white&autohide=0&controls=0&disablekb=1" frameborder="0" allowfullscreen=""></iframe>
 				  </div>
 				</div>
 				<!-- {{#each categories}}

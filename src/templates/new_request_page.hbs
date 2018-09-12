@@ -1,16 +1,52 @@
 <section class="section">
-	<div class="hero c-hero">
+	<div class="hero c-hero c-hero-internal">
 		<div class="o-wrapper">
-			<div class="error-page">
-				<h1>{{t 'oops'}}</h1>
+			<div class="c-hero__breadcrumbs">
+				<nav class="sub-nav">
+					<ol class="breadcrumbs">
+						<li title="Hype">
+							<a href="/hc/it">Home</a>
+						</li>
+						<li>
+							{{t 'submit_a_request'}}
+						</li>
 
-						<h2>{{t 'nonexistent_page'}}</h2>
-						<p>{{t 'mistyped_address_or_moved_page'}}</p>
+					</ol>
+				</nav>
 
-					{{#link 'help_center'}}
-						{{t 'back_to_homepage'}}
-					{{/link}}
 			</div>
+			<div class="c-hero__search">
+				{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
+			</div>
+
 		</div>
 	</div>
+
 </section>
+
+<div class="container-divider"></div>
+<div class="o-wrapper">
+
+	<div class="article-container" id="article-container">
+		<section class="article-sidebar">
+			<header class="">
+				<h1 class="article-title">
+		  		{{t 'submit_a_request'}}
+				  {{#if parent}}
+				    <span class="follow-up-hint">
+				      {{follow_up}}
+				    </span>
+				  {{/if}}
+				</h1>
+			</header>
+			<p class="page-header-description">
+				{{dc 'invia_richiesta'}}
+			</p>
+			<img src="{{asset 'window-center.svg'}}" width="200">
+		</section>
+
+		<article class="form">
+			{{request_form}}
+		</article>
+	</div>
+</div>

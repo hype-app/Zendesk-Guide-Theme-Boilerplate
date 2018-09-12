@@ -15,6 +15,7 @@
     				</li>
 					</ol>
 				</nav>
+
 			</div>
 			<div class="c-hero__search">
 				{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
@@ -54,7 +55,6 @@
 						<span class="icon-lock" title="{{t 'internal'}}"></span>
 					{{/if}}
 				</h1>
-
 			</header>
 
 			<section class="article-info">
@@ -81,7 +81,7 @@
 				{{#with article}}
 					<div class="article-votes">
 						<span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
-						<div class="article-votes-controls" role='radiogroup'>
+						<div class="article-votes-controls" role="radiogroup">
 							{{vote 'up' role='radio' style='height: auto' class='button article-vote-button article-vote article-vote-up'}}
 							{{vote 'down' role='radio' style='height: auto' class='button article-vote-button article-vote article-vote-down'}}
 						</div>
@@ -92,6 +92,9 @@
 				{{/with}}
 
 				<div class="article-more-questions">
+					{{request_callout}}
+				</div>
+				<div>
 					{{request_callout}}
 				</div>
 				<div class="article-footer">

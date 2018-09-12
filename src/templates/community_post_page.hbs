@@ -39,7 +39,7 @@
 								{{#if post.author.agent}}
 									<span class="icon-agent"></span>
 								{{/if}}
-								<img src="{{post.author.avatar_url}}" alt="Avatar" class="user-avatar"/>
+								<img src="{{post.author.avatar_url}}" alt="Avatar" class="user-avatar">
 							</div>
 							<div class="post-meta">
                 <span title="{{post.author.name}}">
@@ -76,7 +76,7 @@
 					</div>
 
 					<div class="post-actions-wrapper">
-						<div class="post-vote vote" role='radiogroup'>
+						<div class="post-vote vote" role="radiogroup">
 							{{#with post}}
 								{{vote 'up' role='radio' class='vote-up' selected_class='vote-voted'}}
 								{{vote 'sum' class='vote-sum'}}
@@ -132,7 +132,7 @@
 										{{#if author.agent}}
 											<span class="icon-agent"></span>
 										{{/if}}
-										<img src="{{author.avatar_url}}" alt="Avatar" class="user-avatar"/>
+										<img src="{{author.avatar_url}}" alt="Avatar" class="user-avatar">
 									</div>
 									<div class="comment-meta">
                     <span title="{{author.name}}">
@@ -167,7 +167,7 @@
 
 							<div class="comment-actions-container">
 								{{#unless official}}
-									<div class="comment-vote vote" role='radiogroup'>
+									<div class="comment-vote vote" role="radiogroup">
 										{{vote 'up' role='radio' class='vote-up' selected_class='vote-voted'}}
 										{{vote 'sum' class='vote-sum'}}
 										{{vote 'down' role='radio' class='vote-down' selected_class='vote-voted'}}

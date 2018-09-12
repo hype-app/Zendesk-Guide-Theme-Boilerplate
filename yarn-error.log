@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/pasqualeerrico/.nvm/versions/node/v9.10.1/bin/node /usr/local/bin/yarn build
+  /Users/pasqualeerrico/.nvm/versions/node/v9.10.1/bin/node /usr/local/bin/yarn start
 
 PATH: 
-  /Users/pasqualeerrico/.rvm/gems/ruby-2.4.1/bin:/Users/pasqualeerrico/.rvm/gems/ruby-2.4.1@global/bin:/Users/pasqualeerrico/.rvm/rubies/ruby-2.4.1/bin:/Users/pasqualeerrico/.sdkman/candidates/java/current/bin:/Users/pasqualeerrico/.sdkman/candidates/grails/current/bin:/Users/pasqualeerrico/.nvm/versions/node/v9.10.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/debug/Library/Android/sdk/platform-tools:/usr/local/MacGPG2/bin:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/pasqualeerrico/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/pasqualeerrico/.antigen/bundles/mafredri/zsh-async:/Users/pasqualeerrico/.antigen/bundles/sindresorhus/pure:/opt/yarn-[version]/bin:/Users/pasqualeerrico/.rvm/bin
+  /Users/pasqualeerrico/.rvm/gems/ruby-2.4.1/bin:/Users/pasqualeerrico/.rvm/gems/ruby-2.4.1@global/bin:/Users/pasqualeerrico/.rvm/rubies/ruby-2.4.1/bin:/Users/pasqualeerrico/.sdkman/candidates/java/current/bin:/Users/pasqualeerrico/.sdkman/candidates/grails/current/bin:/Users/pasqualeerrico/.nvm/versions/node/v9.10.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/debug/Library/Android/sdk/platform-tools:/usr/local/MacGPG2/bin:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein:/Users/pasqualeerrico/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/pasqualeerrico/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/pasqualeerrico/.antigen/bundles/mafredri/zsh-async:/Users/pasqualeerrico/.antigen/bundles/sindresorhus/pure:/opt/yarn-[version]/bin:/Users/pasqualeerrico/.rvm/bin:/Users/pasqualeerrico/.android-sdk-macosx/platform-tools/:/Users/pasqualeerrico/Library/Android/sdk/platform-tools/
 
 Yarn version: 
   1.5.1
@@ -5677,7 +5677,7 @@ Lockfile:
       buffer-crc32 "~0.2.3"
 
 Trace: 
-  Error: Command "build" not found.
+  Error: Command "start" not found.
       at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at /usr/local/lib/node_modules/yarn/lib/cli.js:87307:17
       at Generator.next (<anonymous>)
