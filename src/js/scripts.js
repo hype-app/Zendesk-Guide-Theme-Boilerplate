@@ -115,6 +115,11 @@ $(document).ready(function () {
   //createSlider();
   //subsVideo();
 
+  $('#request_issue_type_select option[value="360000065513"]').remove();
+  $('.nesty-panel').on('DOMNodeInserted', function(e) {
+    $(this).children('ul').children().remove('#360000065513');
+  });
+
   //slider
   var createSlider = function () {
     var slider = document.getElementById('js-slider');
