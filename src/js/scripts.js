@@ -65,8 +65,8 @@ function initChatbot() {
       },
       selector: '#chatbot',
       endpoint:
-        'https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/57858072-d02e-4dd6-bd72-73da2d55eb5b/generateAnswer',
-      subKey: '35f376e3f5294748886e1cd937a75f3e',
+        'https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer',
+      subKey: '6943f66c-7671-4ce9-80b8-f581f5a52be2',
       operatorChatApiRoot: WWW_ROOT + '/ChatApi/service/gc/',
       hypeCheck: WWW_ROOT + '/api/rest/FREE/services',
       afterOpenCallback: function () {
@@ -82,14 +82,14 @@ function initChatbot() {
         // }
       },
       afterCloseCallback: function () {
-        document.getElementById("chatbot").style.display = "none";
+        document.getElementById('chatbot').style.display = 'none';
       }
     });
   }
 
   var openChatbotFromLink = function (e) {
     e.preventDefault();
-    document.getElementById("chatbot").style.display = "block";
+    document.getElementById('chatbot').style.display = 'block';
     window.chatbotInstance.open();
   };
 
@@ -117,7 +117,10 @@ $(document).ready(function () {
 
   $('#request_issue_type_select option[value="360000065513"]').remove();
   $('.nesty-panel').on('DOMNodeInserted', function(e) {
-    $(this).children('ul').children().remove('#360000065513');
+    $(this)
+      .children('ul')
+      .children()
+      .remove('#360000065513');
   });
 
   //slider
