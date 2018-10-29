@@ -33,6 +33,24 @@ function initChatWidget() {
         });
         document.querySelector('#chat-widget .chat-button').style.display =
           'none';
+
+        var decodedQs = decodeURIComponent(window.location.search);
+        var chatCredentials = {
+          name: decodedQs.replace(/^.*\Wname\=([^&]*).*$/i, '$1'),
+          surname: decodedQs.replace(/^.*\Wsurname\=([^&]*).*$/i, '$1'),
+          email: decodedQs.replace(/^.*\Wemail\=([^&]*).*$/i, '$1'),
+          phone: decodedQs.replace(/^.*\phone\=([^&]*).*$/i, '$1')
+        };
+
+        window.chatWidget.setVisitorInfo({
+          display_name:
+            chatCredentials.name +
+            (chatCredentials.surname ? ' ' : '') +
+            chatCredentials.surname,
+          email: chatCredentials.email,
+          phone: chatCredentials.phone
+        });
+
         var openChatbotFromLink = function (e) {
           e.preventDefault();
           window.chatWidget.setVisible(true);
@@ -42,7 +60,6 @@ function initChatWidget() {
           .call(document.querySelectorAll('.js-chatbot'))
           .forEach(function (el) {
             el.onclick = openChatbotFromLink;
-            //el.onclick = document.getElementById("chatbot").style.visibility = "visible";
           });
 
         // $('div.article-more-questions').text('Hai ancora bisogno d’aiuto?');
