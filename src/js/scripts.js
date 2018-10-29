@@ -1,3 +1,25 @@
+function loadScript(url, callback) {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  if (script.readyState) {
+    //IE
+    script.onreadystatechange = () => {
+      if (script.readyState === 'loaded' || script.readyState === 'complete') {
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else {
+    //Others
+    script.onload = () => {
+      callback();
+    };
+  }
+
+  script.src = url;
+  document.body.appendChild(script);
+}
+
 /**
  * Initializes the chat widget
  * @return {undefined} undefined
@@ -5,7 +27,7 @@
 function initChatWidget() {
   if (!window.chatWidget) {
     if (typeof ChatWidget === 'undefined') {
-      loadScript('https://www.hype.it/assets/js/chat-widget.min.js', () => {
+      loadScript('https://www.te-hype.it/assets/js/chat-widget.min.js', () => {
         window.chatWidget = ChatWidget.default.init({
           selector: 'chat-widget'
         });
@@ -13,8 +35,7 @@ function initChatWidget() {
           'none';
         var openChatbotFromLink = function (e) {
           e.preventDefault();
-          document.getElementById('chatbot').style.display = 'block';
-          window.chatbotInstance.open();
+          window.chatWidget.setVisible(true);
         };
 
         Array.prototype.slice
