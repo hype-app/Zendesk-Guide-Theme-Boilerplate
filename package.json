@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run update-chatbot",
-    "update-chatbot": "cp node_modules/@hype/chatbot/umd/@hype/chatbot.min.* src/js/",
     "package": "gulp package --env production",
     "watch": "gulp watch --env local",
     "build-dev": "gulp build --env local",
