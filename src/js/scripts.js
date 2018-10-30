@@ -27,7 +27,7 @@ function loadScript(url, callback) {
 function initChatWidget() {
   if (!window.chatWidget) {
     if (typeof ChatWidget === 'undefined') {
-      loadScript('https://www.te-hype.it/assets/js/chat-widget.min.js', () => {
+      loadScript('https://www.hype.it/assets/js/chat-widget.min.js', () => {
         window.chatWidget = ChatWidget.default.init({
           selector: 'chat-widget',
           theme: 'hype',
@@ -36,7 +36,7 @@ function initChatWidget() {
           botEndpoint:
             'https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer',
           emailAddress: 'hello@hype.it',
-          servicesCheckUrl: 'https://www.te-hype.it/api/rest/FREE/services'
+          servicesCheckUrl: 'https://www.hype.it/api/rest/FREE/services'
         });
 
         document.querySelector('#chat-widget .chat-button').style.display =
