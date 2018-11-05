@@ -211,7 +211,7 @@
     "spaced-line-comment": 0,       // require or disallow a space immediately following the // in a line comment (off by default)
     "wrap-regex": 0,                // require regex literals to be wrapped in parentheses (off by default)
     "space-before-function-paren": ["error", {
-        "anonymous": "always",
+        "anonymous": "never",
         "named": "never",
         "asyncArrow": "always"
     }],
