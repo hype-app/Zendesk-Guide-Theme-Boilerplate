@@ -28,7 +28,7 @@ function initChatWidget() {
   if (!window.chatWidget) {
     if (typeof ChatWidget === 'undefined') {
       loadScript(
-        'https://www.hype.it/assets/js/chat-widget.min.js',
+        'https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js',
         function() {
           window.chatWidget = ChatWidget.default.init({
             selector: 'chat-widget',
