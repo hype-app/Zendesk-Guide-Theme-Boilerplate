@@ -20,6 +20,30 @@ function loadScript(url, callback) {
   document.body.appendChild(script);
 }
 
+function deParam(uri) {
+  return uri.match(/([^&?]+)/gi).reduce(function(res, next) {
+    var keyValue = next.split('=');
+
+    res[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+
+    return res;
+  }, {});
+}
+
+function toTitleCase(str, onlyFirst) {
+  if (typeof str !== 'string') return;
+  var pattern = /(.)[^\s]+[\s_]*/g;
+  if (onlyFirst) {
+    pattern = /(.)/;
+  }
+
+  var ret = str.toLowerCase().replace(pattern, function($1, $2) {
+    return $2.toUpperCase() + $1.substr(1);
+  });
+
+  return ret;
+}
+
 /**
  * Initializes the chat widget
  * @return {undefined} undefined
@@ -44,22 +68,18 @@ function initChatWidget() {
           document.querySelector('#chat-widget .chat-button').style.display =
             'none';
 
-          var decodedQs = decodeURIComponent(window.location.search);
+          var rawChatCredentials = deParam(window.location.search);
           var chatCredentials = {
-            name: decodedQs.replace(/^.*\Wname\=([^&]*).*$/i, '$1'),
-            surname: decodedQs.replace(/^.*\Wsurname\=([^&]*).*$/i, '$1'),
-            email: decodedQs.replace(/^.*\Wemail\=([^&]*).*$/i, '$1'),
-            phone: decodedQs.replace(/^.*\phone\=([^&]*).*$/i, '$1')
+            display_name: toTitleCase(
+              (rawChatCredentials.name || '') +
+                (rawChatCredentials.surname ? ' ' : '') +
+                (rawChatCredentials.surname || '')
+            ),
+            email: (rawChatCredentials.email || '').toLowerCase(),
+            phone: (rawChatCredentials.phone || '').toLowerCase()
           };
 
-          window.chatWidget.setVisitorInfo({
-            display_name:
-              chatCredentials.name +
-              (chatCredentials.surname ? ' ' : '') +
-              chatCredentials.surname,
-            email: chatCredentials.email,
-            phone: chatCredentials.phone
-          });
+          window.chatWidget.setVisitorInfo(chatCredentials);
 
           var openChatbotFromLink = function(e) {
             e.preventDefault();
