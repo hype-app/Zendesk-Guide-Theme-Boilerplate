@@ -21,7 +21,7 @@ function loadScript(url, callback) {
 }
 
 function deParam(uri) {
-  return uri.match(/([^&?]+)/gi).reduce(function(res, next) {
+  return (uri.match(/([^&?]+)/gi) || []).reduce(function(res, next) {
     var keyValue = next.split('=');
 
     res[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
@@ -79,7 +79,9 @@ function initChatWidget() {
             phone: (rawChatCredentials.phone || '').toLowerCase()
           };
 
-          window.chatWidget.setVisitorInfo(chatCredentials);
+          if (Object.keys(chatCredentials).length > 0) {
+            window.chatWidget.setVisitorInfo(chatCredentials);
+          }
 
           var openChatbotFromLink = function(e) {
             e.preventDefault();
