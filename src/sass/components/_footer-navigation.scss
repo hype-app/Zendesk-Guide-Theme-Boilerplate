@@ -35,7 +35,8 @@
 
 .c-footer__navigation__link {
   font-size: 1rem;
-  color: color($purple, lighter)
+  color: color($purple, lighter);
+  white-space: nowrap;
 }
 
 @media screen and (break(extraSmall)) {
