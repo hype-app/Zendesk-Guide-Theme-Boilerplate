@@ -62,7 +62,7 @@ function initChatWidget() {
             botEndpoint:
               'https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer',
             emailAddress: 'hello@hype.it',
-            servicesCheckUrl: 'https://www.hype.it/api/rest/FREE/services'
+            servicesCheckUrl: 'https://api.hype.it/v1/rest/free/services'
           });
 
           document.querySelector('#chat-widget .chat-button').style.display =
