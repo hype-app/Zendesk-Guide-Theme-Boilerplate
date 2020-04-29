@@ -1,5 +1,5 @@
 .c-footer {
-  padding: $base-spacing-x5 $base-spacing-x3;
+  padding: $base-spacing-x5 0;
   text-align: left;
 }
 
@@ -8,7 +8,6 @@
   padding: $base-spacing-x5;
   color: white;
   max-width: initial;
-
 }
 
 .c-footer__logo {
@@ -16,10 +15,16 @@
 }
 
 .c-footer__social {
-  margin: $base-spacing-x5 0 0 0;
+  margin: $base-spacing-x5 auto 0 auto;
   padding: 0;
   text-align: center;
   align-items: center;
+  li {
+    display: inline-block;
+    list-style: none;
+    min-height: 24px;
+    min-width: 24px;
+  }
 }
 
 .c-footer__social-facebook,
@@ -27,60 +32,71 @@
 .c-footer__social-instagram {
   display: inline-block;
   list-style: none;
-  min-height: 16px;
-  min-width: 16px;
+  min-height: 24px;
+  min-width: 24px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .c-footer__social-facebook {
-  background-image: url('$assets-facebook-png');
+  background-image: url("images/facebook.png");
   margin-right: $base-spacing;
 }
 
 .c-footer__social-twitter {
-  background-image: url('$assets-twitter-png');
+  background-image: url("images/twitter.png");
   margin-right: $base-spacing;
 }
 
 .c-footer__social-instagram {
-  background-image: url('$assets-instagram-png');
+  background-image: url("images/instagram.png");
 }
 
 .c-footer__copyright {
-  margin: 0;
+  margin: 0 auto;
   padding: $base-spacing-x2 0;
   text-align: center;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: color($purple, lightest);
 
   &.c-footer__copyright-timpersonal {
-    color: rgba(254, 250, 242, .6);
+    color: rgba(254, 250, 242, 0.6);
   }
-  &.c-footer__copyright-timpersonal-disclaimer{
-    font-size: .65rem;
+  &.c-footer__copyright-timpersonal-disclaimer {
+    font-size: 0.65rem;
     text-align: left;
     line-height: normal;
-    color: rgba(254, 250, 242, .4);
+    color: rgba(254, 250, 242, 0.4);
   }
 }
 
 .c-footer__miglior-prepagata {
   margin-top: $base-spacing-x6;
   text-align: center;
-  @include grid(12,12,30px);
+  @include grid(12, 12, 30px);
+  .img {
+    width: 70%;
+  }
+}
+@media screen and (break(small)) {
+  .c-footer__miglior-prepagata {
+    display: none;
+  }
 }
 
-@media screen and (break(large)) {
+@media screen and (break(medium)) {
   .c-footer__miglior-prepagata {
     float: right;
     display: inline-block;
     margin: 0;
     margin-top: $base-spacing-x4;
     //max-width: 25%;
-    @include grid(4,12,30px);
+    @include grid(7, 24, 30px);
+    .img {
+      //width: 100%;
+    }
   }
 }
 

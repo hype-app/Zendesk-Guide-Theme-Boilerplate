@@ -1,6 +1,14 @@
-function loadScript(url, callback) {
+'use strict';
+function loadScript(url, args, callback) {
   var script = document.createElement('script');
   script.type = 'text/javascript';
+
+  if (!!args) {
+    Object.keys(args).forEach(function(k) {
+      script[k] = args[k];
+    });
+  }
+
   if (script.readyState) {
     //IE
     script.onreadystatechange = function() {
@@ -23,9 +31,7 @@ function loadScript(url, callback) {
 function deParam(uri) {
   return (uri.match(/([^&?]+)/gi) || []).reduce(function(res, next) {
     var keyValue = next.split('=');
-
     res[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
-
     return res;
   }, {});
 }
@@ -33,6 +39,7 @@ function deParam(uri) {
 function toTitleCase(str, onlyFirst) {
   if (typeof str !== 'string') return;
   var pattern = /(.)[^\s]+[\s_]*/g;
+
   if (onlyFirst) {
     pattern = /(.)/;
   }
@@ -40,68 +47,88 @@ function toTitleCase(str, onlyFirst) {
   var ret = str.toLowerCase().replace(pattern, function($1, $2) {
     return $2.toUpperCase() + $1.substr(1);
   });
-
   return ret;
 }
-
 /**
  * Initializes the chat widget
  * @return {undefined} undefined
  */
+
 function initChatWidget() {
-  if (!window.chatWidget) {
-    if (typeof ChatWidget === 'undefined') {
-      loadScript(
-        'https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js',
-        function() {
-          window.chatWidget = ChatWidget.default.init({
-            selector: 'chat-widget',
-            theme: 'hype',
-            chatAccountKey: 'N3KwuCDduJaQMDOIQM0FgwF3woTZTazk',
-            botAccountKey: '6943f66c-7671-4ce9-80b8-f581f5a52be2',
-            botEndpoint:
-              'https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer',
-            emailAddress: 'hello@hype.it',
-            servicesCheckUrl: 'https://www.hype.it/api/rest/FREE/services'
+  fetch("https://www.hype.pre/api/rest/FREE/services").then(function (res) {
+    return res.json();
+  }).then(function (dto) {
+    var service = dto.hypeNoAuthServiceList.find(function (x) {
+      return x.service === "ALGHO_CHAT_WIDGET";
+    });
+    var alghoScriptId = "chatbot-embedded-module";
+    var alghoScriptEnabled = false;
+    var alghoScriptUrl; 
+
+    if (!!service) {
+      var addtInfo = JSON.parse(service.addtInfo);
+      alghoScriptEnabled = addtInfo.enabled;
+      alghoScriptUrl = addtInfo.scriptUrl;
+    }
+
+    console.log("enabled: ", alghoScriptEnabled);
+    console.log("scriptUrl: ", alghoScriptUrl); 
+  });
+
+  if (!!alghoScriptEnabled) { 
+    loadScript("".concat(alghoScriptUrl, "&autoOpen=1"), {
+      id: alghoScriptId
+    }, function () {
+      document.querySelector("#".concat(alghoScriptId)).style.display = "none";
+
+      var openChatbotFromLink = function openChatbotFromLink(e) {
+        e.preventDefault();
+        window.chatWidget.setVisible(true);
+      };
+
+      Array.prototype.slice.call(document.querySelectorAll(".js-chatbot")).forEach(function (el) {
+        el.onclick = openChatbotFromLink;
+      }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
+
+      $(".article-more-questions a").text("Avvia chat").attr("href", "#").addClass("js-chatbot").on("click", openChatbotFromLink);
+    });
+  } else {
+    if (!window.chatWidget) { 
+      if (typeof ChatWidget === "undefined") {
+        loadScript("https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js", null, function () {
+          window.chatWidget = ChatWidget["default"].init({
+            selector: "chat-widget",
+            theme: "hype",
+            chatAccountKey: "N3KwuCDduJaQMDOIQM0FgwF3woTZTazk",
+            botAccountKey: "6943f66c-7671-4ce9-80b8-f581f5a52be2",
+            botEndpoint: "https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer",
+            emailAddress: "hello@hype.it",
+            servicesCheckUrl: "https://www.hype.it/api/rest/FREE/services"
           });
-
-          document.querySelector('#chat-widget .chat-button').style.display =
-            'none';
-
+          document.querySelector("#chat-widget .chat-button").style.display = "none";
           var rawChatCredentials = deParam(window.location.search);
           var chatCredentials = {
-            display_name: toTitleCase(
-              (rawChatCredentials.name || '') +
-                (rawChatCredentials.surname ? ' ' : '') +
-                (rawChatCredentials.surname || '')
-            ),
-            email: (rawChatCredentials.email || '').toLowerCase(),
-            phone: (rawChatCredentials.phone || '').toLowerCase()
+            display_name: toTitleCase((rawChatCredentials.name || "") + (rawChatCredentials.surname ? " " : "") + (rawChatCredentials.surname || "")),
+            email: (rawChatCredentials.email || "").toLowerCase(),
+            phone: (rawChatCredentials.phone || "").toLowerCase()
           };
 
           if (Object.keys(chatCredentials).length > 0) {
             window.chatWidget.setVisitorInfo(chatCredentials);
           }
 
-          var openChatbotFromLink = function(e) {
+          var openChatbotFromLink = function openChatbotFromLink(e) {
             e.preventDefault();
             window.chatWidget.setVisible(true);
           };
 
-          Array.prototype.slice
-            .call(document.querySelectorAll('.js-chatbot'))
-            .forEach(function(el) {
-              el.onclick = openChatbotFromLink;
-            });
+          Array.prototype.slice.call(document.querySelectorAll(".js-chatbot")).forEach(function (el) {
+            el.onclick = openChatbotFromLink;
+          }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
 
-          // $('div.article-more-questions').text('Hai ancora bisogno d’aiuto?');
-          $('.article-more-questions a')
-            .text('Avvia chat')
-            .attr('href', '#')
-            .addClass('js-chatbot')
-            .on('click', openChatbotFromLink);
-        }
-      );
+          $(".article-more-questions a").text("Avvia chat").attr("href", "#").addClass("js-chatbot").on("click", openChatbotFromLink);
+        });
+      }
     }
   }
 }
