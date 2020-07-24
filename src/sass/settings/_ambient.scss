@@ -1,50 +1,46 @@
 // Typography settings
 
-$font-face-name: Muli;
+$font-face-name: gordita;
 $font-face-name-timsans: TimSans;
 $use-google-fonts: false;
 $google-fonts: "";
 $font-family: sans-serif;
 
-
 // Layout settings
 
-$base-spacing    : 8px; // 8px
-$base-spacing-x2 : $base-spacing * 2;
-$base-spacing-x3 : $base-spacing * 3;
-$base-spacing-x4 : $base-spacing * 4;
-$base-spacing-x5 : $base-spacing * 5;
-$base-spacing-x6 : $base-spacing * 6;
-$base-spacing-x7 : $base-spacing * 7;
-$base-spacing-x8 : $base-spacing * 8;
-$base-spacing-x9 : $base-spacing * 9;
-$base-spacing-x10 : $base-spacing * 10;
-
+$base-spacing: 8px; // 8px
+$base-spacing-x2: $base-spacing * 2;
+$base-spacing-x3: $base-spacing * 3;
+$base-spacing-x4: $base-spacing * 4;
+$base-spacing-x5: $base-spacing * 5;
+$base-spacing-x6: $base-spacing * 6;
+$base-spacing-x7: $base-spacing * 7;
+$base-spacing-x8: $base-spacing * 8;
+$base-spacing-x9: $base-spacing * 9;
+$base-spacing-x10: $base-spacing * 10;
 
 // Debug flags
 
 $use-helper-mediaqueries: false;
 
-
 // Responsive settings (30em > 480px, 48em > 768px, 60em > 960px, 80em > 1280px, 100em > 1600px)
 $breakpoints: (
-  extraSmall : 30em,
-  small      : 48em,
-  medium     : 60em,
-  large      : 80em,
-  extraLarge : 100em
+  extraSmall: 30em,
+  small: 48em,
+  medium: 60em,
+  large: 80em,
+  extraLarge: 100em,
 );
 
 $densities: (
-  1x  : '96dpi',
-  15x : '144dpi',
-  2x  : '192dpi',
-  3x  : '288dpi'
+  1x: "96dpi",
+  15x: "144dpi",
+  2x: "192dpi",
+  3x: "288dpi",
 );
-
-
 // Grid settings
+$grid-columns: 12;
 
-$grid-columns     : 12;
-$grid-use-gutters : true;
-$grid-gutter      : $base-spacing-x2;
+$grid-use-gutters: true;
+
+$grid-gutter: $base-spacing-x2;

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 function loadScript(url, args, callback) {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
+  var script = document.createElement("script");
+  script.type = "text/javascript";
 
   if (!!args) {
     Object.keys(args).forEach(function(k) {
@@ -12,7 +12,7 @@ function loadScript(url, args, callback) {
   if (script.readyState) {
     //IE
     script.onreadystatechange = function() {
-      if (script.readyState === 'loaded' || script.readyState === 'complete') {
+      if (script.readyState === "loaded" || script.readyState === "complete") {
         script.onreadystatechange = null;
         callback();
       }
@@ -30,14 +30,14 @@ function loadScript(url, args, callback) {
 
 function deParam(uri) {
   return (uri.match(/([^&?]+)/gi) || []).reduce(function(res, next) {
-    var keyValue = next.split('=');
+    var keyValue = next.split("=");
     res[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
     return res;
   }, {});
 }
 
 function toTitleCase(str, onlyFirst) {
-  if (typeof str !== 'string') return;
+  if (typeof str !== "string") return;
   var pattern = /(.)[^\s]+[\s_]*/g;
 
   if (onlyFirst) {
@@ -49,85 +49,128 @@ function toTitleCase(str, onlyFirst) {
   });
   return ret;
 }
+
+/**
+ * checks the cookie policy cookie
+ * @return {undefined} undefined
+ */
+function checkCookie() {
+  if (localStorage.getItem("cookie") !== "viewed") {
+    document
+      .getElementById("js-cookie")
+      .classList.remove("c-cookie-block--closed");
+    document.getElementById("js-fixedNav").classList.add("cookie-on");
+  }
+}
+
 /**
  * Initializes the chat widget
  * @return {undefined} undefined
  */
 
 function initChatWidget() {
-  fetch("https://www.hype.pre/api/rest/FREE/services").then(function (res) {
-    return res.json();
-  }).then(function (dto) {
-    var service = dto.hypeNoAuthServiceList.find(function (x) {
-      return x.service === "ALGHO_CHAT_WIDGET";
+  fetch("https://www.hype.pre/api/rest/FREE/services")
+    .then(function(res) {
+      return res.json();
+    })
+    .then(function(dto) {
+      var service = dto.hypeNoAuthServiceList.find(function(x) {
+        return x.service === "ALGHO_CHAT_WIDGET";
+      });
+      var alghoScriptId = "chatbot-embedded-module";
+      var alghoScriptEnabled = false;
+      var alghoScriptUrl;
+
+      if (!!service) {
+        var addtInfo = JSON.parse(service.addtInfo);
+        alghoScriptEnabled = addtInfo.enabled;
+        alghoScriptUrl = addtInfo.scriptUrl;
+      }
+
+      console.log("enabled: ", alghoScriptEnabled);
+      console.log("scriptUrl: ", alghoScriptUrl);
     });
-    var alghoScriptId = "chatbot-embedded-module";
-    var alghoScriptEnabled = false;
-    var alghoScriptUrl; 
 
-    if (!!service) {
-      var addtInfo = JSON.parse(service.addtInfo);
-      alghoScriptEnabled = addtInfo.enabled;
-      alghoScriptUrl = addtInfo.scriptUrl;
-    }
+  if (!!alghoScriptEnabled) {
+    loadScript(
+      "".concat(alghoScriptUrl, "&autoOpen=1"),
+      {
+        id: alghoScriptId,
+      },
+      function() {
+        document.querySelector("#".concat(alghoScriptId)).style.display =
+          "none";
 
-    console.log("enabled: ", alghoScriptEnabled);
-    console.log("scriptUrl: ", alghoScriptUrl); 
-  });
+        var openChatbotFromLink = function openChatbotFromLink(e) {
+          e.preventDefault();
+          window.chatWidget.setVisible(true);
+        };
 
-  if (!!alghoScriptEnabled) { 
-    loadScript("".concat(alghoScriptUrl, "&autoOpen=1"), {
-      id: alghoScriptId
-    }, function () {
-      document.querySelector("#".concat(alghoScriptId)).style.display = "none";
-
-      var openChatbotFromLink = function openChatbotFromLink(e) {
-        e.preventDefault();
-        window.chatWidget.setVisible(true);
-      };
-
-      Array.prototype.slice.call(document.querySelectorAll(".js-chatbot")).forEach(function (el) {
-        el.onclick = openChatbotFromLink;
-      }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
-
-      $(".article-more-questions a").text("Avvia chat").attr("href", "#").addClass("js-chatbot").on("click", openChatbotFromLink);
-    });
-  } else {
-    if (!window.chatWidget) { 
-      if (typeof ChatWidget === "undefined") {
-        loadScript("https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js", null, function () {
-          window.chatWidget = ChatWidget["default"].init({
-            selector: "chat-widget",
-            theme: "hype",
-            chatAccountKey: "N3KwuCDduJaQMDOIQM0FgwF3woTZTazk",
-            botAccountKey: "6943f66c-7671-4ce9-80b8-f581f5a52be2",
-            botEndpoint: "https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer",
-            emailAddress: "hello@hype.it",
-            servicesCheckUrl: "https://www.hype.it/api/rest/FREE/services"
-          });
-          document.querySelector("#chat-widget .chat-button").style.display = "none";
-          var rawChatCredentials = deParam(window.location.search);
-          var chatCredentials = {
-            display_name: toTitleCase((rawChatCredentials.name || "") + (rawChatCredentials.surname ? " " : "") + (rawChatCredentials.surname || "")),
-            email: (rawChatCredentials.email || "").toLowerCase(),
-            phone: (rawChatCredentials.phone || "").toLowerCase()
-          };
-
-          if (Object.keys(chatCredentials).length > 0) {
-            window.chatWidget.setVisitorInfo(chatCredentials);
-          }
-
-          var openChatbotFromLink = function openChatbotFromLink(e) {
-            e.preventDefault();
-            window.chatWidget.setVisible(true);
-          };
-
-          Array.prototype.slice.call(document.querySelectorAll(".js-chatbot")).forEach(function (el) {
+        Array.prototype.slice
+          .call(document.querySelectorAll(".js-chatbot"))
+          .forEach(function(el) {
             el.onclick = openChatbotFromLink;
           }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
 
-          $(".article-more-questions a").text("Avvia chat").attr("href", "#").addClass("js-chatbot").on("click", openChatbotFromLink);
-        });
+        $(".article-more-questions a")
+          .text("Avvia chat")
+          .attr("href", "#")
+          .addClass("js-chatbot")
+          .on("click", openChatbotFromLink);
+      }
+    );
+  } else {
+    if (!window.chatWidget) {
+      if (typeof ChatWidget === "undefined") {
+        loadScript(
+          "https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js",
+          null,
+          function() {
+            window.chatWidget = ChatWidget["default"].init({
+              selector: "chat-widget",
+              theme: "hype",
+              chatAccountKey: "N3KwuCDduJaQMDOIQM0FgwF3woTZTazk",
+              botAccountKey: "6943f66c-7671-4ce9-80b8-f581f5a52be2",
+              botEndpoint:
+                "https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer",
+              emailAddress: "hello@hype.it",
+              servicesCheckUrl: "https://www.hype.it/api/rest/FREE/services",
+            });
+            document.querySelector("#chat-widget .chat-button").style.display =
+              "none";
+            var rawChatCredentials = deParam(window.location.search);
+            var chatCredentials = {
+              display_name: toTitleCase(
+                (rawChatCredentials.name || "") +
+                  (rawChatCredentials.surname ? " " : "") +
+                  (rawChatCredentials.surname || "")
+              ),
+              email: (rawChatCredentials.email || "").toLowerCase(),
+              phone: (rawChatCredentials.phone || "").toLowerCase(),
+            };
+
+            if (Object.keys(chatCredentials).length > 0) {
+              window.chatWidget.setVisitorInfo(chatCredentials);
+            }
+
+            var openChatbotFromLink = function openChatbotFromLink(e) {
+              e.preventDefault();
+              window.chatWidget.setVisible(true);
+            };
+
+            Array.prototype.slice
+              .call(document.querySelectorAll(".js-chatbot"))
+              .forEach(function(el) {
+                el.onclick = openChatbotFromLink;
+              }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
+
+            $(".article-more-questions a")
+              .text("Avvia chat")
+              .attr("href", "#")
+              .addClass("js-chatbot")
+              .on("click", openChatbotFromLink);
+          }
+        );
       }
     }
   }
@@ -139,9 +182,9 @@ function initChatWidget() {
  */
 function isDesktopOrLanding() {
   return (
-    window.matchMedia('(min-width: 769px)').matches ||
+    window.matchMedia("(min-width: 769px)").matches ||
     Array.from(document.body.classList).find(function(c) {
-      return c.indexOf('e-landing') > -1;
+      return c.indexOf("e-landing") > -1;
     })
   );
 }
@@ -232,45 +275,53 @@ function isDesktopOrLanding() {
 
 $(document).ready(function() {
   // DOM Ready, execute code
-  // checkCookie();
+  checkCookie();
   //handleQueryString();
   //createSlider();
   //subsVideo();
 
   $('#request_issue_type_select option[value="360000065513"]').remove();
-  $('.nesty-panel').on('DOMNodeInserted', function(/*e*/) {
+  $(".nesty-panel").on("DOMNodeInserted", function(/*e*/) {
     $(this)
-      .children('ul')
+      .children("ul")
       .children()
-      .remove('#360000065513');
+      .remove("#360000065513");
   });
 
-  var tl1 = new TimelineMax();
+  document.getElementById("js-cookie-button").onclick = function(/*e*/) {
+    document
+      .getElementById("js-cookie")
+      .classList.add("c-cookie-block--closed");
+    document.getElementById("js-fixedNav").classList.remove("cookie-on");
+    localStorage.setItem("cookie", "viewed");
+  };
+
+  //var tl1 = new TimelineMax();
 
   // Timeline Tweenmax prima sezione
-  tl1
-    .from(
-      '#c-ill-window__item-1 .c-ill-window__item-bubble',
-      1,
-      { scale: 0, opacity: 0, ease: Bounce.easeOut },
-      1
-    )
-    .to('#c-ill-window__item-1 .c-ill-window__item-bubble', 0, {
-      scale: 1,
-      opacity: 1,
-      ease: Bounce.easeIn
-    })
-    .from(
-      '#c-ill-window__item-2 .c-ill-window__item-bubble',
-      1,
-      { scale: 0, opacity: 0, ease: Bounce.easeOut },
-      2
-    )
-    .to('#c-ill-window__item-2 .c-ill-window__item-bubble', 0, {
-      scale: 1,
-      opacity: 1,
-      ease: Bounce.easeIn
-    });
+  // tl1
+  //   .from(
+  //     '#c-ill-window__item-1 .c-ill-window__item-bubble',
+  //     1,
+  //     { scale: 0, opacity: 0, ease: Bounce.easeOut },
+  //     1
+  //   )
+  //   .to('#c-ill-window__item-1 .c-ill-window__item-bubble', 0, {
+  //     scale: 1,
+  //     opacity: 1,
+  //     ease: Bounce.easeIn
+  //   })
+  //   .from(
+  //     '#c-ill-window__item-2 .c-ill-window__item-bubble',
+  //     1,
+  //     { scale: 0, opacity: 0, ease: Bounce.easeOut },
+  //     2
+  //   )
+  //   .to('#c-ill-window__item-2 .c-ill-window__item-bubble', 0, {
+  //     scale: 1,
+  //     opacity: 1,
+  //     ease: Bounce.easeIn
+  //   });
   // .from("#section-1 .section__text div",1,{ y:1000 , opacity:1 , ease: Expo. easeOut },1)
   //   .to("#section-1 .section__text div",0,{ y:0 , opacity:1 , ease: Expo. easeOut })
   // .fromTo("#section-1 .section-animate__left", 0.5, {css: {bottom: "100%"}}, {css:{bottom: "0"}},2)
@@ -283,8 +334,8 @@ $(document).ready(function() {
   // console.log(tl1);
 
   // Animazione di entrata su alcuni elementi
-  $('[data-animated]').each(function() {
-    $(this).addClass('animated-out');
+  $("[data-animated]").each(function() {
+    $(this).addClass("animated-out");
   });
 
   initChatWidget();
@@ -293,24 +344,24 @@ $(document).ready(function() {
 $(window).scroll(function() {
   var scroll = $(window).scrollTop();
   var height = $(window).height();
-  var mobileNavigation = document.getElementById('js-mobileMenu');
-  var navigationBar = document.getElementById('js-fixedNav');
+  var mobileNavigation = document.getElementById("js-mobileMenu");
+  var navigationBar = document.getElementById("js-fixedNav");
 
   if (scroll > 0) {
     if (isDesktopOrLanding()) {
-      navigationBar.classList.add('is-sticky');
+      navigationBar.classList.add("is-sticky");
     } else {
-      mobileNavigation.classList.add('is-sticky');
+      mobileNavigation.classList.add("is-sticky");
     }
-    //document
-    //  .getElementById('js-cookie')
-    //  .classList.add('c-cookie-block--closed');
-    //navigationBar.classList.remove('cookie-on');
+    document
+      .getElementById("js-cookie")
+      .classList.add("c-cookie-block--closed");
+    navigationBar.classList.remove("cookie-on");
   } else {
     if (isDesktopOrLanding()) {
-      navigationBar.classList.remove('is-sticky');
+      navigationBar.classList.remove("is-sticky");
     } else {
-      mobileNavigation.classList.remove('is-sticky');
+      mobileNavigation.classList.remove("is-sticky");
     }
   }
 
@@ -321,16 +372,16 @@ $(window).scroll(function() {
   //   }
   // }
 
-  $('.animated-out[data-animated]').each(function() {
+  $(".animated-out[data-animated]").each(function() {
     var $this = $(this);
     //console.log($this.offset().top)
     if (scroll + height >= $this.offset().top + 160) {
-      var delay = parseInt($this.attr('data-animated'));
+      var delay = parseInt($this.attr("data-animated"));
       if (isNaN(delay) || 0 === delay) {
-        $this.removeClass('animated-out').addClass('animated-in');
+        $this.removeClass("animated-out").addClass("animated-in");
       } else {
         setTimeout(function() {
-          $this.removeClass('animated-out').addClass('animated-in');
+          $this.removeClass("animated-out").addClass("animated-in");
         }, delay);
       }
     }

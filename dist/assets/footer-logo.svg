@@ -1,1 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="197" height="40" fill="#bab7cc" fill-rule="evenodd"><path d="M32.606 16.33h-2.275v3.964h2.275c1.48 0 2.403-.818 2.403-1.967v-.03c0-1.3-.94-1.966-2.403-1.966m4.4 1.95c0 2.47-2.004 3.76-4.452 3.76h-2.212v3.54h-1.956v-11.01h4.4c2.61 0 4.23 1.463 4.23 3.68v.032zm3.594 7.298v-11.01h8.254v1.73h-6.3v2.862h5.585v1.73h-5.585v2.957h4.712C48.987 21.606 50 19.292 50 17.02 50 2.855 29.553-3.427 16.264 1.857 10 4.348 5.258 8.985 2.555 14.567h1.122v4.577H9v-4.577h1.956v11.01H9v-4.64H3.676v4.64H1.72V16.5a25.28 25.28 0 0 0 .155 18.727c4.308 10.597 32.958 1.887 43.892-9.64H40.59zM20.648 21.2v4.388h-1.974v-4.34l-4.422-6.67h2.323l3.1 4.86 3.15-4.86h2.243L20.648 21.2z"/><text font-family="Muli-Regular, Muli" font-size="15"><tspan x="59" y="25">Money is just a tool</tspan></text></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="196.7px" height="40px" viewBox="0 0 196.7 40" style="enable-background:new 0 0 196.7 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#BAB7CC;}
+	.st1{enable-background:new    ;}
+	.st2{fill:#BAB7CC;}
+</style>
+<title>Group 2</title>
+<desc>Created with Sketch.</desc>
+<g id="Symbols">
+	<g id="footer" transform="translate(-110.000000, -110.000000)">
+		<g id="footer-logo" transform="translate(110.000000, 110.000000)">
+			<g id="Group-2">
+				<path id="hype_logo_white" class="st0" d="M32.6,16.3h-2.3v4h2.3c1.5,0,2.4-0.8,2.4-2v0C35,17,34.1,16.3,32.6,16.3 M37,18.3
+					c0,2.5-2,3.8-4.5,3.8h-2.2v3.5h-2v-11h4.4C35.4,14.6,37,16,37,18.3L37,18.3z M40.6,25.6v-11h8.3v1.7h-6.3v2.9h5.6v1.7h-5.6v3
+					h4.7C49,21.6,50,19.3,50,17C50,2.9,29.6-3.4,16.3,1.9C10,4.3,5.3,9,2.6,14.6h1.1v4.6H9v-4.6h2v11H9v-4.6H3.7v4.6h-2v-9.1
+					C-0.5,22.3-0.7,29,1.9,35.2c4.3,10.6,33,1.9,43.9-9.6H40.6z M20.6,21.2v4.4h-2v-4.3l-4.4-6.7h2.3l3.1,4.9l3.2-4.9h2.2L20.6,21.2
+					z"/>
+				
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

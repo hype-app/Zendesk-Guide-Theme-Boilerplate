@@ -1,6 +1,9 @@
 .c-footer {
   padding: $base-spacing-x5 0;
   text-align: left;
+  @media screen and (max-width: map-get($breakpoints, medium)) {
+    padding-bottom: $base-spacing-x10;
+  }
 }
 
 .c-footer-timpersonal {

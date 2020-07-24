@@ -1,7 +1,7 @@
 .c-footer__navigation {
   display: inline-block;
   margin-top: $base-spacing-x4;
-  @include n-columns(150px, 0px, true, 2);
+  @include n-columns(160px, 0px, true, 2);
   .c-footer__navigation__list-item {
     &:nth-child(2n) {
       padding-left: 30px;
@@ -20,7 +20,7 @@
 
 .c-footer__navigation__list-item {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   list-style: none;
   padding: $base-spacing $base-spacing $base-spacing 0;
   //align-self: flex-start;
@@ -28,7 +28,7 @@
 
   &--active {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: color($blue, default);
   }
 }
@@ -36,7 +36,6 @@
 .c-footer__navigation__link {
   font-size: 1rem;
   color: color($purple, lighter);
-  //white-space: nowrap;
 }
 
 @media screen and (break(extraSmall)) {
@@ -81,6 +80,6 @@
 
 @media screen and (break(large)) {
   .c-footer__navigation {
-    @include grid(4, 12, 30px);
+    @include grid(11, 24, 30px);
   }
 }

@@ -28,100 +28,92 @@ Trumps ------ Helpers and overrides.
 
 ↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥↥ */
 
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Muli:300,400,700);
-
-@import 'bootstrap-grid';
+@import "bootstrap-grid";
 
 /* Import Settings */
-@import 'settings/colors';
-@import 'settings/ambient';
+@import "settings/colors";
+@import "settings/ambient";
 // @import 'settings/fontface';
 //@import 'settings/fontface-tim';
 
 /* Import Tools */
-@import 'tools/mixins';
-@import 'tools/functions';
-@import 'tools/clearfix';
-@import 'tools/fontface';
-@import 'tools/grid';
-@import 'tools/mediaqueries';
-
-
+@import "tools/mixins";
+@import "tools/functions";
+@import "tools/clearfix";
+@import "tools/fontface";
+@import "tools/grid";
+@import "tools/mediaqueries";
 
 /* Import Generic */
-@import 'generic/normalize';
+@import "generic/normalize";
 
 /* Standard copenhagen theme css */
-@import 'copenhagen/index';
+@import "copenhagen/index";
 
 /* Import Elements */
-@import 'elements/links';
-@import 'elements/pages';
-@import 'elements/typography';
-@import 'elements/media';
-@import 'elements/button';
-
+@import "elements/links";
+@import "elements/pages";
+@import "elements/typography";
+@import "elements/media";
+@import "elements/button";
 
 /* Import Objects */
-@import 'objects/wrapper';
-
+@import "objects/wrapper";
 
 /* Import Components */
-@import 'components/header';
-@import 'components/main-navigation';
-@import 'components/logo';
-@import 'components/language-switcher';
-@import 'components/help-block';
-@import 'components/hero';
-@import 'components/features-navigation';
-@import 'components/features-block';
-@import 'components/features-wallet-block';
-@import 'components/features-friends-block';
-@import 'components/block-online';
-@import 'components/illustrated-description-block';
-@import 'components/block-list-with-icons';
-@import 'components/block-list-exchange-money';
-@import 'components/features-card-block';
-@import 'components/features-double-image-text-block';
-@import 'components/intro-block';
-@import 'components/prefooter';
-@import 'components/footer';
-@import 'components/footer-navigation';
-@import 'components/cookie-block';
-@import 'components/customer-care-block';
-@import 'components/exchange-money-block';
-@import 'components/page-content';
-@import 'components/pricing-plans';
-@import 'components/pricing-table';
-@import 'components/features-list';
-@import 'components/press-kit';
-@import 'components/contacts';
-@import 'components/customer-reviews';
-@import 'components/press-block';
-@import 'components/mobile-navigation';
-@import 'components/feature-card-recharge';
-@import 'components/documentation-table';
-@import 'components/costs-table';
-@import 'components/usage-limits-table';
-@import 'components/faq-table';
-@import 'components/emoji';
-@import 'components/payinstore-applepay';
-@import 'components/devices-table-applepay';
-@import 'components/video';
-@import 'components/deals-block';
-@import 'components/form';
-@import 'components/zendesk';
-@import 'components/alerts';
+@import "components/header";
+@import "components/main-navigation";
+@import "components/logo";
+@import "components/language-switcher";
+@import "components/help-block";
+@import "components/hero";
+@import "components/features-navigation";
+@import "components/features-block";
+@import "components/features-wallet-block";
+@import "components/features-friends-block";
+@import "components/block-online";
+@import "components/illustrated-description-block";
+@import "components/block-list-with-icons";
+@import "components/block-list-exchange-money";
+@import "components/features-card-block";
+@import "components/features-double-image-text-block";
+@import "components/intro-block";
+@import "components/prefooter";
+@import "components/footer";
+@import "components/footer-navigation";
+@import "components/cookie-block";
+@import "components/customer-care-block";
+@import "components/exchange-money-block";
+@import "components/page-content";
+@import "components/pricing-plans";
+@import "components/pricing-table";
+@import "components/features-list";
+@import "components/press-kit";
+@import "components/contacts";
+@import "components/customer-reviews";
+@import "components/press-block";
+@import "components/mobile-navigation";
+@import "components/feature-card-recharge";
+@import "components/documentation-table";
+@import "components/costs-table";
+@import "components/usage-limits-table";
+@import "components/faq-table";
+@import "components/emoji";
+@import "components/payinstore-applepay";
+@import "components/devices-table-applepay";
+@import "components/video";
+@import "components/deals-block";
+@import "components/form";
+@import "components/zendesk";
+@import "components/alerts";
 
-@import 'components/landing-card-block';
-@import 'components/landing-money-block';
-@import 'components/landing-dream-block';
-@import 'components/landing-comparative-table';
-
+@import "components/landing-card-block";
+@import "components/landing-money-block";
+@import "components/landing-dream-block";
+@import "components/landing-comparative-table";
 
 /* Import Trumps */
-@import 'trumps/margins';
-@import 'trumps/animations';
-@import 'trumps/noscroll';
-@import 'trumps/aligner';
+@import "trumps/margins";
+@import "trumps/animations";
+@import "trumps/noscroll";
+@import "trumps/aligner";

@@ -4,7 +4,7 @@
   margin-top: 2em;
   vertical-align: top;
   text-align: center;
-  border: 1px solid #F2EEE6;
+  border: 1px solid #f2eee6;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -26,39 +26,33 @@
 }
 
 @media screen and (break(extraSmall)) {
-
-
 }
 
 @media screen and (break(small)) {
   .c-help-block {
     text-align: left;
-    @include grid(6,12,30px);
+    @include grid(6, 12, 30px);
     border: 0;
     padding-top: 0;
     padding-bottom: 0;
   }
   .c-help-block__image {
-    float: left;
   }
 
   .c-help-block__text {
-    float: left;
     display: inline-block;
     max-width: 83%;
-    margin-left: $base-spacing-x4;
   }
 }
 
 @media screen and (break(medium)) {
   .c-help-block {
-    @include grid(6,12,30px);
+    @include grid(6, 12, 30px);
   }
-
 }
 
 @media screen and (break(large)) {
   .c-help-block {
-    @include grid(4,12,30px);
+    @include grid(6, 24, 30px);
   }
 }

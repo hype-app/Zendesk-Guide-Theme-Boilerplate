@@ -66,10 +66,8 @@ gulp.task("build", ["build-sass", "build-templates", "build-js"]);
 gulp.task("build-sass", () => {
   return gulp
     .src("./src/sass/style.scss")
-    .pipe(sourcemaps.init())
     .pipe(sassVars(config, { verbose: false }))
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist"));
 });
 
