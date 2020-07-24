@@ -1,4 +1,5 @@
 "use strict";
+
 function loadScript(url, args, callback) {
   var script = document.createElement("script");
   script.type = "text/javascript";
@@ -51,111 +52,58 @@ function toTitleCase(str, onlyFirst) {
 }
 
 /**
- * checks the cookie policy cookie
- * @return {undefined} undefined
- */
-function checkCookie() {
-  if (localStorage.getItem("cookie") !== "viewed") {
-    document
-      .getElementById("js-cookie")
-      .classList.remove("c-cookie-block--closed");
-    document.getElementById("js-fixedNav").classList.add("cookie-on");
-  }
-}
-
-/**
  * Initializes the chat widget
  * @return {undefined} undefined
  */
-
 function initChatWidget() {
-  fetch("https://www.hype.pre/api/rest/FREE/services")
+  fetch("https://www.hype.it/api/rest/FREE/services")
     .then(function(res) {
       return res.json();
     })
     .then(function(dto) {
       var service = dto.hypeNoAuthServiceList.find(function(x) {
-        return x.service === "ALGHO_CHAT_WIDGET";
+        return x.service === "ALGHO_CHAT_WIDGET" && x.status === "ACTIVE";
       });
-      var alghoScriptId = "chatbot-embedded-module";
-      var alghoScriptEnabled = false;
-      var alghoScriptUrl;
 
       if (!!service) {
+        var alghoScriptId = "chatbot-embedded-module";
         var addtInfo = JSON.parse(service.addtInfo);
-        alghoScriptEnabled = addtInfo.enabled;
-        alghoScriptUrl = addtInfo.scriptUrl;
-      }
+        var alghoScriptUrl = addtInfo.scriptUrl;
 
-      console.log("enabled: ", alghoScriptEnabled);
-      console.log("scriptUrl: ", alghoScriptUrl);
-    });
-
-  if (!!alghoScriptEnabled) {
-    loadScript(
-      "".concat(alghoScriptUrl, "&autoOpen=1"),
-      {
-        id: alghoScriptId,
-      },
-      function() {
-        document.querySelector("#".concat(alghoScriptId)).style.display =
-          "none";
-
-        var openChatbotFromLink = function openChatbotFromLink(e) {
-          e.preventDefault();
-          window.chatWidget.setVisible(true);
-        };
-
-        Array.prototype.slice
-          .call(document.querySelectorAll(".js-chatbot"))
-          .forEach(function(el) {
-            el.onclick = openChatbotFromLink;
-          }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
-
-        $(".article-more-questions a")
-          .text("Avvia chat")
-          .attr("href", "#")
-          .addClass("js-chatbot")
-          .on("click", openChatbotFromLink);
-      }
-    );
-  } else {
-    if (!window.chatWidget) {
-      if (typeof ChatWidget === "undefined") {
         loadScript(
-          "https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js",
-          null,
+          "".concat(alghoScriptUrl, "&autoOpen=1"),
+          {
+            id: alghoScriptId,
+          },
           function() {
-            window.chatWidget = ChatWidget["default"].init({
-              selector: "chat-widget",
-              theme: "hype",
-              chatAccountKey: "N3KwuCDduJaQMDOIQM0FgwF3woTZTazk",
-              botAccountKey: "6943f66c-7671-4ce9-80b8-f581f5a52be2",
-              botEndpoint:
-                "https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer",
-              emailAddress: "hello@hype.it",
-              servicesCheckUrl: "https://www.hype.it/api/rest/FREE/services",
-            });
-            document.querySelector("#chat-widget .chat-button").style.display =
-              "none";
-            var rawChatCredentials = deParam(window.location.search);
-            var chatCredentials = {
-              display_name: toTitleCase(
-                (rawChatCredentials.name || "") +
-                  (rawChatCredentials.surname ? " " : "") +
-                  (rawChatCredentials.surname || "")
-              ),
-              email: (rawChatCredentials.email || "").toLowerCase(),
-              phone: (rawChatCredentials.phone || "").toLowerCase(),
-            };
+            window.alghoIframeTick = setInterval(function() {
+              window.alghoChatWidget = document.querySelector(
+                "#iframe-".concat(alghoScriptId)
+              );
 
-            if (Object.keys(chatCredentials).length > 0) {
-              window.chatWidget.setVisitorInfo(chatCredentials);
-            }
+              if (!!window.alghoChatWidget) {
+                if (window.alghoChatWidget.style.visibility !== "hidden") {
+                  window.alghoChatWidget.style.visibility = "hidden";
+                  clearInterval(window.alghoIframeTick);
+                  window.alghoIframeTick = setInterval(function() {
+                    if (window.alghoChatWidget.style.visibility === "hidden") {
+                      window.alghoChatWidget.style.visibility = "visible";
+                      window.alghoChatWidget.style.display = "none";
+                      clearInterval(window.alghoIframeTick);
+                    }
+                  }, 1000);
+                }
+              }
+            }, 400);
 
             var openChatbotFromLink = function openChatbotFromLink(e) {
               e.preventDefault();
-              window.chatWidget.setVisible(true);
+
+              if (window.alghoChatWidget.style.display !== "none") {
+                window.alghoChatWidget.src = window.alghoChatWidget.src;
+              } else {
+                window.alghoChatWidget.style.display = "inline";
+              }
             };
 
             Array.prototype.slice
@@ -171,9 +119,64 @@ function initChatWidget() {
               .on("click", openChatbotFromLink);
           }
         );
+      } else {
+        if (!window.chatWidget) {
+          if (typeof ChatWidget === "undefined") {
+            loadScript(
+              "https://cdn.jsdelivr.net/npm/hype-chat-widget@0.3/dist/assets/widget.js",
+              null,
+              function() {
+                window.chatWidget = ChatWidget["default"].init({
+                  selector: "chat-widget",
+                  theme: "hype",
+                  chatAccountKey: "N3KwuCDduJaQMDOIQM0FgwF3woTZTazk",
+                  botAccountKey: "6943f66c-7671-4ce9-80b8-f581f5a52be2",
+                  botEndpoint:
+                    "https://hypebotqna.azurewebsites.net/qnamaker/knowledgebases/6caa7eed-9b39-4033-8637-9028fec8751d/generateAnswer",
+                  emailAddress: "hello@hype.it",
+                  servicesCheckUrl:
+                    "https://www.hype.it/api/rest/FREE/services",
+                });
+                document.querySelector(
+                  "#chat-widget .chat-button"
+                ).style.display = "none";
+                var rawChatCredentials = deParam(window.location.search);
+                var chatCredentials = {
+                  display_name: toTitleCase(
+                    (rawChatCredentials.name || "") +
+                      (rawChatCredentials.surname ? " " : "") +
+                      (rawChatCredentials.surname || "")
+                  ),
+                  email: (rawChatCredentials.email || "").toLowerCase(),
+                  phone: (rawChatCredentials.phone || "").toLowerCase(),
+                };
+
+                if (Object.keys(chatCredentials).length > 0) {
+                  window.chatWidget.setVisitorInfo(chatCredentials);
+                }
+
+                var openChatbotFromLink = function openChatbotFromLink(e) {
+                  e.preventDefault();
+                  window.chatWidget.setVisible(true);
+                };
+
+                Array.prototype.slice
+                  .call(document.querySelectorAll(".js-chatbot"))
+                  .forEach(function(el) {
+                    el.onclick = openChatbotFromLink;
+                  }); // $('div.article-more-questions').text('Hai ancora bisogno d'aiuto?');
+
+                $(".article-more-questions a")
+                  .text("Avvia chat")
+                  .attr("href", "#")
+                  .addClass("js-chatbot")
+                  .on("click", openChatbotFromLink);
+              }
+            );
+          }
+        }
       }
-    }
-  }
+    });
 }
 
 /**
@@ -187,6 +190,19 @@ function isDesktopOrLanding() {
       return c.indexOf("e-landing") > -1;
     })
   );
+}
+
+/**
+ * checks the cookie policy cookie
+ * @return {undefined} undefined
+ */
+function checkCookie() {
+  if (localStorage.getItem("cookie") !== "viewed") {
+    document
+      .getElementById("js-cookie")
+      .classList.remove("c-cookie-block--closed");
+    document.getElementById("js-fixedNav").classList.add("cookie-on");
+  }
 }
 
 // /**
