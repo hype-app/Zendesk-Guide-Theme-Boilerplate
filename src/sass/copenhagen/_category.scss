@@ -15,14 +15,18 @@
 }
 
 .section-tree {
-  @include tablet { flex-direction: row; }
+  @include tablet {
+    flex-direction: row;
+  }
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
 
   .section {
-    @include tablet { flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ }
+    @include tablet {
+      flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */
+    }
     flex: initial;
   }
 
@@ -33,7 +37,9 @@
   &-title {
     margin-bottom: 0;
 
-    a { color: $text_color; }
+    a {
+      color: $text_color;
+    }
   }
 
   .see-all-articles {
@@ -48,7 +54,9 @@
     font-size: $font-size-bigger;
     padding: 15px 0;
 
-    a { color: $text_color; }
+    a {
+      color: $text_color !important;
+    }
   }
 }
 

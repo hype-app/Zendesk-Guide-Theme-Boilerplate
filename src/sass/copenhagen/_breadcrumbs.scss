@@ -10,7 +10,7 @@
   padding: 0;
 
   li {
-    color: color($blue,default);
+    color: color($blue, default);
     display: inline;
     font-weight: 600;
     font-size: $font-size-small;
@@ -22,14 +22,16 @@
       content: ">";
       margin: 0 4px;
       background: none;
-      color: color($purple,lighter);
+      color: color($purple, lighter);
     }
-    a, a:visited {
-      color: color($purple,lighter);
+    a,
+    a:visited {
+      color: color($purple, lighter) !important;
     }
     &:last-child {
-      a, a:visited {
-        color: color($blue,lighter);
+      a,
+      a:visited {
+        color: color($blue, default) !important;
       }
     }
   }

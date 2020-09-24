@@ -7,10 +7,14 @@ a {
   text-decoration: none;
   transition: all 200ms;
   display: inline-block;
-  color: color($blue, lighter);
+  color: color($blue, default) !important;
 
-  &:hover {
+  &:hover,
+  &:active {
     transition: all 200ms;
+    color: color($blue, dark) !important;
+  }
+  &:visited {
     color: color($blue, default);
   }
 }
