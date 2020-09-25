@@ -19,7 +19,6 @@
   }
 
   &--landing {
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -121,10 +120,9 @@
 }
 
 .c-header .e-button {
-
   display: none;
   float: right;
-  padding: 8px 33px;
+  padding: 12px 32px;
 }
 
 @media screen and (break(medium)) {
@@ -142,19 +140,15 @@
     margin-top: 0;
     &--landing-partner {
       .c-logo {
-        position: relative  !important;
+        position: relative !important;
       }
     }
     &--landing-timpersonal {
-
-
-
       .c-header .e-button {
         /*display: none;*/
         float: right;
         padding: 8px 56px;
       }
-
     }
     .c-header__partner-logo__timpersonal {
       height: 43px;
@@ -187,7 +181,6 @@
       // flex: 1;
       margin-left: 0;
     }
-
   }
   .c-header__wrapper {
     width: 1220px;
@@ -208,5 +201,4 @@
     height: 32px;
     margin: 0 0 0 2.5rem;
   }
-
 }
