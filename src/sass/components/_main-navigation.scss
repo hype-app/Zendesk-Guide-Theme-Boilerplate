@@ -5,14 +5,14 @@
 .c-main-navigation__link-icon {
   vertical-align: text-top;
   margin-left: $base-spacing;
-  &:hover{
+  &:hover {
     filter: opacity(80%);
   }
 }
 
 .c-main-navigation__tim {
   color: white;
-  float:right;
+  float: right;
   padding: 10px;
   line-height: 20px;
 }
@@ -24,7 +24,6 @@
     padding: $base-spacing;
     margin-left: $base-spacing-x4;
     flex-grow: 2;
-
   }
 
   .c-main-navigation__list {
@@ -37,19 +36,18 @@
     text-transform: uppercase;
     font-weight: 600;
     margin-right: $base-spacing-x4;
-    font-size: .9rem;
+    font-size: 0.9rem;
 
     &--right {
       float: right;
 
       .c-main-navigation__link {
-        color: color($blue, default);
+        color: color($blue, default) !important;
         .c-main-navigation__link-icon {
           vertical-align: text-top;
           margin-left: $base-spacing;
-
         }
-        &:hover{
+        &:hover {
           filter: opacity(70%);
         }
       }
@@ -57,18 +55,16 @@
   }
 
   .c-main-navigation__link {
-    color: color($purple, lighter);
+    color: color($purple, lighter) !important;
   }
 
   .c-main-navigation__tim {
     @media screen and (break(medium)) {
       color: white;
       padding-left: 54%;
-      &:hover{
+      &:hover {
         color: white;
       }
     }
   }
-
-
 }
