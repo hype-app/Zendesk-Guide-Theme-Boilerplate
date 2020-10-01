@@ -39,7 +39,7 @@
 
 .c-mobile-navigation__burger {
   float: right;
-  color: color($purple, darkest);
+  color: color($purple, darkest) !important;
   font-weight: 500;
   margin-top: $base-spacing;
   &:hover,
@@ -65,13 +65,13 @@
   text-align: center;
 
   &--active {
-    color: color($blue, default);
+    color: color($blue, default) !important;
     font-size: 2rem;
   }
 }
 
 .c-mobile-navigation__link {
-  color: color($purple, darker);
+  color: color($purple, darker) !important;
   font-size: 2rem;
 }
 

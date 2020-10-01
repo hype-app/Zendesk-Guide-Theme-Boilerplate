@@ -10,8 +10,11 @@
   border-radius: 4px;
 
   &:hover {
-    background: color($blue, light);
-    color: #fff;
+    //background: linear-gradient(90deg, #0293e1 0%, color($blue, light) 100%);
+    color: #ffffff !important;
+    transform: scale(1.04);
+    box-shadow: 0 0 1.1rem rgba(#000000, 0.08);
+    z-index: 10;
   }
 
   &--orange {
