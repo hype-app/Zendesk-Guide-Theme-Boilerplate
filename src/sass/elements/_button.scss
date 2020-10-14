@@ -112,3 +112,13 @@
     }
   }
 }
+
+.mobile-button {
+  color: #ffffff !important;
+  &:hover {
+    color: #ffffff !important;
+    transform: scale(1.04);
+    box-shadow: 0 0 1.1rem rgba(#000000, 0.08);
+    z-index: 10;
+  }
+}

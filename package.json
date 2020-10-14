@@ -1,7 +1,7 @@
 {
   "name": "@hype/zendesk-guide-theme",
   "themeName": "hype",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
   "main": "index.js",
   "scripts": {
