@@ -1,9 +1,11 @@
 {
   "name": "hype-1.2.4",
-  "author": "Bemind Interactive",
-  "version": "1.2.2",
+  "author": "HYPE S.p.A.",
+  "version": "1.5",
   "api_version": 1,
   "default_locale": "it",
+   "defaultLocale": "it",
+   "frameworkVersion": "1.0",
   "settings": [
     {
       "label": "colors_group_label",

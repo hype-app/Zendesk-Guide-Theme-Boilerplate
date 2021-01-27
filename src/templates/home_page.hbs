@@ -4,11 +4,12 @@
 			<h1>Ciao! Hai bisogno di aiuto?</h1>
 			{{search submit=false instant=true class='search search-full c-form c-form__hero-search'}}
 			<div class="c-quick-search">
-	      <a href="/hc/it/sections/360000529974-Getting-Started" class="e-button e-button--small">Registrazione</a>
-	      <a href="/hc/it/sections/360000529954-La-carta" class="e-button e-button--small">La carta</a>
-	      <a href="/hc/it/sections/360000571154-Il-conto" class="e-button e-button--small">Il conto</a>
+				<a href="/hc/it/sections/360000529974-Getting-Started"
+					class="e-button e-button--small">Registrazione</a>
+				<a href="/hc/it/sections/360000529954-La-carta" class="e-button e-button--small">La carta</a>
+				<a href="/hc/it/sections/360000571154-Il-conto" class="e-button e-button--small">Il conto</a>
 				<a href="/hc/it/sections/360000570034-Le-funzioni" class="e-button e-button--small">Le funzioni</a>
-	    </div>
+			</div>
 			<div class="c-ill-window">
 				<div class="c-ill-window__wrapper">
 					<div class="c-ill-window__item">
@@ -42,7 +43,9 @@
 		<div class="o-wrapper">
 			<p>
 				<span class="c-new-features__title">Nuova funzionalità!</span>
-				Con HYPE puoi acquistare, vendere e scambiare <a href="https://blog.hype.it/i-bitcoin-sono-arrivati-su-hype/" target="_blank" title="Da oggi puoi pagare i bolletini con HYPE">Bitcoin</a> comodamente in app.
+				Con HYPE puoi acquistare, vendere e scambiare <a
+					href="https://blog.hype.it/i-bitcoin-sono-arrivati-su-hype/" target="_blank"
+					title="Da oggi puoi pagare i bolletini con HYPE">Bitcoin</a> comodamente in app.
 			</p>
 		</div>
 	</div>
@@ -51,81 +54,71 @@
 <section class="section">
 	<div class="o-wrapper">
 		<section class="section knowledge-base" data-animated="0">
-			<h2 class="c-section-title">Benvenuto!</h2>
-				<section class="c-block-list-with-icons">
-					<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
-						{{#each categories}}
-							{{#is name 'Generale'}}
-								{{#each sections}}
-									<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
-										<a href="{{url}}">
-											{{#is name 'Registrazione'}}<div class="icon hype-icon-start"></div>{{/is}}
-											{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
-											{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
-											<h3 class="c-block-list-with-icons__title">
-												{{name}} <span>({{article_count}})</span>
-												{{#if internal}}
-													<span class="icon-lock" title="{{t 'internal'}}"></span>
-												{{/if}}
-											</h3>
-										</a>
-										<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
-										<div class="c-block-list-with-icons__link t-align-left">
-											{{#each articles}}
-												<a href="{{url}}">{{title}}</a>
-											{{/each}}
-										</div>
-										<div class="c-block-list-with-icons__link--more t-align-right">
-											<a href="{{url}}">Vedi tutti</a>
-										</div>
-									</li>
-								{{/each}}
-							{{/is}}
-						{{/each}}
-					</ul>
-				</section>
+
+			<section class="c-block-list-with-icons">
+				<ul
+					class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
+					{{#each categories}}
+
+
+					<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
+						<a href="{{url}}">
+
+							<h3 class="c-block-list-with-icons__title">
+								{{name}}
+
+							</h3>
+						</a>
+						<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
+
+					</li>
+
+					{{/each}}
+				</ul>
 			</section>
-			<section class="section knowledge-base" data-animated="0">
-				<h2 class="c-section-title">Tutto su HYPE</h2>
-					<section class="c-block-list-with-icons">
-						<ul class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
-							{{#each categories}}
-								{{#is name 'Tutto su Hype'}}
-									{{#each sections}}
-										<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
-											<a href="{{url}}">
-												{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
-												{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
-												{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
-												{{#is name "L'app"}}<div class="icon hype-icon-app"></div>{{/is}}
-												{{#is name 'Il conto'}}<div class="icon hype-icon-account"></div>{{/is}}
-												{{#is name 'Pagamenti e prelievi'}}<div class="icon hype-icon-pagamenti"></div>{{/is}}
-												{{#is name 'Servizi e sicurezza'}}<div class="icon hype-icon-sicurezza"></div>{{/is}}
-												{{#is name 'Promozioni'}}<div class="icon hype-icon-promo"></div>{{/is}}
-												{{#is name 'Ricarica'}}<div class="icon hype-icon-ricarica"></div>{{/is}}
-												<h3 class="c-block-list-with-icons__title">
-													{{name}} <span>({{article_count}})</span>
-													{{#if internal}}
-														<span class="icon-lock" title="{{t 'internal'}}"></span>
-													{{/if}}
-												</h3>
-											</a>
-											<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
-											<div class="c-block-list-with-icons__link t-align-left">
-												{{#each articles}}
-													<a href="{{url}}">{{title}}</a>
-												{{/each}}
-											</div>
-											<div class="c-block-list-with-icons__link--more t-align-right">
-												<a href="{{url}}">Vedi tutti</a>
-											</div>
-										</li>
-									{{/each}}
-								{{/is}}
+		</section>
+		<section class="section knowledge-base" data-animated="0">
+			<h2 class="c-section-title">Tutto su HYPE</h2>
+			<section class="c-block-list-with-icons">
+				<ul
+					class="c-block-list-with-icons__list c-block-list-with-icons__list--overflow c-block-list-with-icons__list--three clearfix">
+					{{#each categories}}
+					{{#is name 'Tutto su Hype'}}
+					{{#each sections}}
+					<li class="c-block-list-with-icons__list-item c-block-list-with-icons__list-item--no-border">
+						<a href="{{url}}">
+							{{#is name 'Getting Started'}}<div class="icon hype-icon-start"></div>{{/is}}
+							{{#is name 'La carta'}}<div class="icon hype-icon-card"></div>{{/is}}
+							{{#is name 'Le funzioni'}}<div class="icon hype-icon-funzioni"></div>{{/is}}
+							{{#is name "L'app"}}<div class="icon hype-icon-app"></div>{{/is}}
+							{{#is name 'Il conto'}}<div class="icon hype-icon-account"></div>{{/is}}
+							{{#is name 'Pagamenti e prelievi'}}<div class="icon hype-icon-pagamenti"></div>{{/is}}
+							{{#is name 'Servizi e sicurezza'}}<div class="icon hype-icon-sicurezza"></div>{{/is}}
+							{{#is name 'Promozioni'}}<div class="icon hype-icon-promo"></div>{{/is}}
+							{{#is name 'Ricarica'}}<div class="icon hype-icon-ricarica"></div>{{/is}}
+							<h3 class="c-block-list-with-icons__title">
+								{{name}} <span>({{article_count}})</span>
+								{{#if internal}}
+								<span class="icon-lock" title="{{t 'internal'}}"></span>
+								{{/if}}
+							</h3>
+						</a>
+						<p class="c-block-list-with-icons__text t-align-left">{{excerpt description}}</p>
+						<div class="c-block-list-with-icons__link t-align-left">
+							{{#each articles}}
+							<a href="{{url}}">{{title}}</a>
 							{{/each}}
-						</ul>
-					</section>
-				</section>
+						</div>
+						<div class="c-block-list-with-icons__link--more t-align-right">
+							<a href="{{url}}">Vedi tutti</a>
+						</div>
+					</li>
+					{{/each}}
+					{{/is}}
+					{{/each}}
+				</ul>
+			</section>
+		</section>
 
 	</div>
 	<section class="section c-recent-articles" data-animated="0">
@@ -138,62 +131,78 @@
 				<div class="c-video-recent">
 					<img src="{{asset 'video.png' }}">
 					<button class="c-hero__play" id="js-video-modal-button" rel="nofollow" href="#">
-			      <svg width="93px" height="93px" viewBox="0 0 93 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			        <defs>
-			          <linearGradient x1="50%" y1="0%" x2="50%" y2="99.0214445%" id="linearGradient-1">
-			            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
-			            <stop stop-color="#000000" stop-opacity="0.02" offset="80%"></stop>
-			            <stop stop-color="#000000" stop-opacity="0.04" offset="100%"></stop>
-			          </linearGradient>
-			          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
-			            <stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
-			            <stop stop-color="#FFFFFF" stop-opacity="0.06" offset="20%"></stop>
-			            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
-			          </linearGradient>
-			          <circle id="path-3" cx="40.5" cy="40.5" r="40.5"></circle>
-			          <filter x="-17.3%" y="-14.8%" width="134.6%" height="134.6%" filterUnits="objectBoundingBox" id="filter-4">
-			            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-			            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-			            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
-			            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.237601902 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-			            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
-			            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
-			            <feComposite in="shadowBlurOuter2" in2="SourceAlpha" operator="out" result="shadowBlurOuter2"></feComposite>
-			            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
-			            <feMerge>
-			              <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-			              <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
-			            </feMerge>
-			          </filter>
-			        </defs>
-			        <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-			          <g id="Home" transform="translate(-994.000000, -436.000000)">
-			            <g id="ic_play" transform="translate(1000.000000, 440.000000)">
-			              <g id="bgplay" opacity="0.657438859">
-			                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
-			                <use fill="#00A5FF" fill-rule="evenodd" xlink:href="#path-3"></use>
-			                <circle stroke="url(#linearGradient-1)" stroke-width="0.5" cx="40.5" cy="40.5" r="40.25"></circle>
-			                <circle stroke="url(#linearGradient-2)" stroke-width="0.5" cx="40.5" cy="40.5" r="40.25"></circle>
-			              </g>
-			              <path d="M32,52.0773359 L32,28.922496 C32,28.3702112 32.4477153,27.922496 33,27.922496 C33.1826973,27.922496 33.3619034,27.9725464 33.5181613,28.067213 L52.6279836,39.644633 C53.1003433,39.9308055 53.2512778,40.5457175 52.9651052,41.0180772 C52.8815544,41.1559872 52.7658936,41.271648 52.6279836,41.3551989 L33.5181613,52.9326188 C33.0458015,53.2187914 32.4308896,53.0678569 32.1447171,52.5954971 C32.0500504,52.4392393 32,52.2600331 32,52.0773359 Z" fill="#FFFFFF"></path>
-			            </g>
-			          </g>
-			        </g>
-			      </svg>
-			    </button>
+						<svg width="93px" height="93px" viewBox="0 0 93 93" version="1.1"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<defs>
+								<linearGradient x1="50%" y1="0%" x2="50%" y2="99.0214445%" id="linearGradient-1">
+									<stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+									<stop stop-color="#000000" stop-opacity="0.02" offset="80%"></stop>
+									<stop stop-color="#000000" stop-opacity="0.04" offset="100%"></stop>
+								</linearGradient>
+								<linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+									<stop stop-color="#FFFFFF" stop-opacity="0.12" offset="0%"></stop>
+									<stop stop-color="#FFFFFF" stop-opacity="0.06" offset="20%"></stop>
+									<stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+								</linearGradient>
+								<circle id="path-3" cx="40.5" cy="40.5" r="40.5"></circle>
+								<filter x="-17.3%" y="-14.8%" width="134.6%" height="134.6%"
+									filterUnits="objectBoundingBox" id="filter-4">
+									<feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+									<feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1">
+									</feGaussianBlur>
+									<feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out"
+										result="shadowBlurOuter1"></feComposite>
+									<feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.237601902 0"
+										type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+									<feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+									<feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2">
+									</feGaussianBlur>
+									<feComposite in="shadowBlurOuter2" in2="SourceAlpha" operator="out"
+										result="shadowBlurOuter2"></feComposite>
+									<feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0"
+										type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+									<feMerge>
+										<feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+										<feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+									</feMerge>
+								</filter>
+							</defs>
+							<g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<g id="Home" transform="translate(-994.000000, -436.000000)">
+									<g id="ic_play" transform="translate(1000.000000, 440.000000)">
+										<g id="bgplay" opacity="0.657438859">
+											<use fill="black" fill-opacity="1" filter="url(#filter-4)"
+												xlink:href="#path-3"></use>
+											<use fill="#00A5FF" fill-rule="evenodd" xlink:href="#path-3"></use>
+											<circle stroke="url(#linearGradient-1)" stroke-width="0.5" cx="40.5"
+												cy="40.5" r="40.25"></circle>
+											<circle stroke="url(#linearGradient-2)" stroke-width="0.5" cx="40.5"
+												cy="40.5" r="40.25"></circle>
+										</g>
+										<path
+											d="M32,52.0773359 L32,28.922496 C32,28.3702112 32.4477153,27.922496 33,27.922496 C33.1826973,27.922496 33.3619034,27.9725464 33.5181613,28.067213 L52.6279836,39.644633 C53.1003433,39.9308055 53.2512778,40.5457175 52.9651052,41.0180772 C52.8815544,41.1559872 52.7658936,41.271648 52.6279836,41.3551989 L33.5181613,52.9326188 C33.0458015,53.2187914 32.4308896,53.0678569 32.1447171,52.5954971 C32.0500504,52.4392393 32,52.2600331 32,52.0773359 Z"
+											fill="#FFFFFF"></path>
+									</g>
+								</g>
+							</g>
+						</svg>
+					</button>
 				</div>
 
 				<div class="c-video hidden" id="js-video">
-				  <div class="c-video__body">
-				    <button class="c-video__close">&times;</button>
-				    <iframe id="js-iframe-video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
-				  </div>
+					<div class="c-video__body">
+						<button class="c-video__close">&times;</button>
+						<iframe id="js-iframe-video" frameborder="0" gesture="media" allow="encrypted-media"
+							allowfullscreen=""></iframe>
+					</div>
 				</div>
 
 				<div class="c-video-mobile" id="js-video-mobile">
-				  <div class="c-youtube-player">
-				    <iframe src="https://www.youtube.com/embed/NuAKnlcBGVc?modestbranding=1&showinfo=0&rel=0&theme=light&fs=0&color=white&autohide=0&controls=0&disablekb=1" frameborder="0" allowfullscreen=""></iframe>
-				  </div>
+					<div class="c-youtube-player">
+						<iframe
+							src="https://www.youtube.com/embed/NuAKnlcBGVc?modestbranding=1&showinfo=0&rel=0&theme=light&fs=0&color=white&autohide=0&controls=0&disablekb=1"
+							frameborder="0" allowfullscreen=""></iframe>
+					</div>
 				</div>
 				<!-- {{#each categories}}
 					{{#is name 'Generale'}}
@@ -211,43 +220,43 @@
 </section>
 
 <script>
-//open video hype
+	//open video hype
 
-var openVideo = function () {
-	var modalVideo = document.getElementById('js-video');
-	var btnVideo = document.getElementById('js-video-modal-button');
-	var body = document.body;
-	var span = document.getElementsByClassName('c-video__close')[0];
-	var iframe = document.getElementById('js-iframe-video');
+	var openVideo = function () {
+		var modalVideo = document.getElementById('js-video');
+		var btnVideo = document.getElementById('js-video-modal-button');
+		var body = document.body;
+		var span = document.getElementsByClassName('c-video__close')[0];
+		var iframe = document.getElementById('js-iframe-video');
 
-	if (!btnVideo) return;
-	btnVideo.onclick = function () {
-		modalVideo.classList.add('open');
-		modalVideo.classList.remove('hidden');
-		body.classList.add('t-noscroll');
-		iframe.src =
-			'https://www.youtube.com/embed/NuAKnlcBGVc?rel=0&showinfo=0&autoplay=1&color=white&modestbranding=1&theme=light';
-	};
+		if (!btnVideo) return;
+		btnVideo.onclick = function () {
+			modalVideo.classList.add('open');
+			modalVideo.classList.remove('hidden');
+			body.classList.add('t-noscroll');
+			iframe.src =
+				'https://www.youtube.com/embed/NuAKnlcBGVc?rel=0&showinfo=0&autoplay=1&color=white&modestbranding=1&theme=light';
+		};
 
-	if (!span) return;
-	span.onclick = function () {
-		modalVideo.classList.add('hidden');
-		modalVideo.classList.remove('open');
-		body.classList.remove('t-noscroll');
-		iframe.src = '';
-	};
-
-	window.onclick = function (event) {
-		if (event.target === modalVideo) {
+		if (!span) return;
+		span.onclick = function () {
 			modalVideo.classList.add('hidden');
 			modalVideo.classList.remove('open');
 			body.classList.remove('t-noscroll');
 			iframe.src = '';
-		}
-	};
-};
+		};
 
-$(document).ready(function() {
-  openVideo();
-});
+		window.onclick = function (event) {
+			if (event.target === modalVideo) {
+				modalVideo.classList.add('hidden');
+				modalVideo.classList.remove('open');
+				body.classList.remove('t-noscroll');
+				iframe.src = '';
+			}
+		};
+	};
+
+	$(document).ready(function () {
+		openVideo();
+	});
 </script>
